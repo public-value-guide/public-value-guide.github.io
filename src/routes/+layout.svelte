@@ -10,6 +10,7 @@
   } from '@lilydesignsystem/svelte-headless';
   import PickerBar from '@lilydesignsystem/svelte-picker-bar';
   import { SOURCE_REPO, LOCALES, LOCALE_SLUGS, DEFAULT_LOCALE } from '$lib/book';
+  import { ui } from '$lib/i18n';
 
   let { children } = $props();
 
@@ -19,8 +20,11 @@
 
   // The locale of the page currently showing, when there is one — set on
   // every `/locales/<slug>/...` route, absent on locale-neutral pages
-  // (home, glossary, index).
+  // (home, glossary, index). The header chrome (nav, picker, footer) reads
+  // this locale's own strings; locale-neutral pages fall back to English,
+  // `ui()`'s default when passed `undefined`.
   const currentLocale = $derived(page.params.locale);
+  const t = $derived(ui(currentLocale));
 
   /**
    * Where switching to `newLocale` should go from the page showing now.
@@ -62,9 +66,9 @@
   // "Contents" follows whichever locale is currently showing, falling back
   // to the house-style default on locale-neutral pages.
   const siteLinks = $derived([
-    { href: `/locales/${currentLocale ?? DEFAULT_LOCALE}/contents/`, label: 'Contents' },
-    { href: '/glossary/', label: 'Glossary' },
-    { href: '/index/', label: 'Index' }
+    { href: `/locales/${currentLocale ?? DEFAULT_LOCALE}/contents/`, label: t.nav.contents },
+    { href: '/glossary/', label: t.nav.glossary },
+    { href: '/index/', label: t.nav.index }
   ]);
 
   // Read at share time (inside each href, not as a static prop), so it
@@ -74,48 +78,48 @@
     return typeof document !== 'undefined' ? document.title : '';
   }
 
-  const shareTargets = [
+  const shareTargets = $derived([
     {
       id: 'email',
-      label: 'Email Link',
+      label: t.share.emailLink,
       href: (url: string) =>
         `mailto:?subject=${encodeURIComponent(pageTitle())}&body=${encodeURIComponent(url)}`,
       newTab: false
     },
     {
       id: 'linkedin',
-      label: 'Share on LinkedIn',
+      label: t.share.shareOnLinkedIn,
       href: (url: string) =>
         `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`
     },
     {
       id: 'reddit',
-      label: 'Share on Reddit',
+      label: t.share.shareOnReddit,
       href: (url: string) =>
         `https://www.reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(pageTitle())}`
     },
     {
       id: 'bluesky',
-      label: 'Share on Bluesky',
+      label: t.share.shareOnBluesky,
       href: (url: string) =>
         `https://bsky.app/intent/compose?text=${encodeURIComponent(`${pageTitle()} ${url}`)}`
     },
     {
       id: 'mastodon',
-      label: 'Share on Mastodon',
+      label: t.share.shareOnMastodon,
       href: (url: string) =>
         `https://mastodonshare.com/?text=${encodeURIComponent(pageTitle())}&url=${encodeURIComponent(url)}`
     }
-  ];
+  ]);
 </script>
 
-<SkipLink href="#main" label="Skip to main content" />
+<SkipLink href="#main" label={t.skipToContent} />
 
 <GrailLayout class="site">
   <GrailLayoutTopHeader class="site-header">
     <a class="site-brand" href="/">
       <span class="site-brand-icon" aria-hidden="true">⚖</span>
-      <span class="site-brand-title">Public Value Guide</span>
+      <span class="site-brand-title">{t.siteTitle}</span>
     </a>
 
     <nav class="site-nav" aria-label="Site">
@@ -124,12 +128,17 @@
           {link.label}
         </a>
       {/each}
-      <a href={SOURCE_REPO} rel="noopener">Source</a>
+      <a href={SOURCE_REPO} rel="noopener">{t.nav.source}</a>
     </nav>
 
     <PickerBar
       class="site-controls"
-      labels={{ theme: 'Theme', locale: 'Language', textSize: 'Text size', share: 'Share' }}
+      labels={{
+        theme: t.picker.theme,
+        locale: t.picker.locale,
+        textSize: t.picker.textSize,
+        share: t.picker.share
+      }}
       themesUrl="/assets/themes/"
       themeProps={{
         defaultValue: 'light',
@@ -147,9 +156,9 @@
       textSizeProps={{ storageKey: 'public-value-guide-text-size' }}
       shareTargets={shareTargets}
       shareProps={{
-        copyLabel: 'Copy Link',
-        copiedLabel: 'Copied!',
-        copyFailedLabel: 'Copy failed — copy the address bar instead'
+        copyLabel: t.share.copyLink,
+        copiedLabel: t.share.copied,
+        copyFailedLabel: t.share.copyFailed
       }}
     />
   </GrailLayoutTopHeader>
@@ -160,12 +169,12 @@
 
   <GrailLayoutBottomFooter class="site-footer">
     <p>
-      <strong>Public Value Guide</strong> — a practical handbook of best practices for creating
-      public value in government and the social sector, worldwide in scope.
+      <strong>{t.siteTitle}</strong> — {t.footer.tagline}
     </p>
     <p>
-      Source and contributions: <a href={SOURCE_REPO} rel="noopener">github.com/public-value-guide</a
-      >. Built with the
+      {t.footer.sourceAndContributions} <a href={SOURCE_REPO} rel="noopener"
+        >github.com/public-value-guide</a
+      >. {t.footer.builtWith}
       <a href="https://github.com/LilyDesignSystem" rel="noopener">Lily Design System™</a>.
     </p>
   </GrailLayoutBottomFooter>

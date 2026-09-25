@@ -1,6 +1,6 @@
 <script lang="ts">
   import { ArticleLayout, SectionHeading, Badge } from '@lilydesignsystem/svelte-headless';
-  import { PARTS, SOURCE_REPO, SKILLS_REPO, LOCALES, DEFAULT_LOCALE } from '$lib/book';
+  import { PARTS, SOURCE_REPO, SKILLS_REPO, DEFAULT_LOCALE, sortedLocales } from '$lib/book';
 
   let { data } = $props();
 
@@ -13,7 +13,9 @@
 
   const preface = $derived(data.toc.find((chapter) => chapter.part === 0));
   const chapterCount = $derived(data.toc.filter((chapter) => chapter.part > 0).length);
-  const otherLocales = $derived(LOCALES.filter((locale) => locale.slug !== DEFAULT_LOCALE));
+  const otherLocales = $derived(
+    sortedLocales().filter((locale) => locale.slug !== DEFAULT_LOCALE)
+  );
 </script>
 
 <svelte:head>
