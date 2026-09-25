@@ -43,10 +43,10 @@ export type Locale = {
  * `scripts/sync-content.sh` reports every chapter synced for it.
  */
 export const LOCALES: Locale[] = [
-  { slug: 'en-gb-oxendict', label: 'English (UK, Oxford spelling)' },
-  { slug: 'en-gb', label: 'English (UK)' },
-  { slug: 'en-us', label: 'English (US)' },
-  { slug: 'en-001', label: 'English (World)' }
+  { slug: 'en-gb-oxendict', label: 'English - Great Britain - Oxford' },
+  { slug: 'en-gb', label: 'English - Great Britain' },
+  { slug: 'en-us', label: 'English - United States' },
+  { slug: 'en-001', label: 'English' }
 ];
 
 /**
@@ -74,14 +74,17 @@ export function isLocale(value: string): boolean {
 
 /**
  * `LOCALES`, ordered for display: the default locale first, then grouped by
- * language name (the label text before its first `(`), with a `-001` "world"
- * variant sorted before its regional siblings within each group, then
- * alphabetically by label. This does not fall out of a plain alphabetical
- * sort on its own — "English (World)" would sort after "English (UK)" — so
- * the `-001` check is explicit.
+ * language (the locale slug's primary subtag, e.g. `en` in `en-gb-oxendict`),
+ * with a `-001` "world" variant sorted before its regional siblings within
+ * each group, then alphabetically by label. Grouping by slug rather than by
+ * parsing the label text keeps this correct regardless of how a label is
+ * worded. This does not fall out of a plain alphabetical sort on its own —
+ * "English" (en-001) would sort before "English - Great Britain" (en-gb)
+ * alphabetically, which is the wrong order for a "world" variant among its
+ * regional siblings in the other direction — so the `-001` check is explicit.
  */
 export function sortedLocales(locales: Locale[] = LOCALES): Locale[] {
-  const languageOf = (locale: Locale) => locale.label.split('(')[0].trim();
+  const languageOf = (locale: Locale) => locale.slug.split('-')[0];
   const [defaults, rest] = [
     locales.filter((locale) => locale.slug === DEFAULT_LOCALE),
     locales.filter((locale) => locale.slug !== DEFAULT_LOCALE)
