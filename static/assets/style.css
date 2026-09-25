@@ -704,17 +704,23 @@ body {
 
 /* --- Lily pickers ---------------------------------------------------------- */
 
-/* Every *-picker class below this point (button, icon, list, option,
-   share target/copy, status) already has a complete baseline in each
-   Lily theme file — see e.g. static/assets/themes/light.css's own
-   ":where(.theme-picker-list, .locale-picker-list, ...)" block. Adding
-   physical left/right rules here on top of the theme's logical
-   inset-inline-start ones over-constrains the popup's position and the
-   browser silently drops one of them — that's what made the locale
-   picker's dropdown balloon past the viewport edge and yank the whole
-   page sideways when it took focus. .picker-bar itself is the one thing
-   no theme styles, since it's PickerBar's own wrapper, not a Lily
-   component class. */
+/* The installed package version (@lilydesignsystem/svelte-*-picker 0.1.1)
+   renders each popup's button and listbox through the shared generic
+   IconButton/Listbox primitives — real classes "icon-button" and
+   "listbox" — and carries the per-picker identity ("theme-picker-button",
+   "locale-picker-list", etc.) only as an inert `baseclass` HTML
+   attribute, not an actual CSS class. Only the *option* elements inside
+   an open list get a real per-picker class (.theme-picker-option,
+   .locale-picker-option, ...), which is why those already match the
+   theme file's rules correctly.
+   The theme file's own ":where(.theme-picker-list, .locale-picker-list,
+   ...)" block therefore matches nothing in the DOM at all, so the
+   popup got no positioning from anywhere: it rendered as a static,
+   block-level element and pushed the rest of the page down when it
+   opened — the reported "page jump" bug. This block supplies the
+   positioning and visual baseline directly against the classes that
+   actually exist. If a future package version adds real per-picker
+   classes, prefer those and drop this. */
 .picker-bar {
     display: flex;
     flex-wrap: wrap;
@@ -722,30 +728,65 @@ body {
     gap: var(--lily-space-sm);
 }
 
-/* All four pickers sit in the right-hand cluster of a right-aligned
-   header, so the theme's default left-anchored popup (inset-inline-start:
-   0, extending toward the reading end) risks running past the
-   viewport's right edge from any of them — theme-picker most visibly,
-   since its list is as wide as the longest theme name in the catalog
-   needs, and it isn't even the rightmost button. Flip every popup to
-   hang from its own end edge instead — using the same logical property
-   the theme sets, so this cleanly overrides rather than re-creating the
-   earlier left/right conflict. */
-.theme-picker-list,
-.locale-picker-list,
-.text-size-picker-list,
+/* Every *-picker wrapper (the div PickerBar renders per control) does
+   get its real class name, and the theme already sets `position:
+   relative` on it — confirmed against the rendered page, not assumed. */
+
+.listbox {
+    position: absolute;
+    z-index: 20;
+    inset-block-start: 100%;
+    /* All four pickers sit in the right-hand cluster of a right-aligned
+       header, so hang every popup from its own end edge rather than the
+       theme's (also non-matching) left-anchored default — otherwise the
+       widest list (theme-picker, 45 options) would run past the
+       viewport's right edge. */
+    inset-inline-end: 0;
+    inset-inline-start: auto;
+    margin-block-start: var(--lily-space-xs);
+    /* No min-width: max-content here (deliberately) — it would beat the
+       narrower max-width the mobile media query below sets, since
+       min-width always wins over a conflicting max-width. Letting the
+       box size to its content up to max-width is enough; option text
+       wraps if a name is ever wider than that. */
+    width: max-content;
+    max-width: min(20rem, calc(100vw - 2 * var(--lily-space-lg)));
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: var(--lily-space-xs);
+    list-style: none;
+    color: var(--lily-text);
+    background-color: var(--color-base-100);
+    border: 1px solid var(--lily-border-strong);
+    border-radius: var(--lily-radius-md);
+    box-shadow: var(--lily-shadow-md, 0 4px 16px rgba(0, 0, 0, 0.15));
+}
+
+/* Needed explicitly: a `display` declaration on a styled element
+   overrides the UA stylesheet's `[hidden] { display: none }` rule, so
+   without this the closed list stays visible. */
+.listbox[hidden] {
+    display: none;
+}
+
+/* Unlike the other three, SharePicker in this package version renders
+   its own real `.share-picker-list` class (confirmed against the
+   rendered page) rather than the generic `.listbox` — so it already
+   gets position/background/border from the theme's `:where(...)` rule,
+   which does match it. It only needs the same right-edge anchor as
+   `.listbox` above, since the theme's default is left-anchored. */
 .share-picker-list {
     inset-inline-start: auto;
     inset-inline-end: 0;
 }
 
-/* The theme's own .share-picker-status is in normal flow — a caption
-   line under the button — which is fine on its own, but it makes
-   .share-picker taller than its sibling picker wrappers (which have no
-   such line). .picker-bar centers its children on the cross axis, so
-   that extra height was pushing the share button, icon included, up
-   relative to the other three buttons. Take the status line out of
-   flow so every wrapper stays button-height and the row centers evenly. */
+/* The share picker's status line ("Copied!") is a real class too, and
+   is in normal flow by default — a caption line under the button,
+   which is fine on its own, but it makes .share-picker taller than its
+   sibling wrappers (which have no such line). .picker-bar centers its
+   children on the cross axis, so that extra height was pushing the
+   share button, icon included, up relative to the other three. Take
+   the status line out of flow so every wrapper stays button-height. */
 .share-picker-status {
     position: absolute;
     inset-inline-end: 0;
@@ -772,6 +813,25 @@ body {
     .page-header h1,
     .page-hero h1 {
         font-size: 1.75em;
+    }
+
+    /* .site-header wraps at this width (see .site-header's flex-wrap) and
+       .picker-bar drops to its own row, left-aligned under the nav rather
+       than pinned to the header's right edge as on a wide viewport. A
+       popup anchored to its own trigger's *end* edge (the desktop choice,
+       made when every trigger sits near the header's right edge) then
+       hangs mostly off-screen to the left from the *left-most* of the
+       four clustered icon buttons — anchor from the trigger's start edge
+       here instead, since there is room to the right of the cluster but
+       not to the left of it. */
+    .listbox,
+    .share-picker-list {
+        inset-inline-start: 0;
+        inset-inline-end: auto;
+    }
+
+    .listbox {
+        max-width: calc(100vw - 2 * var(--lily-space-md) - 2 * var(--lily-space-lg));
     }
 }
 
