@@ -1,0 +1,97 @@
+<script lang="ts">
+  import {
+    ArticleLayout,
+    BreadcrumbNav,
+    BreadcrumbList,
+    BreadcrumbListItem,
+    PaginationNav,
+    PaginationList,
+    PaginationListItem,
+    ContentsNav,
+    ContentsLink
+  } from '@lilydesignsystem/svelte-headless';
+  import { PARTS } from '$lib/book';
+
+  let { data } = $props();
+
+  const part = $derived(PARTS.find((candidate) => candidate.number === data.ref.part));
+
+  /** `Chapter 1.1 — Introduction to Public Value`, or just the title for front matter. */
+  const fullTitle = $derived(
+    data.ref.number ? `Chapter ${data.ref.number} — ${data.ref.title}` : data.ref.title
+  );
+
+  /** Only top-level sections go in the on-page contents; `###` would crowd it. */
+  const sections = $derived(data.doc.headings.filter((heading) => heading.depth === 2));
+
+  const label = (ref: { number: string; title: string }) =>
+    ref.number ? `${ref.number} ${ref.title}` : ref.title;
+</script>
+
+<svelte:head>
+  <title>{fullTitle} — Public Value Guide</title>
+  <meta name="description" content={data.doc.lead || data.ref.title} />
+</svelte:head>
+
+<ArticleLayout class="page page-chapter">
+  <BreadcrumbNav label="Breadcrumb" class="page-breadcrumb">
+    <BreadcrumbList>
+      <BreadcrumbListItem><a href="/">Home</a></BreadcrumbListItem>
+      <BreadcrumbListItem><a href="/locales/{data.locale}/contents/">Contents</a></BreadcrumbListItem>
+      {#if part}
+        <BreadcrumbListItem>Part {part.number} — {part.title}</BreadcrumbListItem>
+      {/if}
+      <BreadcrumbListItem current>
+        {data.ref.number ? `Chapter ${data.ref.number}` : data.ref.title}
+      </BreadcrumbListItem>
+    </BreadcrumbList>
+  </BreadcrumbNav>
+
+  <header class="page-header">
+    {#if data.ref.number}
+      <p class="page-eyebrow">Chapter {data.ref.number}</p>
+    {/if}
+    <h1>{data.ref.title}</h1>
+    {#if data.doc.lead}
+      <p class="page-lead">{data.doc.lead}</p>
+    {/if}
+  </header>
+
+  {#if sections.length > 1}
+    <ContentsNav label="On this page" class="page-toc">
+      <h2 class="page-toc-heading">On this page</h2>
+      {#each sections as section (section.id)}
+        <ContentsLink class="page-toc-item">
+          <a href="#{section.id}">{section.text}</a>
+        </ContentsLink>
+      {/each}
+    </ContentsNav>
+  {/if}
+
+  <div class="prose">
+    <!-- Rendered at build time from the book's own markdown; not user input. -->
+    <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+    {@html data.doc.html}
+  </div>
+
+  <PaginationNav label="Chapter" class="page-pagination">
+    <PaginationList>
+      <PaginationListItem class="page-pagination-previous">
+        {#if data.previous}
+          <a href="/locales/{data.locale}/chapters/{data.previous.slug}/" rel="prev">
+            <span class="page-pagination-direction">Previous</span>
+            <span class="page-pagination-label">{label(data.previous)}</span>
+          </a>
+        {/if}
+      </PaginationListItem>
+      <PaginationListItem class="page-pagination-next">
+        {#if data.next}
+          <a href="/locales/{data.locale}/chapters/{data.next.slug}/" rel="next">
+            <span class="page-pagination-direction">Next</span>
+            <span class="page-pagination-label">{label(data.next)}</span>
+          </a>
+        {/if}
+      </PaginationListItem>
+    </PaginationList>
+  </PaginationNav>
+</ArticleLayout>
