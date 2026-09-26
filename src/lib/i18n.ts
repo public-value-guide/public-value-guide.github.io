@@ -13,7 +13,9 @@
 // chapter prose (see `spec/index.md` §4 upstream). `cy-001` reuses `cy-gb`'s
 // strings verbatim — the same decision the book repo made for chapter prose,
 // since the register difference between Welsh (Wales) and World Welsh is
-// negligible for this formal content.
+// negligible for this formal content. `es-001` (World/neutral Spanish) and
+// `zh-cn` (Mainland China, Simplified script) each get their own strings, in
+// the same neutral register their chapter prose uses.
 
 export type UiStrings = {
   /** The site's own name, as shown in the header brand and used in page titles. */
@@ -148,13 +150,92 @@ const cyGb: UiStrings = {
 // decision to reuse cy-gb prose for cy-001 (see spec/index.md upstream).
 const cy001: UiStrings = cyGb;
 
+const es001: UiStrings = {
+  siteTitle: 'Guía de Valor Público',
+  skipToContent: 'Saltar al contenido principal',
+  nav: { contents: 'Contenido', glossary: 'Glosario', index: 'Índice', source: 'Fuente' },
+  breadcrumb: { home: 'Inicio', contents: 'Contenido' },
+  picker: { theme: 'Tema', locale: 'Idioma', textSize: 'Tamaño del texto', share: 'Compartir' },
+  share: {
+    emailLink: 'Enviar enlace por correo',
+    shareOnLinkedIn: 'Compartir en LinkedIn',
+    shareOnReddit: 'Compartir en Reddit',
+    shareOnBluesky: 'Compartir en Bluesky',
+    shareOnMastodon: 'Compartir en Mastodon',
+    copyLink: 'Copiar enlace',
+    copied: '¡Copiado!',
+    copyFailed: 'Error al copiar — copie la barra de direcciones en su lugar'
+  },
+  contents: {
+    pageTitle: 'Contenido',
+    lead: 'Cada capítulo es autónomo. Léalo de principio a fin como un curso sobre valor público, o vaya directamente al capítulo que corresponda a la decisión que tiene ante usted.',
+    readingIn: (label) => `Leyendo en ${label}. Cambie de idioma desde el selector del encabezado.`,
+    frontMatter: 'Preliminares',
+    part: (n) => `Parte ${n}`,
+    reference: 'Referencia'
+  },
+  chapter: {
+    chapterEyebrow: (n) => `Capítulo ${n}`,
+    paginationLabel: 'Capítulo',
+    onThisPage: 'En esta página',
+    previous: 'Anterior',
+    next: 'Siguiente'
+  },
+  footer: {
+    tagline:
+      'un manual práctico de buenas prácticas para crear valor público en el gobierno y el sector social, de alcance mundial.',
+    sourceAndContributions: 'Fuente y contribuciones:',
+    builtWith: 'Creado con el'
+  }
+};
+
+const zhCn: UiStrings = {
+  siteTitle: '公共价值指南',
+  skipToContent: '跳转到主要内容',
+  nav: { contents: '目录', glossary: '术语表', index: '索引', source: '源代码' },
+  breadcrumb: { home: '首页', contents: '目录' },
+  picker: { theme: '主题', locale: '语言', textSize: '字体大小', share: '分享' },
+  share: {
+    emailLink: '通过电子邮件发送链接',
+    shareOnLinkedIn: '分享到 LinkedIn',
+    shareOnReddit: '分享到 Reddit',
+    shareOnBluesky: '分享到 Bluesky',
+    shareOnMastodon: '分享到 Mastodon',
+    copyLink: '复制链接',
+    copied: '已复制!',
+    copyFailed: '复制失败——请改为复制地址栏内容'
+  },
+  contents: {
+    pageTitle: '目录',
+    lead: '每一章都是独立完整的。可以从头到尾通读,作为一门关于公共价值的课程,也可以直接跳转到与你眼下的决策相匹配的那一章。',
+    readingIn: (label) => `正在以${label}阅读。可从页眉的选择器切换语言。`,
+    frontMatter: '前言部分',
+    part: (n) => `第 ${n} 部分`,
+    reference: '参考资料'
+  },
+  chapter: {
+    chapterEyebrow: (n) => `第 ${n} 章`,
+    paginationLabel: '章节',
+    onThisPage: '本页内容',
+    previous: '上一章',
+    next: '下一章'
+  },
+  footer: {
+    tagline: '一部面向全球的、关于在政府与社会部门中创造公共价值的最佳实践实用手册。',
+    sourceAndContributions: '源代码与贡献:',
+    builtWith: '构建工具:'
+  }
+};
+
 const STRINGS: Record<string, UiStrings> = {
   'en-gb-oxendict': enGbOxendict,
   'en-gb': enGb,
   'en-us': enUs,
   'en-001': en001,
   'cy-gb': cyGb,
-  'cy-001': cy001
+  'cy-001': cy001,
+  'es-001': es001,
+  'zh-cn': zhCn
 };
 
 /** UI chrome strings for `locale`, falling back to English if the locale is unknown. */

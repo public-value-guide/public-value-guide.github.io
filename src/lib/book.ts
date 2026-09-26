@@ -35,18 +35,27 @@ export type Locale = {
 
 /**
  * The book's locales. Kept in sync by hand with the source repo's `locales/`
- * directory: `cy-gb` and `cy-001` are also scaffolded there (see
- * spec/index.md §4a upstream) but are not yet fully translated, so they are
- * not listed here until they are — an incomplete locale would otherwise
- * offer a picker option that 404s on whichever chapter has no translation
- * yet. Add a locale here, and to `$lib/i18n`'s `STRINGS`, only once
- * `scripts/sync-content.sh` reports every chapter synced for it.
+ * directory (see spec/index.md §4a upstream). Add a locale here, and to
+ * `$lib/i18n`'s `STRINGS`, only once `scripts/sync-content.sh` reports every
+ * chapter synced for it — an incomplete locale would otherwise offer a
+ * picker option that 404s on whichever chapter has no translation yet.
+ *
+ * Labels follow the book's own endonym-first convention: the language name
+ * in its own language (its endonym), then a hyphen-separated region and, if
+ * applicable, script/spelling variant, each also given in that language
+ * (mirroring the English rows' "Great Britain", "Oxford", and so on). The
+ * bare endonym with no suffix marks the CLDR "World" (`-001`) variant of a
+ * language, matching the existing `en-001` row.
  */
 export const LOCALES: Locale[] = [
   { slug: 'en-gb-oxendict', label: 'English - Great Britain - Oxford' },
   { slug: 'en-gb', label: 'English - Great Britain' },
   { slug: 'en-us', label: 'English - United States' },
-  { slug: 'en-001', label: 'English' }
+  { slug: 'en-001', label: 'English' },
+  { slug: 'cy-gb', label: 'Cymraeg - Cymru' },
+  { slug: 'cy-001', label: 'Cymraeg' },
+  { slug: 'es-001', label: 'Español' },
+  { slug: 'zh-cn', label: '中文 - 中国大陆 - 简体' }
 ];
 
 /**
@@ -168,6 +177,55 @@ const PART_TRANSLATIONS: Record<string, Record<number, { title: string; tagline:
       title: 'Digidol, Meddalwedd, a Thechnoleg',
       tagline:
         "gwerth cyhoeddus technoleg: llywodraeth ddigidol, deallusrwydd artiffisial, meddalwedd, data, a seiberddiogelwch"
+    }
+  },
+  'es-001': {
+    1: {
+      title: 'Fundamentos',
+      tagline:
+        'por qué el valor público difiere del valor de mercado o de un mandato democrático por sí solos, y los modelos que lo explican'
+    },
+    2: {
+      title: 'Evaluación y Evidencia',
+      tagline:
+        'el conjunto de herramientas del analista: valorar los resultados, construir el caso, poner a prueba las afirmaciones'
+    },
+    3: {
+      title: 'Sistemas, Gobernanza y Prioridades',
+      tagline:
+        'cómo se estructuran, financian y responsabilizan las organizaciones públicas y del sector social'
+    },
+    4: {
+      title: 'Cuestiones Globales y Sociales',
+      tagline:
+        'el valor público más allá de una sola institución: el comportamiento, la confianza, el planeta y la conversación pública'
+    },
+    5: {
+      title: 'Digital, Software y Tecnología',
+      tagline:
+        'el valor público de la tecnología: gobierno digital, inteligencia artificial, software, datos y ciberseguridad'
+    }
+  },
+  'zh-cn': {
+    1: {
+      title: '基础',
+      tagline: '为什么公共价值不同于单纯的市场价值或民主授权,以及解释这一点的各种模型'
+    },
+    2: {
+      title: '评估与证据',
+      tagline: '分析者的工具箱:为成果估值、构建论证、检验主张'
+    },
+    3: {
+      title: '体系、治理与优先事项',
+      tagline: '公共与社会部门组织是如何被构建、被资助,并被追究责任的'
+    },
+    4: {
+      title: '全球与社会议题',
+      tagline: '超越单一机构的公共价值:行为、信任、地球,以及公共对话'
+    },
+    5: {
+      title: '数字、软件与技术',
+      tagline: '技术的公共价值:数字政府、人工智能、软件、数据与网络安全'
     }
   }
 };
