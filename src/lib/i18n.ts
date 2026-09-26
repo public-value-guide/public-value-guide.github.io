@@ -14,8 +14,13 @@
 // strings verbatim — the same decision the book repo made for chapter prose,
 // since the register difference between Welsh (Wales) and World Welsh is
 // negligible for this formal content. `es-001` (World/neutral Spanish) and
-// `zh-cn` (Mainland China, Simplified script) each get their own strings, in
-// the same neutral register their chapter prose uses.
+// `zh-cn` (Mainland China, Simplified script), `ar-001` (World/neutral
+// Arabic), and `hi-in` (Hindi, India) each get their own strings, in the same
+// neutral register their chapter prose uses. `ar-001` needs no separate `dir`
+// handling here — the Lily locale picker sets `dir="rtl"` on the document
+// itself for any locale whose base language subtag is in its own RTL list,
+// which already includes `ar` (see `isRtlLocale` in
+// `@lilydesignsystem/svelte-locale-picker`).
 
 export type UiStrings = {
   /** The site's own name, as shown in the header brand and used in page titles. */
@@ -227,6 +232,84 @@ const zhCn: UiStrings = {
   }
 };
 
+const ar001: UiStrings = {
+  siteTitle: 'دليل القيمة العامة',
+  skipToContent: 'الانتقال إلى المحتوى الرئيسي',
+  nav: { contents: 'المحتويات', glossary: 'المسرد', index: 'الفهرس', source: 'المصدر' },
+  breadcrumb: { home: 'الرئيسية', contents: 'المحتويات' },
+  picker: { theme: 'السمة', locale: 'اللغة', textSize: 'حجم النص', share: 'مشاركة' },
+  share: {
+    emailLink: 'إرسال الرابط بالبريد الإلكتروني',
+    shareOnLinkedIn: 'مشاركة على LinkedIn',
+    shareOnReddit: 'مشاركة على Reddit',
+    shareOnBluesky: 'مشاركة على Bluesky',
+    shareOnMastodon: 'مشاركة على Mastodon',
+    copyLink: 'نسخ الرابط',
+    copied: 'تم النسخ!',
+    copyFailed: 'فشل النسخ — يُرجى نسخ شريط العنوان بدلًا من ذلك'
+  },
+  contents: {
+    pageTitle: 'المحتويات',
+    lead: 'كل فصل قائم بذاته. اقرأ الكتاب من البداية إلى النهاية كدورة في القيمة العامة، أو انتقل مباشرة إلى الفصل الذي يناسب القرار الذي أمامك.',
+    readingIn: (label) => `تقرأ الآن بـ${label}. غيّر اللغة من منتقي الترويسة.`,
+    frontMatter: 'المادة الاستهلالية',
+    part: (n) => `الجزء ${n}`,
+    reference: 'مرجع'
+  },
+  chapter: {
+    chapterEyebrow: (n) => `الفصل ${n}`,
+    paginationLabel: 'الفصل',
+    onThisPage: 'في هذه الصفحة',
+    previous: 'السابق',
+    next: 'التالي'
+  },
+  footer: {
+    tagline:
+      'دليل عملي لأفضل الممارسات في خلق القيمة العامة داخل الحكومة والقطاع الاجتماعي، بنطاق عالمي.',
+    sourceAndContributions: 'المصدر والمساهمات:',
+    builtWith: 'بُني باستخدام'
+  }
+};
+
+const hiIn: UiStrings = {
+  siteTitle: 'लोक मूल्य मार्गदर्शिका',
+  skipToContent: 'मुख्य सामग्री पर जाएँ',
+  nav: { contents: 'विषय-सूची', glossary: 'शब्दावली', index: 'अनुक्रमणिका', source: 'स्रोत' },
+  breadcrumb: { home: 'मुखपृष्ठ', contents: 'विषय-सूची' },
+  picker: { theme: 'थीम', locale: 'भाषा', textSize: 'पाठ का आकार', share: 'साझा करें' },
+  share: {
+    emailLink: 'ईमेल लिंक',
+    shareOnLinkedIn: 'LinkedIn पर साझा करें',
+    shareOnReddit: 'Reddit पर साझा करें',
+    shareOnBluesky: 'Bluesky पर साझा करें',
+    shareOnMastodon: 'Mastodon पर साझा करें',
+    copyLink: 'लिंक कॉपी करें',
+    copied: 'कॉपी हो गया!',
+    copyFailed: 'कॉपी विफल — इसके बजाय पता बार से कॉपी करें'
+  },
+  contents: {
+    pageTitle: 'विषय-सूची',
+    lead: 'हर अध्याय स्वयं में पूर्ण है। लोक मूल्य पर एक पाठ्यक्रम के रूप में शुरू से अंत तक पढ़ें, या सीधे उस अध्याय पर जाएँ जो आपके सामने के निर्णय से मेल खाता है।',
+    readingIn: (label) => `${label} में पढ़ रहे हैं। शीर्षलेख के चयनकर्ता से भाषा बदलें।`,
+    frontMatter: 'प्रारंभिक सामग्री',
+    part: (n) => `भाग ${n}`,
+    reference: 'संदर्भ'
+  },
+  chapter: {
+    chapterEyebrow: (n) => `अध्याय ${n}`,
+    paginationLabel: 'अध्याय',
+    onThisPage: 'इस पृष्ठ पर',
+    previous: 'पिछला',
+    next: 'अगला'
+  },
+  footer: {
+    tagline:
+      'सरकार और सामाजिक क्षेत्र में लोक मूल्य बनाने के लिए श्रेष्ठ व्यवहारों की एक व्यावहारिक पुस्तिका, विश्वव्यापी दायरे में।',
+    sourceAndContributions: 'स्रोत और योगदान:',
+    builtWith: 'इसके साथ बनाया गया'
+  }
+};
+
 const STRINGS: Record<string, UiStrings> = {
   'en-gb-oxendict': enGbOxendict,
   'en-gb': enGb,
@@ -235,7 +318,9 @@ const STRINGS: Record<string, UiStrings> = {
   'cy-gb': cyGb,
   'cy-001': cy001,
   'es-001': es001,
-  'zh-cn': zhCn
+  'zh-cn': zhCn,
+  'ar-001': ar001,
+  'hi-in': hiIn
 };
 
 /** UI chrome strings for `locale`, falling back to English if the locale is unknown. */
