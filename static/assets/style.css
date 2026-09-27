@@ -431,6 +431,51 @@ body {
     color: var(--color-primary);
 }
 
+/* The `/contents/` page's part-and-chapter listing: a single nested list
+   (`<ul><li>` part, nested `<ul><li>` chapters), deliberately plain — no
+   tiles, no table or grid layout, no flexbox. Indentation comes from the
+   browser's own default nested-list rendering. */
+.contents-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.contents-list .contents-list {
+    margin-top: 0.35rem;
+    padding-inline-start: 1.5rem;
+    list-style: disc;
+}
+
+.contents-list li {
+    margin: 0.15rem 0;
+}
+
+.contents-parts > li {
+    margin: 0 0 var(--lily-space-lg);
+}
+
+.contents-part-heading {
+    margin: 0;
+    font-size: 1.0625em;
+    font-weight: 700;
+}
+
+.contents-part-tagline {
+    margin: 0.2rem 0 0;
+    font-size: 0.875em;
+    color: var(--lily-text-muted);
+    text-wrap: pretty;
+}
+
+.contents-list a {
+    color: var(--lily-text);
+}
+
+.contents-list a:hover {
+    color: var(--color-primary);
+}
+
 /* --- On-this-page nav ------------------------------------------------------ */
 
 .contents-nav.page-toc {

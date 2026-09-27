@@ -46,39 +46,39 @@
   {#if frontMatter.length}
     <section class="page-section">
       <SectionHeading heading={t.contents.frontMatter} />
-      <ol class="contents-chapters">
+      <ul class="contents-list">
         {#each frontMatter as chapter (chapter.slug)}
           <li><a href="/locales/{data.locale}/chapters/{chapter.slug}/">{chapter.title}</a></li>
         {/each}
-      </ol>
+      </ul>
     </section>
   {/if}
 
-  {#each parts as part (part.number)}
-    <section class="page-section">
-      <SectionHeading
-        eyebrow={t.contents.part(part.number)}
-        heading={part.title}
-        subtitle={part.tagline}
-      />
-      <ol class="contents-chapters">
-        {#each part.chapters as chapter (chapter.slug)}
-          <li>
-            <a href="/locales/{data.locale}/chapters/{chapter.slug}/">
-              <span class="site-contents-number">{chapter.number}</span>
-              {chapter.title}
-            </a>
-          </li>
-        {/each}
-      </ol>
-    </section>
-  {/each}
+  <section class="page-section">
+    <ul class="contents-list contents-parts">
+      {#each parts as part (part.number)}
+        <li>
+          <p class="contents-part-heading">{t.contents.part(part.number)} {part.title}</p>
+          <p class="contents-part-tagline">{part.tagline}</p>
+          <ul class="contents-list">
+            {#each part.chapters as chapter (chapter.slug)}
+              <li>
+                <a href="/locales/{data.locale}/chapters/{chapter.slug}/">
+                  {chapter.number} {chapter.title}
+                </a>
+              </li>
+            {/each}
+          </ul>
+        </li>
+      {/each}
+    </ul>
+  </section>
 
   <section class="page-section">
     <SectionHeading heading={t.contents.reference} />
-    <ol class="contents-chapters">
+    <ul class="contents-list">
       <li><a href="/glossary/">{t.nav.glossary}</a></li>
       <li><a href="/index/">{t.nav.index}</a></li>
-    </ol>
+    </ul>
   </section>
 </ArticleLayout>
