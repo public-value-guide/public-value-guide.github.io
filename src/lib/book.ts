@@ -55,6 +55,7 @@ export const LOCALES: Locale[] = [
   { slug: 'cy-gb', label: 'Cymraeg - Cymru' },
   { slug: 'cy-001', label: 'Cymraeg' },
   { slug: 'es-001', label: 'Español' },
+  { slug: 'fr-001', label: 'Français' },
   { slug: 'zh-cn', label: '中文 - 中国大陆 - 简体' },
   { slug: 'ar-001', label: 'العربية' },
   { slug: 'hi-in', label: 'हिन्दी - भारत' }
@@ -206,6 +207,33 @@ const PART_TRANSLATIONS: Record<string, Record<number, { title: string; tagline:
       title: 'Digital, Software y Tecnología',
       tagline:
         'el valor público de la tecnología: gobierno digital, inteligencia artificial, software, datos y ciberseguridad'
+    }
+  },
+  'fr-001': {
+    1: {
+      title: 'Fondements',
+      tagline:
+        'pourquoi la valeur publique diffère de la seule valeur marchande ou du seul mandat démocratique, et les modèles qui l\'expliquent'
+    },
+    2: {
+      title: 'Évaluation et données probantes',
+      tagline:
+        "la boîte à outils de l'analyste : valoriser les résultats, construire l'argumentaire, mettre les affirmations à l'épreuve"
+    },
+    3: {
+      title: 'Systèmes, gouvernance et priorités',
+      tagline:
+        'comment les organisations publiques et du secteur social sont structurées, financées, et tenues responsables'
+    },
+    4: {
+      title: 'Enjeux mondiaux et sociétaux',
+      tagline:
+        "la valeur publique au-delà d'une seule institution : comportement, confiance, la planète, et le débat public"
+    },
+    5: {
+      title: 'Numérique, logiciels et technologie',
+      tagline:
+        "la valeur publique de la technologie : gouvernement numérique, intelligence artificielle, logiciels, données, et cybersécurité"
     }
   },
   'zh-cn': {

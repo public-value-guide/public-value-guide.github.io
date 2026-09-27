@@ -13,10 +13,11 @@
 // chapter prose (see `spec/index.md` §4 upstream). `cy-001` reuses `cy-gb`'s
 // strings verbatim — the same decision the book repo made for chapter prose,
 // since the register difference between Welsh (Wales) and World Welsh is
-// negligible for this formal content. `es-001` (World/neutral Spanish) and
-// `zh-cn` (Mainland China, Simplified script), `ar-001` (World/neutral
-// Arabic), and `hi-in` (Hindi, India) each get their own strings, in the same
-// neutral register their chapter prose uses. `ar-001` needs no separate `dir`
+// negligible for this formal content. `es-001` (World/neutral Spanish),
+// `fr-001` (World/neutral French), `zh-cn` (Mainland China, Simplified
+// script), `ar-001` (World/neutral Arabic), and `hi-in` (Hindi, India) each
+// get their own strings, in the same neutral register their chapter prose
+// uses. `ar-001` needs no separate `dir`
 // handling here — the Lily locale picker sets `dir="rtl"` on the document
 // itself for any locale whose base language subtag is in its own RTL list,
 // which already includes `ar` (see `isRtlLocale` in
@@ -194,6 +195,45 @@ const es001: UiStrings = {
   }
 };
 
+const fr001: UiStrings = {
+  siteTitle: 'Guide de la Valeur Publique',
+  skipToContent: 'Passer au contenu principal',
+  nav: { contents: 'Contenu', glossary: 'Glossaire', index: 'Index', source: 'Source' },
+  breadcrumb: { home: 'Accueil', contents: 'Contenu' },
+  picker: { theme: 'Thème', locale: 'Langue', textSize: 'Taille du texte', share: 'Partager' },
+  share: {
+    emailLink: 'Envoyer le lien par courriel',
+    shareOnLinkedIn: 'Partager sur LinkedIn',
+    shareOnReddit: 'Partager sur Reddit',
+    shareOnBluesky: 'Partager sur Bluesky',
+    shareOnMastodon: 'Partager sur Mastodon',
+    copyLink: 'Copier le lien',
+    copied: 'Copié !',
+    copyFailed: 'Échec de la copie — copiez plutôt la barre d’adresse'
+  },
+  contents: {
+    pageTitle: 'Contenu',
+    lead: 'Chaque chapitre est autonome. Lisez-le d’un bout à l’autre comme un cours sur la valeur publique, ou allez directement au chapitre qui correspond à la décision qui vous occupe.',
+    readingIn: (label) => `Lecture en ${label}. Changez de langue depuis le sélecteur d’en-tête.`,
+    frontMatter: 'Matière liminaire',
+    part: (n) => `Partie ${n}`,
+    reference: 'Référence'
+  },
+  chapter: {
+    chapterEyebrow: (n) => `Chapitre ${n}`,
+    paginationLabel: 'Chapitre',
+    onThisPage: 'Sur cette page',
+    previous: 'Précédent',
+    next: 'Suivant'
+  },
+  footer: {
+    tagline:
+      'un guide pratique des meilleures pratiques pour créer de la valeur publique dans le gouvernement et le secteur social, de portée mondiale.',
+    sourceAndContributions: 'Source et contributions :',
+    builtWith: 'Construit avec le'
+  }
+};
+
 const zhCn: UiStrings = {
   siteTitle: '公共价值指南',
   skipToContent: '跳转到主要内容',
@@ -318,6 +358,7 @@ const STRINGS: Record<string, UiStrings> = {
   'cy-gb': cyGb,
   'cy-001': cy001,
   'es-001': es001,
+  'fr-001': fr001,
   'zh-cn': zhCn,
   'ar-001': ar001,
   'hi-in': hiIn
