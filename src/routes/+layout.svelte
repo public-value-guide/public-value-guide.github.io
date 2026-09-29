@@ -8,9 +8,24 @@
     GrailLayoutCenterMain,
     GrailLayoutBottomFooter
   } from '@lilydesignsystem/svelte-headless';
-  import PickerBar from '@lilydesignsystem/svelte-picker-bar';
+  import PickerBar, { DEFAULT_THEMES } from '@lilydesignsystem/svelte-picker-bar';
   import { SOURCE_REPO, LOCALES, LOCALE_SLUGS, DEFAULT_LOCALE } from '$lib/book';
   import { ui } from '$lib/i18n';
+
+  /**
+   * `DEFAULT_THEMES`, minus the institution-specific themes (NHS
+   * England/Scotland/Wales, UK GOV.UK GDS, US USWDS) that
+   * `scripts/sync-themes.sh` excludes when it copies
+   * `@lilydesignsystem/themes` into `static/assets/themes/` — this book is
+   * not any of those institutions. Every excluded slug starts with
+   * `united-kingdom-` or `united-states-`, matching that script's own
+   * prefix filter, so the two stay in sync without a duplicated name list.
+   * Without this, the picker would offer a theme with no stylesheet behind
+   * it to load.
+   */
+  const GENERIC_THEMES = DEFAULT_THEMES.filter(
+    (slug) => !slug.startsWith('united-kingdom-') && !slug.startsWith('united-states-')
+  );
 
   let { children } = $props();
 
@@ -140,6 +155,7 @@
         share: t.picker.share
       }}
       themesUrl="/assets/themes/"
+      themes={GENERIC_THEMES}
       themeProps={{
         defaultValue: 'light',
         detectFromSystem: true,
