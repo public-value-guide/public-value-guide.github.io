@@ -56,6 +56,7 @@ export const LOCALES: Locale[] = [
   { slug: 'cy-001', label: 'Cymraeg' },
   { slug: 'es-001', label: 'Español' },
   { slug: 'fr-001', label: 'Français' },
+  { slug: 'de-de', label: 'Deutsch - Deutschland' },
   { slug: 'zh-cn', label: '中文 - 中国大陆 - 简体' },
   { slug: 'ar-001', label: 'العربية' },
   { slug: 'hi-in', label: 'हिन्दी - भारत' }
@@ -234,6 +235,33 @@ const PART_TRANSLATIONS: Record<string, Record<number, { title: string; tagline:
       title: 'Numérique, logiciels et technologie',
       tagline:
         "la valeur publique de la technologie : gouvernement numérique, intelligence artificielle, logiciels, données, et cybersécurité"
+    }
+  },
+  'de-de': {
+    1: {
+      title: 'Grundlagen',
+      tagline:
+        'warum sich öffentlicher Wert von reinem Marktwert oder demokratischem Mandat unterscheidet, und die Modelle, die das erklären'
+    },
+    2: {
+      title: 'Evaluation und Evidenz',
+      tagline:
+        'der Werkzeugkasten der Analystin: Ergebnisse bewerten, den Fall aufbauen, Behauptungen prüfen'
+    },
+    3: {
+      title: 'Systeme, Governance, und Prioritäten',
+      tagline:
+        'wie öffentliche und Sozialsektor-Organisationen strukturiert, finanziert, und zur Rechenschaft gezogen werden'
+    },
+    4: {
+      title: 'Globale und gesellschaftliche Fragen',
+      tagline:
+        'öffentlicher Wert jenseits einer Institution: Verhalten, Vertrauen, der Planet, und das öffentliche Gespräch'
+    },
+    5: {
+      title: 'Digitales, Software, und Technologie',
+      tagline:
+        'der öffentliche Wert von Technologie: digitale Verwaltung, künstliche Intelligenz, Software, Daten, und Cybersicherheit'
     }
   },
   'zh-cn': {

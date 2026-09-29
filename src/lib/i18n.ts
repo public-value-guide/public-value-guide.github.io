@@ -14,10 +14,10 @@
 // strings verbatim — the same decision the book repo made for chapter prose,
 // since the register difference between Welsh (Wales) and World Welsh is
 // negligible for this formal content. `es-001` (World/neutral Spanish),
-// `fr-001` (World/neutral French), `zh-cn` (Mainland China, Simplified
-// script), `ar-001` (World/neutral Arabic), and `hi-in` (Hindi, India) each
-// get their own strings, in the same neutral register their chapter prose
-// uses. `ar-001` needs no separate `dir`
+// `fr-001` (World/neutral French), `de-de` (German, Germany), `zh-cn`
+// (Mainland China, Simplified script), `ar-001` (World/neutral Arabic), and
+// `hi-in` (Hindi, India) each get their own strings, in the same neutral
+// register their chapter prose uses. `ar-001` needs no separate `dir`
 // handling here — the Lily locale picker sets `dir="rtl"` on the document
 // itself for any locale whose base language subtag is in its own RTL list,
 // which already includes `ar` (see `isRtlLocale` in
@@ -234,6 +234,45 @@ const fr001: UiStrings = {
   }
 };
 
+const deDe: UiStrings = {
+  siteTitle: 'Leitfaden für öffentlichen Wert',
+  skipToContent: 'Zum Hauptinhalt springen',
+  nav: { contents: 'Inhalt', glossary: 'Glossar', index: 'Index', source: 'Quelle' },
+  breadcrumb: { home: 'Start', contents: 'Inhalt' },
+  picker: { theme: 'Thema', locale: 'Sprache', textSize: 'Textgröße', share: 'Teilen' },
+  share: {
+    emailLink: 'Link per E-Mail senden',
+    shareOnLinkedIn: 'Auf LinkedIn teilen',
+    shareOnReddit: 'Auf Reddit teilen',
+    shareOnBluesky: 'Auf Bluesky teilen',
+    shareOnMastodon: 'Auf Mastodon teilen',
+    copyLink: 'Link kopieren',
+    copied: 'Kopiert!',
+    copyFailed: 'Kopieren fehlgeschlagen — kopieren Sie stattdessen die Adressleiste'
+  },
+  contents: {
+    pageTitle: 'Inhalt',
+    lead: 'Jedes Kapitel ist eigenständig. Lesen Sie durchgehend für einen Kurs zu öffentlichem Wert, oder gehen Sie direkt zum Kapitel, das zur vor Ihnen liegenden Entscheidung passt.',
+    readingIn: (label) => `Sie lesen auf ${label}. Sprache über die Kopfzeilenauswahl wechseln.`,
+    frontMatter: 'Einleitende Seiten',
+    part: (n) => `Teil ${n}`,
+    reference: 'Referenz'
+  },
+  chapter: {
+    chapterEyebrow: (n) => `Kapitel ${n}`,
+    paginationLabel: 'Kapitel',
+    onThisPage: 'Auf dieser Seite',
+    previous: 'Zurück',
+    next: 'Weiter'
+  },
+  footer: {
+    tagline:
+      'ein praktischer Leitfaden bewährter Praktiken zur Schaffung öffentlichen Wertes in Regierung und sozialem Sektor, weltweit angelegt.',
+    sourceAndContributions: 'Quelle und Beiträge:',
+    builtWith: 'Erstellt mit dem'
+  }
+};
+
 const zhCn: UiStrings = {
   siteTitle: '公共价值指南',
   skipToContent: '跳转到主要内容',
@@ -359,6 +398,7 @@ const STRINGS: Record<string, UiStrings> = {
   'cy-001': cy001,
   'es-001': es001,
   'fr-001': fr001,
+  'de-de': deDe,
   'zh-cn': zhCn,
   'ar-001': ar001,
   'hi-in': hiIn
