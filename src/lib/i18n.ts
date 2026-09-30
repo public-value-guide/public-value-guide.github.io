@@ -15,9 +15,10 @@
 // since the register difference between Welsh (Wales) and World Welsh is
 // negligible for this formal content. `es-001` (World/neutral Spanish),
 // `fr-001` (World/neutral French), `de-de` (German, Germany), `zh-cn`
-// (Mainland China, Simplified script), `ar-001` (World/neutral Arabic), and
-// `hi-in` (Hindi, India) each get their own strings, in the same neutral
-// register their chapter prose uses. `ar-001` needs no separate `dir`
+// (Mainland China, Simplified script), `ar-001` (World/neutral Arabic),
+// `hi-in` (Hindi, India), and `ja-jp` (Japanese, Japan) each get their own
+// strings, in the same neutral register their chapter prose uses. `ar-001`
+// needs no separate `dir`
 // handling here — the Lily locale picker sets `dir="rtl"` on the document
 // itself for any locale whose base language subtag is in its own RTL list,
 // which already includes `ar` (see `isRtlLocale` in
@@ -389,6 +390,45 @@ const hiIn: UiStrings = {
   }
 };
 
+const jaJp: UiStrings = {
+  siteTitle: '公共価値ガイド',
+  skipToContent: 'メインコンテンツへスキップ',
+  nav: { contents: '目次', glossary: '用語集', index: '索引', source: 'ソース' },
+  breadcrumb: { home: 'ホーム', contents: '目次' },
+  picker: { theme: 'テーマ', locale: '言語', textSize: '文字サイズ', share: '共有' },
+  share: {
+    emailLink: 'リンクをメールで送る',
+    shareOnLinkedIn: 'LinkedInで共有',
+    shareOnReddit: 'Redditで共有',
+    shareOnBluesky: 'Blueskyで共有',
+    shareOnMastodon: 'Mastodonで共有',
+    copyLink: 'リンクをコピー',
+    copied: 'コピーしました!',
+    copyFailed: 'コピーに失敗しました — 代わりにアドレスバーからコピーしてください'
+  },
+  contents: {
+    pageTitle: '目次',
+    lead: '各章は独立して読めます。公共価値についての講座として最初から通読するか、目の前の決定に対応する章に直接進んでください。',
+    readingIn: (label) => `${label}で読んでいます。ヘッダーの選択メニューから言語を切り替えられます。`,
+    frontMatter: '前付け',
+    part: (n) => `第${n}部`,
+    reference: '参考資料'
+  },
+  chapter: {
+    chapterEyebrow: (n) => `第${n}章`,
+    paginationLabel: '章',
+    onThisPage: 'このページの内容',
+    previous: '前へ',
+    next: '次へ'
+  },
+  footer: {
+    tagline:
+      '政府と社会セクターにおける公共価値の創出のための実践的なベストプラクティスの手引き。世界規模を範囲とする。',
+    sourceAndContributions: 'ソースと貢献:',
+    builtWith: '構築に使用:'
+  }
+};
+
 const STRINGS: Record<string, UiStrings> = {
   'en-gb-oxendict': enGbOxendict,
   'en-gb': enGb,
@@ -401,7 +441,8 @@ const STRINGS: Record<string, UiStrings> = {
   'de-de': deDe,
   'zh-cn': zhCn,
   'ar-001': ar001,
-  'hi-in': hiIn
+  'hi-in': hiIn,
+  'ja-jp': jaJp
 };
 
 /** UI chrome strings for `locale`, falling back to English if the locale is unknown. */
