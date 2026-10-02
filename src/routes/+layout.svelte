@@ -1,4 +1,5 @@
 <script lang="ts">
+  import SearchGate from '#lib/SearchGate.svelte';
   import { page } from '$app/state';
   import { goto } from '$app/navigation';
   import {
@@ -180,7 +181,7 @@
   </GrailLayoutTopHeader>
 
   <GrailLayoutCenterMain class="site-main" id="main">
-    {@render children()}
+    <SearchGate {children} />
   </GrailLayoutCenterMain>
 
   <GrailLayoutBottomFooter class="site-footer">
