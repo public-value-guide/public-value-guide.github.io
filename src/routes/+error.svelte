@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from '$app/state';
   import { ArticleLayout } from '@lilydesignsystem/svelte-headless';
-  import { DEFAULT_LOCALE } from '$lib/book';
+  import { DEFAULT_LOCALE } from '#lib/book.js';
 </script>
 
 <svelte:head>

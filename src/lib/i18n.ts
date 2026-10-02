@@ -4,9 +4,9 @@
 //
 // This exists because a reader who switches the language picker to, say,
 // Welsh should not land on a chapter written in Welsh surrounded by English
-// navigation. Chapter prose comes from the book's markdown (`$lib/server/book`);
+// navigation. Chapter prose comes from the book's markdown (`#lib/server/book.js`);
 // everything else comes from here, keyed by the same locale slugs as `LOCALES`
-// in `$lib/book`.
+// in `#lib/book.js`.
 //
 // English variants (`en-gb`, `en-gb-oxendict`, `en-us`, `en-001`) differ only
 // in spelling convention, matching the house style each variant uses for its

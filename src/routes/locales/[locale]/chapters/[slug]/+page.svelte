@@ -10,8 +10,8 @@
     ContentsNav,
     ContentsLink
   } from '@lilydesignsystem/svelte-headless';
-  import { partsFor } from '$lib/book';
-  import { ui } from '$lib/i18n';
+  import { partsFor } from '#lib/book.js';
+  import { ui } from '#lib/i18n.js';
 
   let { data } = $props();
 

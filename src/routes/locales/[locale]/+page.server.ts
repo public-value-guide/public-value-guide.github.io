@@ -1,5 +1,5 @@
 import { error, redirect } from '@sveltejs/kit';
-import { isLocale, LOCALE_SLUGS } from '$lib/book';
+import { isLocale, LOCALE_SLUGS } from '#lib/book.js';
 
 /**
  * `/locales/<slug>/` on its own has nothing to show — the contents page is

@@ -9,8 +9,8 @@
     GrailLayoutBottomFooter
   } from '@lilydesignsystem/svelte-headless';
   import PickerBar, { DEFAULT_THEMES } from '@lilydesignsystem/svelte-picker-bar';
-  import { SOURCE_REPO, LOCALES, LOCALE_SLUGS, DEFAULT_LOCALE } from '$lib/book';
-  import { ui } from '$lib/i18n';
+  import { SOURCE_REPO, LOCALES, LOCALE_SLUGS, DEFAULT_LOCALE } from '#lib/book.js';
+  import { ui } from '#lib/i18n.js';
 
   /**
    * `DEFAULT_THEMES`, minus the institution-specific themes (NHS

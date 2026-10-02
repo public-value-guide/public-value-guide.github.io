@@ -1,12 +1,12 @@
 // Server-only access to the book's markdown.
 //
-// Living under `$lib/server/` means SvelteKit refuses to bundle this into
+// Living under `#lib/server/` means SvelteKit refuses to bundle this into
 // client code, which matters here: the vendored content is several megabytes of
 // prose. The site is fully prerendered, so this module runs at build time and
 // each page ships only its own rendered HTML.
 
-import { parse, type Document, type Heading } from '$lib/markdown';
-import { PARTS, LOCALE_SLUGS, type ChapterRef } from '$lib/book';
+import { parse, type Document, type Heading } from '#lib/markdown.js';
+import { PARTS, LOCALE_SLUGS, type ChapterRef } from '#lib/book.js';
 
 /**
  * Raw markdown for every chapter, keyed by module path, e.g.

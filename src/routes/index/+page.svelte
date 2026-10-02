@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ReferencePage from '$lib/ReferencePage.svelte';
+  import ReferencePage from '#lib/ReferencePage.svelte';
 
   let { data } = $props();
 </script>

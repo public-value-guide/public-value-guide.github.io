@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
-import { isLocale } from '$lib/book';
-import { chapter, localeChapterEntries } from '$lib/server/book';
+import { isLocale } from '#lib/book.js';
+import { chapter, localeChapterEntries } from '#lib/server/book.js';
 
 /**
  * Prerender one page per (locale, chapter) pair; adapter-static needs the

@@ -1,5 +1,5 @@
-import { LOCALE_SLUGS } from '$lib/book';
-import { slugs } from '$lib/server/book';
+import { LOCALE_SLUGS } from '#lib/book.js';
+import { slugs } from '#lib/server/book.js';
 
 export const prerender = true;
 

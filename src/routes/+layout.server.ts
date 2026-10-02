@@ -1,4 +1,4 @@
-import { localeSlugMap } from '$lib/server/book';
+import { localeSlugMap } from '#lib/server/book.js';
 
 /**
  * The cross-locale chapter slug map, available to every page (including

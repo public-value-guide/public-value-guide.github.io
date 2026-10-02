@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
-import { isLocale, LOCALE_SLUGS } from '$lib/book';
-import { toc } from '$lib/server/book';
+import { isLocale, LOCALE_SLUGS } from '#lib/book.js';
+import { toc } from '#lib/server/book.js';
 
 /** One contents page per locale — chapter titles and slugs both vary by locale. */
 export function entries() {

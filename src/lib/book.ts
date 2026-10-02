@@ -2,7 +2,7 @@
 //
 // This module holds no chapter prose — only the small metadata that both the
 // server load functions and the Svelte components need, so it is safe to import
-// from either side. The prose lives in `$lib/server/book.ts`, which is
+// from either side. The prose lives in `#lib/server/book.ts`, which is
 // server-only and therefore never reaches a client bundle.
 
 /** One entry in the table of contents. */
@@ -36,7 +36,7 @@ export type Locale = {
 /**
  * The book's locales. Kept in sync by hand with the source repo's `locales/`
  * directory (see spec/index.md §4a upstream). Add a locale here, and to
- * `$lib/i18n`'s `STRINGS`, only once `scripts/sync-content.sh` reports every
+ * `#lib/i18n`'s `STRINGS`, only once `scripts/sync-content.sh` reports every
  * chapter synced for it — an incomplete locale would otherwise offer a
  * picker option that 404s on whichever chapter has no translation yet.
  *

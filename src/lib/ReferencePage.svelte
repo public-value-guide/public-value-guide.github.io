@@ -9,7 +9,7 @@
     BreadcrumbListItem,
     ContentsNav
   } from '@lilydesignsystem/svelte-headless';
-  import type { Document, Heading } from '$lib/markdown';
+  import type { Document, Heading } from '#lib/markdown.js';
 
   let {
     title,
