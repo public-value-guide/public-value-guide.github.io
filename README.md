@@ -26,7 +26,7 @@ public-value-guide.github.io/
 │       ├── +layout.svelte        Grail layout: header (incl. the language picker), reading column, footer
 │       ├── +layout.server.ts     Cross-locale chapter slug map, for the language picker
 │       ├── +page.svelte          Home (locale-neutral; links into the default locale)
-│       ├── locales/[locale]/
+│       ├── [locale=locale]/
 │       │   ├── +page.server.ts   Redirects to this locale's contents
 │       │   ├── contents/         Full table of contents, in this locale
 │       │   └── chapters/[slug]/  One prerendered page per chapter, in this locale

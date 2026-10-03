@@ -16,7 +16,7 @@
   </header>
 
   <p>
-    Try the <a href="/locales/{DEFAULT_LOCALE}/contents/">table of contents</a>, the
+    Try the <a href="/{DEFAULT_LOCALE}/contents/">table of contents</a>, the
     <a href="/glossary/">glossary</a>, or the <a href="/index/">index</a>.
   </p>
 </ArticleLayout>

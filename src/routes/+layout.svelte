@@ -35,7 +35,7 @@
   );
 
   // The locale of the page currently showing, when there is one — set on
-  // every `/locales/<slug>/...` route, absent on locale-neutral pages
+  // every `/<slug>/...` route, absent on locale-neutral pages
   // (home, glossary, index). The header chrome (nav, picker, footer) reads
   // this locale's own strings; locale-neutral pages fall back to English,
   // `ui()`'s default when passed `undefined`.
@@ -56,9 +56,9 @@
     if (chapterMatch && page.data?.ref) {
       const key: string = page.data.ref.number || `front:${page.data.ref.slug}`;
       const mapped = page.data.localeSlugMap?.[key]?.[newLocale];
-      if (mapped) return `/locales/${newLocale}/chapters/${mapped}/`;
+      if (mapped) return `/${newLocale}/chapters/${mapped}/`;
     }
-    return `/locales/${newLocale}/contents/`;
+    return `/${newLocale}/contents/`;
   }
 
   /**
@@ -82,7 +82,7 @@
   // "Contents" follows whichever locale is currently showing, falling back
   // to the house-style default on locale-neutral pages.
   const siteLinks = $derived([
-    { href: `/locales/${currentLocale ?? DEFAULT_LOCALE}/contents/`, label: t.nav.contents },
+    { href: `/${currentLocale ?? DEFAULT_LOCALE}/contents/`, label: t.nav.contents },
     { href: '/glossary/', label: t.nav.glossary },
     { href: '/index/', label: t.nav.index }
   ]);

@@ -48,7 +48,7 @@
       <SectionHeading heading={t.contents.frontMatter} />
       <ul class="contents-list">
         {#each frontMatter as chapter (chapter.slug)}
-          <li><a href="/locales/{data.locale}/chapters/{chapter.slug}/">{chapter.title}</a></li>
+          <li><a href="/{data.locale}/chapters/{chapter.slug}/">{chapter.title}</a></li>
         {/each}
       </ul>
     </section>
@@ -63,7 +63,7 @@
           <ul class="contents-list">
             {#each part.chapters as chapter (chapter.slug)}
               <li>
-                <a href="/locales/{data.locale}/chapters/{chapter.slug}/">
+                <a href="/{data.locale}/chapters/{chapter.slug}/">
                   {chapter.number} {chapter.title}
                 </a>
               </li>

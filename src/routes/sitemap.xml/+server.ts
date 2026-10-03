@@ -18,8 +18,8 @@ export function GET() {
     '/glossary/',
     '/index/',
     ...LOCALE_SLUGS.flatMap((locale) => [
-      `/locales/${locale}/contents/`,
-      ...slugs(locale).map((slug) => `/locales/${locale}/chapters/${slug}/`)
+      `/${locale}/contents/`,
+      ...slugs(locale).map((slug) => `/${locale}/chapters/${slug}/`)
     ])
   ];
 
