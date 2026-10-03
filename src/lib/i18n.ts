@@ -16,7 +16,7 @@
 // negligible for this formal content. `es-001` (World/neutral Spanish),
 // `fr-001` (World/neutral French), `de-de` (German, Germany), `zh-cn`
 // (Mainland China, Simplified script), `ar-001` (World/neutral Arabic),
-// `hi-in` (Hindi, India), and `ja-jp` (Japanese, Japan) each get their own
+// `hi-in` (Hindi, India), `ja-jp` (Japanese, Japan), and `ru-ru` (Russian, Russia) each get their own
 // strings, in the same neutral register their chapter prose uses. `ar-001`
 // needs no separate `dir`
 // handling here — the Lily locale picker sets `dir="rtl"` on the document
@@ -441,6 +441,46 @@ const jaJp: UiStrings = {
   }
 };
 
+const ruRu: UiStrings = {
+  siteTitle: 'Руководство по общественной ценности',
+  skipToContent: 'Перейти к основному содержимому',
+  nav: { contents: 'Содержание', glossary: 'Глоссарий', index: 'Указатель', source: 'Исходный код' },
+  breadcrumb: { home: 'Главная', contents: 'Содержание' },
+  picker: { theme: 'Тема', locale: 'Язык', textSize: 'Размер текста', share: 'Поделиться' },
+  share: {
+    emailLink: 'Отправить ссылку по почте',
+    shareOnLinkedIn: 'Поделиться в LinkedIn',
+    shareOnReddit: 'Поделиться в Reddit',
+    shareOnBluesky: 'Поделиться в Bluesky',
+    shareOnMastodon: 'Поделиться в Mastodon',
+    copyLink: 'Скопировать ссылку',
+    copied: 'Скопировано!',
+    copyFailed: 'Не удалось скопировать — скопируйте адрес из адресной строки'
+  },
+  contents: {
+    pageTitle: 'Содержание',
+    lead: 'Каждая глава самостоятельна. Читайте подряд, как курс по общественной ценности, или переходите сразу к главе, соответствующей решению, которое стоит перед вами.',
+    readingIn: (label) => `Вы читаете на языке: ${label}. Язык можно сменить в переключателе в шапке сайта.`,
+    frontMatter: 'Вступительные материалы',
+    part: (n) => `Часть ${n}`,
+    reference: 'Справочные материалы'
+  },
+  chapter: {
+    chapterEyebrow: (n) => `Глава ${n}`,
+    paginationLabel: 'Глава',
+    onThisPage: 'На этой странице',
+    previous: 'Назад',
+    next: 'Далее'
+  },
+  footer: {
+    tagline:
+      'практическое руководство по лучшим практикам создания общественной ценности в государственном и социальном секторах, мировое по охвату.',
+    sourceAndContributions: 'Исходный код и участие:',
+    builtWith: 'Создано с помощью',
+    ledBy: 'Руководитель проекта:'
+  }
+};
+
 const STRINGS: Record<string, UiStrings> = {
   'en-gb-oxendict': enGbOxendict,
   'en-gb': enGb,
@@ -454,7 +494,8 @@ const STRINGS: Record<string, UiStrings> = {
   'zh-cn': zhCn,
   'ar-001': ar001,
   'hi-in': hiIn,
-  'ja-jp': jaJp
+  'ja-jp': jaJp,
+  'ru-ru': ruRu
 };
 
 /** UI chrome strings for `locale`, falling back to English if the locale is unknown. */

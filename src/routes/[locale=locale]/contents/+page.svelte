@@ -6,7 +6,7 @@
     BreadcrumbList,
     BreadcrumbListItem
   } from '@lilydesignsystem/svelte-headless';
-  import { LOCALES, partsFor, resolveLocale } from '#lib/book.js';
+  import { LOCALES, partsFor, resolveLocale, SITE_URL } from '#lib/book.js';
   import { ui } from '#lib/i18n.js';
 
   let { data } = $props();
@@ -27,6 +27,8 @@
 <svelte:head>
   <title>{t.contents.pageTitle} — {t.siteTitle}</title>
   <meta name="description" content={t.contents.lead} />
+  <!-- An alias like /en/ duplicates /en-001/; point search engines at the real locale. -->
+  <link rel="canonical" href="{SITE_URL}/{resolveLocale(data.locale)}/contents/" />
 </svelte:head>
 
 <ArticleLayout class="page">

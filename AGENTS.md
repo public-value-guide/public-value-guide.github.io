@@ -10,7 +10,7 @@ The prose lives in <https://github.com/public-value-guide/public-value-guide>. `
 
 **Never edit `src/content/`.** An edit there is lost the next time anyone runs `pnpm sync`, and it silently forks the book from its source of truth. To fix a typo in a chapter, fix it in the book repository — under `locales/<slug>/chapters/<NN-NN-slug>/index.md`, not a file here — then run `pnpm sync` here.
 
-**The book has up to thirteen locales** (`en-gb-oxendict`, `en-gb`, `en-us`, `en-001`, `cy-gb`, `cy-001`, `es-001`, `fr-001`, `de-de`, `zh-cn`, `ar-001`, `hi-in`, `ja-jp`; see `spec/index.md` §4a upstream), but `$lib/book.ts`'s `LOCALES` only lists the ones with fully-synced chapter content — check that list, not the upstream directory listing, for what the live site actually offers. A chapter's slug is not guaranteed to match across locales, so chapter lookups always take a `locale` argument — never assume one global slug space. The glossary and index are not localized upstream and stay at unprefixed URLs shared by every locale.
+**The book has up to fourteen locales** (`en-gb-oxendict`, `en-gb`, `en-us`, `en-001`, `cy-gb`, `cy-001`, `es-001`, `fr-001`, `de-de`, `zh-cn`, `ar-001`, `hi-in`, `ja-jp`, `ru-ru`; see `spec/index.md` §4a upstream), but `$lib/book.ts`'s `LOCALES` only lists the ones with fully-synced chapter content — check that list, not the upstream directory listing, for what the live site actually offers. A chapter's slug is not guaranteed to match across locales, so chapter lookups always take a `locale` argument — never assume one global slug space. The glossary and index are not localized upstream and stay at unprefixed URLs shared by every locale.
 
 ## Conventions
 

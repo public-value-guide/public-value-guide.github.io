@@ -65,13 +65,18 @@ function slugFor(stem: string): string {
 /**
  * Split a document title into its number and its title.
  *
- * Chapter files open with `# Chapter 1.1 — Introduction to Public Value`;
- * the preface opens with a bare `# Preface`.
+ * The number comes from the directory name (`01-01-…` → `1.1`; part `00` is
+ * front matter and has none), so it works in every language. The title is the
+ * heading with its localized prefix removed: English chapter files open with
+ * `# Chapter 1.1 — Introduction to Public Value`, German with `# Kapitel 1.1 — …`,
+ * Japanese with `# 第1.1章 — …`; the preface opens with a bare heading.
  */
-function splitTitle(heading: string): { number: string; title: string } {
-  const match = heading.match(/^Chapter\s+([\d.]+)\s*[—–-]\s*(.+)$/);
-  if (match) return { number: match[1], title: match[2].trim() };
-  return { number: '', title: heading.trim() };
+function splitTitle(heading: string, stem: string): { number: string; title: string } {
+  const numbered = stem.match(/^(\d+)-(\d+)-/);
+  if (!numbered || Number(numbered[1]) === 0) return { number: '', title: heading.trim() };
+  const number = `${Number(numbered[1])}.${Number(numbered[2])}`;
+  const title = heading.replace(/^[^—–]*?\d[\d.]*[^—–]*[—–-]\s*/, '').trim();
+  return { number, title };
 }
 
 /** Parse `../../content/locales/<slug>/chapters/<chapter-dir>/index.md` into its parts. */
@@ -92,7 +97,7 @@ for (const [path, markdown] of Object.entries(chapterFiles).sort(([a], [b]) =>
 )) {
   const { locale, stem } = parseChapterPath(path);
   const heading = markdown.match(/^#\s+(.+)$/m)?.[1] ?? stem;
-  const { number, title } = splitTitle(heading);
+  const { number, title } = splitTitle(heading, stem);
   const entry: Chapter = {
     slug: slugFor(stem),
     number,

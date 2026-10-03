@@ -1,9 +1,7 @@
-import { LOCALE_SLUGS } from '#lib/book.js';
+import { LOCALE_SLUGS, SITE_URL } from '#lib/book.js';
 import { slugs } from '#lib/server/book.js';
 
 export const prerender = true;
-
-const SITE = 'https://public-value-guide.github.io';
 
 /**
  * A sitemap for a book that search engines should index chapter by chapter —
@@ -25,7 +23,7 @@ export function GET() {
 
   const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${paths.map((path) => `  <url><loc>${SITE}${path}</loc></url>`).join('\n')}
+${paths.map((path) => `  <url><loc>${SITE_URL}${path}</loc></url>`).join('\n')}
 </urlset>
 `;
 

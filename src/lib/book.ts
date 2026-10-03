@@ -60,7 +60,8 @@ export const LOCALES: Locale[] = [
   { slug: 'zh-cn', label: '中文 - 中国大陆 - 简体' },
   { slug: 'ar-001', label: 'العربية' },
   { slug: 'hi-in', label: 'हिन्दी - भारत' },
-  { slug: 'ja-jp', label: '日本語 - 日本' }
+  { slug: 'ja-jp', label: '日本語 - 日本' },
+  { slug: 'ru-ru', label: 'Русский - Россия' }
 ];
 
 /**
@@ -377,6 +378,33 @@ const PART_TRANSLATIONS: Record<string, Record<number, { title: string; tagline:
       title: 'デジタル、ソフトウェア、テクノロジー',
       tagline: '技術の公共価値:デジタル政府、人工知能、ソフトウェア、データ、サイバーセキュリティ'
     }
+  },
+  'ru-ru': {
+    1: {
+      title: 'Основы',
+      tagline:
+        'чем общественная ценность отличается от рыночной стоимости или одного лишь демократического мандата и какие модели это объясняют'
+    },
+    2: {
+      title: 'Оценка и доказательства',
+      tagline:
+        'инструментарий аналитика: оценка результатов, построение обоснования, проверка утверждений'
+    },
+    3: {
+      title: 'Системы, управление и приоритеты',
+      tagline:
+        'как устроены, финансируются и подотчётны организации государственного и социального секторов'
+    },
+    4: {
+      title: 'Глобальные и общественные вопросы',
+      tagline:
+        'общественная ценность за пределами одной организации: поведение, доверие, планета и публичный диалог'
+    },
+    5: {
+      title: 'Цифровые технологии, программное обеспечение и технологии',
+      tagline:
+        'общественная ценность технологий: цифровое государство, искусственный интеллект, программное обеспечение, данные и кибербезопасность'
+    }
   }
 };
 PART_TRANSLATIONS['cy-001'] = PART_TRANSLATIONS['cy-gb'];
@@ -387,6 +415,9 @@ export function partsFor(locale: string): Part[] {
   if (!translation) return PARTS;
   return PARTS.map((part) => ({ ...part, ...(translation[part.number] ?? {}) }));
 }
+
+/** The site's public origin, for canonical URLs and the sitemap. */
+export const SITE_URL = 'https://public-value-guide.github.io';
 
 /** Where the book's source lives, for "edit this page" and provenance links. */
 export const SOURCE_REPO = 'https://github.com/public-value-guide/public-value-guide';

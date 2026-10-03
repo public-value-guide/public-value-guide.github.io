@@ -10,7 +10,7 @@
     ContentsNav,
     ContentsLink
   } from '@lilydesignsystem/svelte-headless';
-  import { partsFor } from '#lib/book.js';
+  import { partsFor, resolveLocale, SITE_URL } from '#lib/book.js';
   import { ui } from '#lib/i18n.js';
 
   let { data } = $props();
@@ -33,6 +33,11 @@
 <svelte:head>
   <title>{fullTitle} — {t.siteTitle}</title>
   <meta name="description" content={data.doc.lead || data.ref.title} />
+  <!-- An alias like /en/ duplicates /en-001/; point search engines at the real locale. -->
+  <link
+    rel="canonical"
+    href="{SITE_URL}/{resolveLocale(data.locale)}/chapters/{data.ref.slug}/"
+  />
 </svelte:head>
 
 <ArticleLayout class="page page-chapter">
