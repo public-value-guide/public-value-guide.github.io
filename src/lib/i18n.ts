@@ -60,6 +60,7 @@ export type UiStrings = {
     tagline: string;
     sourceAndContributions: string;
     builtWith: string;
+    ledBy: string;
   };
 };
 
@@ -98,7 +99,8 @@ const en: UiStrings = {
     tagline:
       'a practical handbook of best practices for creating public value in government and the social sector, worldwide in scope.',
     sourceAndContributions: 'Source and contributions:',
-    builtWith: 'Built with the'
+    builtWith: 'Built with the',
+    ledBy: 'Led by'
   }
 };
 
@@ -149,7 +151,8 @@ const cyGb: UiStrings = {
     tagline:
       'llawlyfr ymarferol o arferion gorau ar gyfer creu gwerth cyhoeddus mewn llywodraeth a’r sector cymdeithasol, byd-eang ei gwmpas.',
     sourceAndContributions: 'Ffynhonnell a chyfraniadau:',
-    builtWith: 'Wedi’i adeiladu â’r'
+    builtWith: 'Wedi’i adeiladu â’r',
+    ledBy: 'Dan arweiniad'
   }
 };
 
@@ -192,7 +195,8 @@ const es001: UiStrings = {
     tagline:
       'un manual práctico de buenas prácticas para crear valor público en el gobierno y el sector social, de alcance mundial.',
     sourceAndContributions: 'Fuente y contribuciones:',
-    builtWith: 'Creado con el'
+    builtWith: 'Creado con el',
+    ledBy: 'Dirigido por'
   }
 };
 
@@ -231,7 +235,8 @@ const fr001: UiStrings = {
     tagline:
       'un guide pratique des meilleures pratiques pour créer de la valeur publique dans le gouvernement et le secteur social, de portée mondiale.',
     sourceAndContributions: 'Source et contributions :',
-    builtWith: 'Construit avec le'
+    builtWith: 'Construit avec le',
+    ledBy: 'Dirigé par'
   }
 };
 
@@ -270,7 +275,8 @@ const deDe: UiStrings = {
     tagline:
       'ein praktischer Leitfaden bewährter Praktiken zur Schaffung öffentlichen Wertes in Regierung und sozialem Sektor, weltweit angelegt.',
     sourceAndContributions: 'Quelle und Beiträge:',
-    builtWith: 'Erstellt mit dem'
+    builtWith: 'Erstellt mit dem',
+    ledBy: 'Geleitet von'
   }
 };
 
@@ -308,7 +314,8 @@ const zhCn: UiStrings = {
   footer: {
     tagline: '一部面向全球的、关于在政府与社会部门中创造公共价值的最佳实践实用手册。',
     sourceAndContributions: '源代码与贡献:',
-    builtWith: '构建工具:'
+    builtWith: '构建工具:',
+    ledBy: '负责人:'
   }
 };
 
@@ -347,7 +354,8 @@ const ar001: UiStrings = {
     tagline:
       'دليل عملي لأفضل الممارسات في خلق القيمة العامة داخل الحكومة والقطاع الاجتماعي، بنطاق عالمي.',
     sourceAndContributions: 'المصدر والمساهمات:',
-    builtWith: 'بُني باستخدام'
+    builtWith: 'بُني باستخدام',
+    ledBy: 'بقيادة'
   }
 };
 
@@ -386,7 +394,8 @@ const hiIn: UiStrings = {
     tagline:
       'सरकार और सामाजिक क्षेत्र में लोक मूल्य बनाने के लिए श्रेष्ठ व्यवहारों की एक व्यावहारिक पुस्तिका, विश्वव्यापी दायरे में।',
     sourceAndContributions: 'स्रोत और योगदान:',
-    builtWith: 'इसके साथ बनाया गया'
+    builtWith: 'इसके साथ बनाया गया',
+    ledBy: 'नेतृत्व:'
   }
 };
 
@@ -425,7 +434,8 @@ const jaJp: UiStrings = {
     tagline:
       '政府と社会セクターにおける公共価値の創出のための実践的なベストプラクティスの手引き。世界規模を範囲とする。',
     sourceAndContributions: 'ソースと貢献:',
-    builtWith: '構築に使用:'
+    builtWith: '構築に使用:',
+    ledBy: '主導:'
   }
 };
 
