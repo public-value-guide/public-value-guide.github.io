@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { isLocale } from '#lib/book.js';
+import { isLocaleOrAlias, resolveLocale } from '#lib/book.js';
 import { chapter, localeChapterEntries } from '#lib/server/book.js';
 
 /**
@@ -13,8 +13,8 @@ export function entries() {
 }
 
 export function load({ params }) {
-  if (!isLocale(params.locale)) error(404, `No locale named "${params.locale}"`);
-  const found = chapter(params.locale, params.slug);
+  if (!isLocaleOrAlias(params.locale)) error(404, `No locale named "${params.locale}"`);
+  const found = chapter(resolveLocale(params.locale), params.slug);
   if (!found) {
     error(404, `No chapter named "${params.slug}" in locale "${params.locale}"`);
   }

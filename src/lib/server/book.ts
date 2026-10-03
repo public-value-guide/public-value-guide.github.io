@@ -6,7 +6,7 @@
 // each page ships only its own rendered HTML.
 
 import { parse, type Document, type Heading } from '#lib/markdown.js';
-import { PARTS, LOCALE_SLUGS, type ChapterRef } from '#lib/book.js';
+import { PARTS, LOCALE_SLUGS, ROUTE_LOCALES, resolveLocale, type ChapterRef } from '#lib/book.js';
 
 /**
  * Raw markdown for every chapter, keyed by module path, e.g.
@@ -164,7 +164,9 @@ export function chapter(
 
 /** `{ locale, slug }` for every chapter in every locale, for prerender entry generation. */
 export function localeChapterEntries(): Array<{ locale: string; slug: string }> {
-  return LOCALE_SLUGS.flatMap((locale) => slugs(locale).map((slug) => ({ locale, slug })));
+  return ROUTE_LOCALES.flatMap((locale) =>
+    slugs(resolveLocale(locale)).map((slug) => ({ locale, slug }))
+  );
 }
 
 /** Every chapter slug for one locale, for prerender entry generation. */

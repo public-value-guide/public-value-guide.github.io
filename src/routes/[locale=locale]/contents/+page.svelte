@@ -6,14 +6,14 @@
     BreadcrumbList,
     BreadcrumbListItem
   } from '@lilydesignsystem/svelte-headless';
-  import { LOCALES, partsFor } from '#lib/book.js';
+  import { LOCALES, partsFor, resolveLocale } from '#lib/book.js';
   import { ui } from '#lib/i18n.js';
 
   let { data } = $props();
 
   const t = $derived(ui(data.locale));
   const localeLabel = $derived(
-    LOCALES.find((candidate) => candidate.slug === data.locale)?.label ?? data.locale
+    LOCALES.find((candidate) => candidate.slug === resolveLocale(data.locale))?.label ?? data.locale
   );
   const frontMatter = $derived(data.toc.filter((chapter) => chapter.part === 0));
   const parts = $derived(

@@ -87,6 +87,30 @@ export function isLocale(value: string): boolean {
 }
 
 /**
+ * Two-letter route aliases for each language's World (`-001`) locale, e.g.
+ * `en` → `en-001`, so `/en/` serves the same content as `/en-001/`. Derived
+ * from `LOCALES`, so a new `xx-001` locale gets its `/xx/` alias for free.
+ */
+export const LOCALE_ALIASES: Record<string, string> = Object.fromEntries(
+  LOCALE_SLUGS.filter((slug) => slug.endsWith('-001')).map((slug) => [slug.split('-')[0], slug])
+);
+
+/** Every locale route segment to prerender: the real slugs plus the aliases. */
+export const ROUTE_LOCALES: string[] = [...LOCALE_SLUGS, ...Object.keys(LOCALE_ALIASES)];
+
+/** Is `value` a known locale slug or a two-letter alias for one? */
+export function isLocaleOrAlias(value: string): boolean {
+  return isLocale(value) || Object.hasOwn(LOCALE_ALIASES, value);
+}
+
+/** The real locale slug behind a route segment: an alias resolves, anything else passes through. */
+export function resolveLocale(value: string): string;
+export function resolveLocale(value: string | undefined): string | undefined;
+export function resolveLocale(value: string | undefined): string | undefined {
+  return value !== undefined && Object.hasOwn(LOCALE_ALIASES, value) ? LOCALE_ALIASES[value] : value;
+}
+
+/**
  * `LOCALES`, ordered for display: the default locale first, then grouped by
  * language (the locale slug's primary subtag, e.g. `en` in `en-gb-oxendict`),
  * with a `-001` "world" variant sorted before its regional siblings within
@@ -359,7 +383,7 @@ PART_TRANSLATIONS['cy-001'] = PART_TRANSLATIONS['cy-gb'];
 
 /** `PARTS`, translated for `locale` where a translation exists, English otherwise. */
 export function partsFor(locale: string): Part[] {
-  const translation = PART_TRANSLATIONS[locale];
+  const translation = PART_TRANSLATIONS[resolveLocale(locale)];
   if (!translation) return PARTS;
   return PARTS.map((part) => ({ ...part, ...(translation[part.number] ?? {}) }));
 }

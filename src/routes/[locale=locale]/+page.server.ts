@@ -1,5 +1,5 @@
 import { error, redirect } from '@sveltejs/kit';
-import { isLocale, LOCALE_SLUGS } from '#lib/book.js';
+import { isLocaleOrAlias, ROUTE_LOCALES } from '#lib/book.js';
 
 /**
  * `/<slug>/` on its own has nothing to show — the contents page is
@@ -7,10 +7,10 @@ import { isLocale, LOCALE_SLUGS } from '#lib/book.js';
  * as a static page with a meta-refresh, so this works with no server.
  */
 export function entries() {
-  return LOCALE_SLUGS.map((locale) => ({ locale }));
+  return ROUTE_LOCALES.map((locale) => ({ locale }));
 }
 
 export function load({ params }) {
-  if (!isLocale(params.locale)) error(404, `No locale named "${params.locale}"`);
+  if (!isLocaleOrAlias(params.locale)) error(404, `No locale named "${params.locale}"`);
   redirect(307, `/${params.locale}/contents/`);
 }

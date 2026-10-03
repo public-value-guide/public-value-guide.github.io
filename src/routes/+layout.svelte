@@ -10,7 +10,7 @@
     GrailLayoutBottomFooter
   } from '@lilydesignsystem/svelte-headless';
   import PickerBar, { DEFAULT_THEMES } from '@lilydesignsystem/svelte-picker-bar';
-  import { SOURCE_REPO, LOCALES, LOCALE_SLUGS, DEFAULT_LOCALE } from '#lib/book.js';
+  import { SOURCE_REPO, LOCALES, LOCALE_SLUGS, DEFAULT_LOCALE, resolveLocale } from '#lib/book.js';
   import { ui } from '#lib/i18n.js';
 
   /**
@@ -39,7 +39,10 @@
   // (home, glossary, index). The header chrome (nav, picker, footer) reads
   // this locale's own strings; locale-neutral pages fall back to English,
   // `ui()`'s default when passed `undefined`.
-  const currentLocale = $derived(page.params.locale);
+  // `routeLocale` is the URL segment (possibly a two-letter alias like `en`);
+  // `currentLocale` is the real locale behind it, for the picker and strings.
+  const routeLocale = $derived(page.params.locale);
+  const currentLocale = $derived(resolveLocale(routeLocale));
   const t = $derived(ui(currentLocale));
 
   /**
@@ -52,7 +55,7 @@
    * index) have no per-locale equivalent to jump to.
    */
   function targetPathForLocale(newLocale: string): string {
-    const chapterMatch = page.url.pathname.match(/^\/locales\/[^/]+\/chapters\/([^/]+)\/?$/);
+    const chapterMatch = page.url.pathname.match(/^\/[^/]+\/chapters\/([^/]+)\/?$/);
     if (chapterMatch && page.data?.ref) {
       const key: string = page.data.ref.number || `front:${page.data.ref.slug}`;
       const mapped = page.data.localeSlugMap?.[key]?.[newLocale];
@@ -82,7 +85,7 @@
   // "Contents" follows whichever locale is currently showing, falling back
   // to the house-style default on locale-neutral pages.
   const siteLinks = $derived([
-    { href: `/${currentLocale ?? DEFAULT_LOCALE}/contents/`, label: t.nav.contents },
+    { href: `/${routeLocale ?? DEFAULT_LOCALE}/contents/`, label: t.nav.contents },
     { href: '/glossary/', label: t.nav.glossary },
     { href: '/index/', label: t.nav.index }
   ]);

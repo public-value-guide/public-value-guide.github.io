@@ -24,6 +24,8 @@
 // which already includes `ar` (see `isRtlLocale` in
 // `@lilydesignsystem/svelte-locale-picker`).
 
+import { resolveLocale } from '#lib/book.js';
+
 export type UiStrings = {
   /** The site's own name, as shown in the header brand and used in page titles. */
   siteTitle: string;
@@ -457,5 +459,5 @@ const STRINGS: Record<string, UiStrings> = {
 
 /** UI chrome strings for `locale`, falling back to English if the locale is unknown. */
 export function ui(locale: string | undefined): UiStrings {
-  return (locale && STRINGS[locale]) || en;
+  return (locale && STRINGS[resolveLocale(locale)]) || en;
 }
