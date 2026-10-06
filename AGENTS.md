@@ -20,6 +20,7 @@ The prose lives in <https://github.com/public-value-guide/public-value-guide>. `
 
 - **"Topic", not "chapter".** The book renamed chapters to topics; routes are `/<locale>/topics/<slug>/`, the sync script reads `locales/<locale>/topics/`, and each locale's UI strings use that locale's word for topic (Topic, Pwnc, Tema, Thème, Thema, 主题, الموضوع, विषय, トピック, Тема, 주제). Old `/chapters/` URLs no longer exist.
 - **`static/llms.txt` and `static/llms.json` are synced, not edited.** They are generated upstream by `bin/build-llms` and copied by `pnpm sync`.
+- **The sitemap is generated at build time** by `src/routes/sitemap.xml/+server.ts`: every locale's contents and topic pages, with `hreflang` alternates linking each topic (and the preface) to its counterpart in every locale, plus `x-default`. A new locale needs no sitemap change.
 - **Adding a locale:** add it to `LOCALES` in `src/lib/book.ts` *and* to `STRINGS` in `src/lib/i18n.ts` (use the locale's own word for topic), then run `pnpm sync`.
 
 - **Prerendered, always.** `src/routes/+layout.ts` sets `prerender = true`. Every route must be prerenderable: no runtime server code, no request-time data. A new dynamic route needs an `entries()` export so adapter-static knows what to emit.
