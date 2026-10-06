@@ -13,5 +13,5 @@ Brings the vendored copy of the book (`src/content/`, `static/llms.txt`, `static
 ## Exit criteria
 
 - `git status` shows no stray edits under `src/content/` other than the sync's own output.
-- `LOCALES`, `STRINGS`, `README.md` and `AGENTS.md` all name the same set of locales.
+- `LOCALES`, `PART_TRANSLATIONS`, `STRINGS`, `README.md` and `AGENTS.md` all name the same set of locales.
 - You flagged any UI string you were not confident of for a human reviewer, rather than guessing silently.
