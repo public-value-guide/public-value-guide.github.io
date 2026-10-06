@@ -43,7 +43,14 @@
   // `currentLocale` is the real locale behind it, for the picker and strings.
   const routeLocale = $derived(page.params.locale);
   const currentLocale = $derived(resolveLocale(routeLocale));
-  const t = $derived(ui(currentLocale));
+  // On locale-neutral pages (home, glossary, index) the URL names no locale, so
+  // the picker shows the reader's saved or detected one. The chrome must follow
+  // that same locale, or the picker would say German over English navigation.
+  // The picker reports it through `onChange`, which fires on mount as well as on
+  // a real choice. Locale pages ignore it: the URL always wins there.
+  let pickerLocale = $state<string | undefined>();
+  const chromeLocale = $derived(currentLocale ?? pickerLocale);
+  const t = $derived(ui(chromeLocale));
 
   /**
    * Where switching to `newLocale` should go from the page showing now.
@@ -74,6 +81,7 @@
   let readyToNavigate = false;
 
   function handleLocaleChange(newLocale: string): void {
+    pickerLocale = newLocale;
     if (!readyToNavigate) {
       readyToNavigate = true;
       return;
@@ -85,7 +93,7 @@
   // "Contents" follows whichever locale is currently showing, falling back
   // to the house-style default on locale-neutral pages.
   const siteLinks = $derived([
-    { href: `/${routeLocale ?? DEFAULT_LOCALE}/contents/`, label: t.nav.contents },
+    { href: `/${routeLocale ?? pickerLocale ?? DEFAULT_LOCALE}/contents/`, label: t.nav.contents },
     { href: '/glossary/', label: t.nav.glossary },
     { href: '/index/', label: t.nav.index }
   ]);
