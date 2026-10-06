@@ -61,6 +61,29 @@ function plain(markdown: string): string {
 }
 
 /**
+ * Render `**strong**` and `*emphasis*` that CommonMark's flanking rules reject.
+ *
+ * A closing `**` that follows punctuation and precedes a letter is not
+ * right-flanking, so `**[価値多元主義](url)**である` leaves literal asterisks. That
+ * is routine in Japanese, Chinese and Korean, where a letter follows the
+ * punctuation with no space between. Emphasis with no asterisk inside is
+ * rewritten to HTML before `marked` sees it; fenced and inline code are left
+ * alone, and anything `marked` already renders correctly renders the same.
+ */
+function fixCjkEmphasis(markdown: string): string {
+  return markdown
+    .split(/(```[\s\S]*?```|`[^`\n]*`)/g)
+    .map((part, i) =>
+      i % 2 === 1
+        ? part
+        : part
+            .replace(/\*\*([^*\n]+?)\*\*/g, '<strong>$1</strong>')
+            .replace(/(?<![*\w\\])\*(?!\s)([^*\n]+?)(?<!\s)\*(?![*\w])/g, '<em>$1</em>')
+    )
+    .join('');
+}
+
+/**
  * Parse one markdown document.
  *
  * A fresh `Marked` instance per call keeps the heading slugger's duplicate
@@ -129,6 +152,6 @@ export function parse(markdown: string): Document {
     }
   }
 
-  const html = marked.parse(rest.join('\n')) as string;
+  const html = marked.parse(fixCjkEmphasis(rest.join('\n'))) as string;
   return { title, lead, html, headings };
 }
