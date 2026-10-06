@@ -2,6 +2,10 @@
 
 Guidance for AI agents working on this repository. Read `README.md` first for the layout and the commands.
 
+## Roles
+
+Role cards in `AGENTS/`: [`content-syncer`](AGENTS/content-syncer.md) (sync the book, add locales), [`site-developer`](AGENTS/site-developer.md) (code, styling, build), [`site-reviewer`](AGENTS/site-reviewer.md) (audit the built site; read-only). A single agent may wear several hats but must meet each role's exit criteria.
+
 ## What this repository is, and is not
 
 This is the **website** for the Public Value Guide. It is not the book.
