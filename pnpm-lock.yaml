@@ -15,8 +15,8 @@ importers:
         specifier: ^0.2.0
         version: 0.2.0(svelte@5.57.1)
       '@lilydesignsystem/themes':
-        specifier: ^0.1.0
-        version: 0.1.0
+        specifier: ^0.3.1
+        version: 0.3.1
       marked:
         specifier: ^18.1.0
         version: 18.1.0
@@ -103,8 +103,8 @@ packages:
     peerDependencies:
       svelte: ^5.0.0
 
-  '@lilydesignsystem/themes@0.1.0':
-    resolution: {integrity: sha512-Oa52SvChIe0kE7g0xqa+XUkXO4Bi6GRJmOvPjDWkk+zJ9W2O1N1DZk0l8/BEsAGUMSZZBDL+IobTfR0Ps20DmA==}
+  '@lilydesignsystem/themes@0.3.1':
+    resolution: {integrity: sha512-ds11oY7MPLP+qpIj+Ruhl6uKmQO9cSnIgP1kYT98TFcGrtjUvndqeXdXEIyS1yjw1QaVECEm3WpMqaewgl70rw==}
     engines: {node: '=26'}
 
   '@oxc-project/types@0.152.0':
@@ -599,7 +599,7 @@ snapshots:
       '@lilydesignsystem/svelte-headless': 0.2.0(svelte@5.57.1)
       svelte: 5.57.1
 
-  '@lilydesignsystem/themes@0.1.0': {}
+  '@lilydesignsystem/themes@0.3.1': {}
 
   '@oxc-project/types@0.152.0': {}
 
