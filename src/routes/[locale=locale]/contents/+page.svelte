@@ -15,11 +15,11 @@
   const localeLabel = $derived(
     LOCALES.find((candidate) => candidate.slug === resolveLocale(data.locale))?.label ?? data.locale
   );
-  const frontMatter = $derived(data.toc.filter((chapter) => chapter.part === 0));
+  const frontMatter = $derived(data.toc.filter((topic) => topic.part === 0));
   const parts = $derived(
     partsFor(data.locale).map((part) => ({
       ...part,
-      chapters: data.toc.filter((chapter) => chapter.part === part.number)
+      topics: data.toc.filter((topic) => topic.part === part.number)
     }))
   );
 </script>
@@ -49,8 +49,8 @@
     <section class="page-section">
       <SectionHeading heading={t.contents.frontMatter} />
       <ul class="contents-list">
-        {#each frontMatter as chapter (chapter.slug)}
-          <li><a href="/{data.locale}/chapters/{chapter.slug}/">{chapter.title}</a></li>
+        {#each frontMatter as topic (topic.slug)}
+          <li><a href="/{data.locale}/topics/{topic.slug}/">{topic.title}</a></li>
         {/each}
       </ul>
     </section>
@@ -63,10 +63,10 @@
           <p class="contents-part-heading">{t.contents.part(part.number)} {part.title}</p>
           <p class="contents-part-tagline">{part.tagline}</p>
           <ul class="contents-list">
-            {#each part.chapters as chapter (chapter.slug)}
+            {#each part.topics as topic (topic.slug)}
               <li>
-                <a href="/{data.locale}/chapters/{chapter.slug}/">
-                  {chapter.number} {chapter.title}
+                <a href="/{data.locale}/topics/{topic.slug}/">
+                  {topic.number} {topic.title}
                 </a>
               </li>
             {/each}

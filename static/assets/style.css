@@ -9,7 +9,7 @@
  * What this file adds on top of the theme:
  *   1. The page frame — the grail layout's grid, the sticky header and sidebar.
  *   2. Book typography — the reading column, its measure, and its rhythm.
- *   3. Book-specific components — contents, chapter header, pagination, letters.
+ *   3. Book-specific components — contents, topic header, pagination, letters.
  *
  * Everything scales from --text-base, which the Lily TextSizePicker drives via
  * `data-text-size` on <html>. Sizes are in rem so a reader's own browser
@@ -75,7 +75,7 @@ body {
 /* The grail layout, reduced to a single column: a full-width header, the
    reading column, and a footer. Neither aside is used — a book does not need a
    rail competing with the prose, and navigation lives in the header, the
-   contents page, and the previous/next links at the foot of each chapter. */
+   contents page, and the previous/next links at the foot of each topic. */
 .grail-layout.site {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -178,7 +178,7 @@ body {
     gap: var(--lily-space-sm);
 }
 
-/* Chapter numbers, wherever a chapter is listed: the home page's part cards and
+/* Topic numbers, wherever a topic is listed: the home page's part cards and
    the contents page. Tabular figures keep the numbers in a straight edge. */
 .site-contents-number {
     font-variant-numeric: tabular-nums;
@@ -247,9 +247,9 @@ body {
     text-wrap: balance;
 }
 
-/* The bold sentence under a chapter title is the chapter's thesis. Give it the
+/* The bold sentence under a topic title is the topic's thesis. Give it the
    weight of a pull quote so a reader skimming the book gets the argument from
-   the chapter headers alone. */
+   the topic headers alone. */
 .page-lead,
 .page-hero-lead {
     margin: 0;
@@ -402,7 +402,7 @@ body {
 
 /* --- Contents page -------------------------------------------------------- */
 
-.contents-chapters {
+.contents-topics {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -411,7 +411,7 @@ body {
     gap: 0.15rem;
 }
 
-.contents-chapters a {
+.contents-topics a {
     display: grid;
     grid-template-columns: 2.5em minmax(0, 1fr);
     gap: 0.25em;
@@ -422,17 +422,17 @@ body {
     text-decoration: none;
 }
 
-.contents-chapters a:not(:has(.site-contents-number)) {
+.contents-topics a:not(:has(.site-contents-number)) {
     display: block;
 }
 
-.contents-chapters a:hover {
+.contents-topics a:hover {
     background-color: var(--color-base-200);
     color: var(--color-primary);
 }
 
-/* The `/contents/` page's part-and-chapter listing: a single nested list
-   (`<ul><li>` part, nested `<ul><li>` chapters), deliberately plain — no
+/* The `/contents/` page's part-and-topic listing: a single nested list
+   (`<ul><li>` part, nested `<ul><li>` topics), deliberately plain — no
    tiles, no table or grid layout, no flexbox. Indentation comes from the
    browser's own default nested-list rendering. */
 .contents-list {
@@ -646,7 +646,7 @@ body {
     background-color: color-mix(in oklch, var(--color-base-200) 50%, transparent);
 }
 
-/* The references section that closes every chapter is a long numbered list of
+/* The references section that closes every topic is a long numbered list of
    bare URLs, which markdown autolinks. A URL has no spaces to break at, so on a
    phone it would set the page width on its own; `anywhere` lets it break at any
    character, but only when it does not fit. */
@@ -654,7 +654,7 @@ body {
     overflow-wrap: anywhere;
 }
 
-/* --- Chapter pagination ---------------------------------------------------- */
+/* --- Topic pagination ---------------------------------------------------- */
 
 .pagination-nav.page-pagination {
     margin-top: 3rem;

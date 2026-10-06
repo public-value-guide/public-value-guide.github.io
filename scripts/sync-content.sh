@@ -32,43 +32,48 @@ destination="$here/src/content"
 cp "$source_repo/GLOSSARY.md" "$destination/GLOSSARY.md"
 cp "$source_repo/INDEX.md" "$destination/INDEX.md"
 
-# Remove first so a locale or chapter removed upstream is removed here too,
+# llms.txt and llms.json are generated upstream by bin/build-llms; the site serves
+# them verbatim at /llms.txt and /llms.json for AI agents.
+cp "$source_repo/llms.txt" "$here/static/llms.txt"
+cp "$source_repo/llms.json" "$here/static/llms.json"
+
+# Remove first so a locale or topic removed upstream is removed here too,
 # rather than lingering as an orphaned page the picker or sidebar still links
 # to.
 rm -rf "$destination/locales"
 mkdir -p "$destination/locales"
 
-# Each chapter is its own directory upstream (`chapters/<NN-NN-slug>/index.md`,
+# Each topic is its own directory upstream (`topics/<NN-NN-slug>/index.md`,
 # alongside `.locale-peer-id` and a `README.md -> index.md` symlink — the
 # locale-peer-id convention, see spec/index.md §4a upstream). Only `index.md`
 # matters to the site's markdown glob (`$lib/server/book.ts`), but copying the
-# whole chapter directory is simpler than picking files apart and the extra
+# whole topic directory is simpler than picking files apart and the extra
 # files are harmless — they are never read at build time.
 total=0
 for locale_path in "$locales_dir"/*/; do
     slug=$(basename "$locale_path")
-    if [ ! -d "${locale_path}chapters" ]; then
+    if [ ! -d "${locale_path}topics" ]; then
         continue
     fi
     # Skip a locale that has been scaffolded (directories exist) but has no
-    # chapter content synced upstream yet, so an empty locale never appears to
+    # topic content synced upstream yet, so an empty locale never appears to
     # exist on the site.
-    if ! find "${locale_path}chapters" -mindepth 2 -maxdepth 2 -name index.md -size +0c | grep -q .; then
-        echo "Skipping locale $slug: no non-empty chapters yet"
+    if ! find "${locale_path}topics" -mindepth 2 -maxdepth 2 -name index.md -size +0c | grep -q .; then
+        echo "Skipping locale $slug: no non-empty topics yet"
         continue
     fi
-    mkdir -p "$destination/locales/$slug/chapters"
-    # No trailing slash on the source glob: with one, cp copies each chapter
-    # directory's *contents* into the destination (flattening every chapter's
-    # index.md into one shared file); without one, cp preserves each chapter
+    mkdir -p "$destination/locales/$slug/topics"
+    # No trailing slash on the source glob: with one, cp copies each topic
+    # directory's *contents* into the destination (flattening every topic's
+    # index.md into one shared file); without one, cp preserves each topic
     # directory as its own named subdirectory of the destination, which is
-    # what the site's glob (chapters/*/index.md) expects.
-    cp -R "${locale_path}chapters/"* "$destination/locales/$slug/chapters/"
-    count=$(find "$destination/locales/$slug/chapters" -name index.md -size +0c | wc -l | tr -d ' ')
+    # what the site's glob (topics/*/index.md) expects.
+    cp -R "${locale_path}topics/"* "$destination/locales/$slug/topics/"
+    count=$(find "$destination/locales/$slug/topics" -name index.md -size +0c | wc -l | tr -d ' ')
     total=$((total + count))
-    echo "Synced $count chapters for locale $slug"
+    echo "Synced $count topics for locale $slug"
 done
 
-echo "Synced $total chapter files across all locales, plus the glossary and the index, from $source_repo"
+echo "Synced $total topic files across all locales, plus the glossary and the index, from $source_repo"
 echo "Review with: git -C \"$here\" status"
 echo "Remember: add any newly-complete locale to LOCALES in src/lib/book.ts before it will show up in the site's navigation."

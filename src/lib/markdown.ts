@@ -22,7 +22,7 @@ export type Heading = {
 
 /** A markdown document split into the parts a page needs. */
 export type Document = {
-  /** The `# ` heading, with the `Chapter N.N — ` prefix left intact. */
+  /** The `# ` heading, with the `Topic N.N — ` prefix left intact. */
   title: string;
   /** The bold lead paragraph directly under the title, as plain text. */
   lead: string;
@@ -35,7 +35,7 @@ export type Document = {
 /**
  * Turn heading text into a URL fragment: lowercase, non-alphanumerics collapsed
  * to single hyphens, edges trimmed. Duplicate ids get a `-2`, `-3`, … suffix so
- * that a chapter using the same subheading twice still yields unique anchors.
+ * that a topic using the same subheading twice still yields unique anchors.
  */
 function slugger() {
   const seen = new Map<string, number>();
@@ -65,7 +65,7 @@ function plain(markdown: string): string {
  *
  * A fresh `Marked` instance per call keeps the heading slugger's duplicate
  * counter scoped to a single document — a shared global instance would let
- * chapter 3's ids leak into chapter 4's.
+ * topic 3's ids leak into topic 4's.
  */
 export function parse(markdown: string): Document {
   const slug = slugger();
@@ -116,7 +116,7 @@ export function parse(markdown: string): Document {
     }
   }
 
-  // A `**bold paragraph**` immediately under the title is the chapter's thesis
+  // A `**bold paragraph**` immediately under the title is the topic's thesis
   // sentence. Pull it out for the page header and for link previews.
   let lead = '';
   const rest = lines.slice(cursor);

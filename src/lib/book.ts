@@ -1,19 +1,19 @@
 // Shared book types and the part manifest.
 //
-// This module holds no chapter prose — only the small metadata that both the
+// This module holds no topic prose — only the small metadata that both the
 // server load functions and the Svelte components need, so it is safe to import
 // from either side. The prose lives in `#lib/server/book.ts`, which is
 // server-only and therefore never reaches a client bundle.
 
 /** One entry in the table of contents. */
-export type ChapterRef = {
+export type TopicRef = {
   /** URL slug, e.g. `1-1-introduction-to-public-value` or `preface`. */
   slug: string;
-  /** Chapter number as printed, e.g. `1.1`. Empty for front matter. */
+  /** Topic number as printed, e.g. `1.1`. Empty for front matter. */
   number: string;
-  /** Chapter title without the `Chapter N.N — ` prefix. */
+  /** Topic title without the `Topic N.N — ` prefix. */
   title: string;
-  /** Part number this chapter belongs to; 0 for front matter. */
+  /** Part number this topic belongs to; 0 for front matter. */
   part: number;
 };
 
@@ -25,7 +25,7 @@ export type Part = {
   tagline: string;
 };
 
-/** One locale the book is written in, per `locales/<slug>/chapters/` upstream. */
+/** One locale the book is written in, per `locales/<slug>/topics/` upstream. */
 export type Locale = {
   /** URL slug and directory name, e.g. `en-gb`. Matches the source repo's `locales/<slug>/`. */
   slug: string;
@@ -37,8 +37,8 @@ export type Locale = {
  * The book's locales. Kept in sync by hand with the source repo's `locales/`
  * directory (see spec/index.md §4a upstream). Add a locale here, and to
  * `#lib/i18n`'s `STRINGS`, only once `scripts/sync-content.sh` reports every
- * chapter synced for it — an incomplete locale would otherwise offer a
- * picker option that 404s on whichever chapter has no translation yet.
+ * topic synced for it — an incomplete locale would otherwise offer a
+ * picker option that 404s on whichever topic has no translation yet.
  *
  * Labels follow the book's own endonym-first convention: the language name
  * in its own language (its endonym), then a hyphen-separated region and, if
@@ -61,7 +61,8 @@ export const LOCALES: Locale[] = [
   { slug: 'ar-001', label: 'العربية' },
   { slug: 'hi-in', label: 'हिन्दी - भारत' },
   { slug: 'ja-jp', label: '日本語 - 日本' },
-  { slug: 'ru-ru', label: 'Русский - Россия' }
+  { slug: 'ru-ru', label: 'Русский - Россия' },
+  { slug: 'ko-kr', label: '한국어 - 대한민국' }
 ];
 
 /**
@@ -75,7 +76,7 @@ export const LOCALE_SLUGS: string[] = LOCALES.map((locale) => locale.slug).sort(
 
 /**
  * The locale served at unprefixed reference pages (glossary, index) and used
- * for "browse the chapters" links from locale-neutral pages. Oxford spelling
+ * for "browse the topics" links from locale-neutral pages. Oxford spelling
  * is the book's own house style (`spec/oxford-spelling.md` upstream) and its
  * canonical/source-of-truth locale (`spec/index.md` §4a), so it is the
  * natural default.
@@ -141,7 +142,7 @@ export function sortedLocales(locales: Locale[] = LOCALES): Locale[] {
 
 /**
  * The five parts, in reading order. Kept in sync by hand with the source repo's
- * README — the chapter files themselves record only their own number, not the
+ * README — the topic files themselves record only their own number, not the
  * part groupings or taglines.
  */
 export const PARTS: Part[] = [
@@ -178,7 +179,7 @@ export const PARTS: Part[] = [
 /**
  * `PARTS`' title and tagline, translated per locale. Keyed by part number.
  * English variants share the canonical English wording (`PARTS` itself);
- * only locales whose chapter prose is actually translated get an entry here.
+ * only locales whose topic prose is actually translated get an entry here.
  * `cy-001` reuses `cy-gb`'s wording, matching the book repo's own decision to
  * reuse `cy-gb` prose for `cy-001` (see spec/index.md upstream).
  */

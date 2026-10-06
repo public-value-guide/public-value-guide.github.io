@@ -4,9 +4,9 @@ import { slugs } from '#lib/server/book.js';
 export const prerender = true;
 
 /**
- * A sitemap for a book that search engines should index chapter by chapter —
+ * A sitemap for a book that search engines should index topic by topic —
  * readers arrive from a search for one concept, not for the front page.
- * Every locale's chapters are listed; the glossary and index are not
+ * Every locale's topics are listed; the glossary and index are not
  * localized upstream, so each gets one shared entry rather than one per
  * locale.
  */
@@ -17,7 +17,7 @@ export function GET() {
     '/index/',
     ...LOCALE_SLUGS.flatMap((locale) => [
       `/${locale}/contents/`,
-      ...slugs(locale).map((slug) => `/${locale}/chapters/${slug}/`)
+      ...slugs(locale).map((slug) => `/${locale}/topics/${slug}/`)
     ])
   ];
 

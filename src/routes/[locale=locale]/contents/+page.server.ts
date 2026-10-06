@@ -2,7 +2,7 @@ import { error } from '@sveltejs/kit';
 import { isLocaleOrAlias, resolveLocale, ROUTE_LOCALES } from '#lib/book.js';
 import { toc } from '#lib/server/book.js';
 
-/** One contents page per locale — chapter titles and slugs both vary by locale. */
+/** One contents page per locale — topic titles and slugs both vary by locale. */
 export function entries() {
   return ROUTE_LOCALES.map((locale) => ({ locale }));
 }

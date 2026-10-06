@@ -3,21 +3,21 @@
 // footer text.
 //
 // This exists because a reader who switches the language picker to, say,
-// Welsh should not land on a chapter written in Welsh surrounded by English
-// navigation. Chapter prose comes from the book's markdown (`#lib/server/book.js`);
+// Welsh should not land on a topic written in Welsh surrounded by English
+// navigation. Topic prose comes from the book's markdown (`#lib/server/book.js`);
 // everything else comes from here, keyed by the same locale slugs as `LOCALES`
 // in `#lib/book.js`.
 //
 // English variants (`en-gb`, `en-gb-oxendict`, `en-us`, `en-001`) differ only
 // in spelling convention, matching the house style each variant uses for its
-// chapter prose (see `spec/index.md` §4 upstream). `cy-001` reuses `cy-gb`'s
-// strings verbatim — the same decision the book repo made for chapter prose,
+// topic prose (see `spec/index.md` §4 upstream). `cy-001` reuses `cy-gb`'s
+// strings verbatim — the same decision the book repo made for topic prose,
 // since the register difference between Welsh (Wales) and World Welsh is
 // negligible for this formal content. `es-001` (World/neutral Spanish),
 // `fr-001` (World/neutral French), `de-de` (German, Germany), `zh-cn`
 // (Mainland China, Simplified script), `ar-001` (World/neutral Arabic),
-// `hi-in` (Hindi, India), `ja-jp` (Japanese, Japan), and `ru-ru` (Russian, Russia) each get their own
-// strings, in the same neutral register their chapter prose uses. `ar-001`
+// `hi-in` (Hindi, India), `ja-jp` (Japanese, Japan), `ru-ru` (Russian, Russia), and `ko-kr` (Korean, South Korea) each get their own
+// strings, in the same neutral register their topic prose uses. `ar-001`
 // needs no separate `dir`
 // handling here — the Lily locale picker sets `dir="rtl"` on the document
 // itself for any locale whose base language subtag is in its own RTL list,
@@ -51,8 +51,8 @@ export type UiStrings = {
     part: (n: number) => string;
     reference: string;
   };
-  chapter: {
-    chapterEyebrow: (n: string) => string;
+  topic: {
+    topicEyebrow: (n: string) => string;
     paginationLabel: string;
     onThisPage: string;
     previous: string;
@@ -84,15 +84,15 @@ const en: UiStrings = {
   },
   contents: {
     pageTitle: 'Contents',
-    lead: 'Every chapter is self-contained. Read straight through for a course in public value, or go directly to the chapter that matches the decision in front of you.',
+    lead: 'Every topic is self-contained. Read straight through for a course in public value, or go directly to the topic that matches the decision in front of you.',
     readingIn: (label) => `Reading in ${label}. Switch language from the header picker.`,
     frontMatter: 'Front matter',
     part: (n) => `Part ${n}`,
     reference: 'Reference'
   },
-  chapter: {
-    chapterEyebrow: (n) => `Chapter ${n}`,
-    paginationLabel: 'Chapter',
+  topic: {
+    topicEyebrow: (n) => `Topic ${n}`,
+    paginationLabel: 'Topic',
     onThisPage: 'On this page',
     previous: 'Previous',
     next: 'Next'
@@ -136,15 +136,15 @@ const cyGb: UiStrings = {
   },
   contents: {
     pageTitle: 'Cynnwys',
-    lead: 'Mae pob pennod yn hunangynhwysol. Darllenwch drwyddo am gwrs mewn gwerth cyhoeddus, neu ewch yn syth i’r bennod sy’n cyfateb â’r penderfyniad o’ch blaen.',
+    lead: 'Mae pob pwnc yn hunangynhwysol. Darllenwch drwyddo am gwrs mewn gwerth cyhoeddus, neu ewch yn syth i’r pwnc sy’n cyfateb â’r penderfyniad o’ch blaen.',
     readingIn: (label) => `Yn darllen yn ${label}. Newidiwch iaith o’r dewisydd yn y pennawd.`,
     frontMatter: 'Deunydd blaen',
     part: (n) => `Rhan ${n}`,
     reference: 'Cyfeirnod'
   },
-  chapter: {
-    chapterEyebrow: (n) => `Pennod ${n}`,
-    paginationLabel: 'Pennod',
+  topic: {
+    topicEyebrow: (n) => `Pwnc ${n}`,
+    paginationLabel: 'Pwnc',
     onThisPage: 'Ar y dudalen hon',
     previous: 'Blaenorol',
     next: 'Nesaf'
@@ -180,15 +180,15 @@ const es001: UiStrings = {
   },
   contents: {
     pageTitle: 'Contenido',
-    lead: 'Cada capítulo es autónomo. Léalo de principio a fin como un curso sobre valor público, o vaya directamente al capítulo que corresponda a la decisión que tiene ante usted.',
+    lead: 'Cada tema es autónomo. Léalo de principio a fin como un curso sobre valor público, o vaya directamente al tema que corresponda a la decisión que tiene ante usted.',
     readingIn: (label) => `Leyendo en ${label}. Cambie de idioma desde el selector del encabezado.`,
     frontMatter: 'Preliminares',
     part: (n) => `Parte ${n}`,
     reference: 'Referencia'
   },
-  chapter: {
-    chapterEyebrow: (n) => `Capítulo ${n}`,
-    paginationLabel: 'Capítulo',
+  topic: {
+    topicEyebrow: (n) => `Tema ${n}`,
+    paginationLabel: 'Tema',
     onThisPage: 'En esta página',
     previous: 'Anterior',
     next: 'Siguiente'
@@ -220,15 +220,15 @@ const fr001: UiStrings = {
   },
   contents: {
     pageTitle: 'Contenu',
-    lead: 'Chaque chapitre est autonome. Lisez-le d’un bout à l’autre comme un cours sur la valeur publique, ou allez directement au chapitre qui correspond à la décision qui vous occupe.',
+    lead: 'Chaque thème est autonome. Lisez-le d’un bout à l’autre comme un cours sur la valeur publique, ou allez directement au thème qui correspond à la décision qui vous occupe.',
     readingIn: (label) => `Lecture en ${label}. Changez de langue depuis le sélecteur d’en-tête.`,
     frontMatter: 'Matière liminaire',
     part: (n) => `Partie ${n}`,
     reference: 'Référence'
   },
-  chapter: {
-    chapterEyebrow: (n) => `Chapitre ${n}`,
-    paginationLabel: 'Chapitre',
+  topic: {
+    topicEyebrow: (n) => `Thème ${n}`,
+    paginationLabel: 'Thème',
     onThisPage: 'Sur cette page',
     previous: 'Précédent',
     next: 'Suivant'
@@ -260,15 +260,15 @@ const deDe: UiStrings = {
   },
   contents: {
     pageTitle: 'Inhalt',
-    lead: 'Jedes Kapitel ist eigenständig. Lesen Sie durchgehend für einen Kurs zu öffentlichem Wert, oder gehen Sie direkt zum Kapitel, das zur vor Ihnen liegenden Entscheidung passt.',
+    lead: 'Jedes Thema ist eigenständig. Lesen Sie durchgehend für einen Kurs zu öffentlichem Wert, oder gehen Sie direkt zum Thema, das zur vor Ihnen liegenden Entscheidung passt.',
     readingIn: (label) => `Sie lesen auf ${label}. Sprache über die Kopfzeilenauswahl wechseln.`,
     frontMatter: 'Einleitende Seiten',
     part: (n) => `Teil ${n}`,
     reference: 'Referenz'
   },
-  chapter: {
-    chapterEyebrow: (n) => `Kapitel ${n}`,
-    paginationLabel: 'Kapitel',
+  topic: {
+    topicEyebrow: (n) => `Thema ${n}`,
+    paginationLabel: 'Thema',
     onThisPage: 'Auf dieser Seite',
     previous: 'Zurück',
     next: 'Weiter'
@@ -300,15 +300,15 @@ const zhCn: UiStrings = {
   },
   contents: {
     pageTitle: '目录',
-    lead: '每一章都是独立完整的。可以从头到尾通读,作为一门关于公共价值的课程,也可以直接跳转到与你眼下的决策相匹配的那一章。',
+    lead: '每个主题都是独立完整的。可以从头到尾通读,作为一门关于公共价值的课程,也可以直接跳转到与你眼下的决策相匹配的那个主题。',
     readingIn: (label) => `正在以${label}阅读。可从页眉的选择器切换语言。`,
     frontMatter: '前言部分',
     part: (n) => `第 ${n} 部分`,
     reference: '参考资料'
   },
-  chapter: {
-    chapterEyebrow: (n) => `第 ${n} 章`,
-    paginationLabel: '章节',
+  topic: {
+    topicEyebrow: (n) => `主题${n}`,
+    paginationLabel: '主题',
     onThisPage: '本页内容',
     previous: '上一章',
     next: '下一章'
@@ -339,15 +339,15 @@ const ar001: UiStrings = {
   },
   contents: {
     pageTitle: 'المحتويات',
-    lead: 'كل فصل قائم بذاته. اقرأ الكتاب من البداية إلى النهاية كدورة في القيمة العامة، أو انتقل مباشرة إلى الفصل الذي يناسب القرار الذي أمامك.',
+    lead: 'كل موضوع قائم بذاته. اقرأ الكتاب من البداية إلى النهاية كدورة في القيمة العامة، أو انتقل مباشرة إلى الموضوع الذي يناسب القرار الذي أمامك.',
     readingIn: (label) => `تقرأ الآن بـ${label}. غيّر اللغة من منتقي الترويسة.`,
     frontMatter: 'المادة الاستهلالية',
     part: (n) => `الجزء ${n}`,
     reference: 'مرجع'
   },
-  chapter: {
-    chapterEyebrow: (n) => `الفصل ${n}`,
-    paginationLabel: 'الفصل',
+  topic: {
+    topicEyebrow: (n) => `الموضوع ${n}`,
+    paginationLabel: 'الموضوع',
     onThisPage: 'في هذه الصفحة',
     previous: 'السابق',
     next: 'التالي'
@@ -379,15 +379,15 @@ const hiIn: UiStrings = {
   },
   contents: {
     pageTitle: 'विषय-सूची',
-    lead: 'हर अध्याय स्वयं में पूर्ण है। लोक मूल्य पर एक पाठ्यक्रम के रूप में शुरू से अंत तक पढ़ें, या सीधे उस अध्याय पर जाएँ जो आपके सामने के निर्णय से मेल खाता है।',
+    lead: 'हर विषय स्वयं में पूर्ण है। लोक मूल्य पर एक पाठ्यक्रम के रूप में शुरू से अंत तक पढ़ें, या सीधे उस विषय पर जाएँ जो आपके सामने के निर्णय से मेल खाता है।',
     readingIn: (label) => `${label} में पढ़ रहे हैं। शीर्षलेख के चयनकर्ता से भाषा बदलें।`,
     frontMatter: 'प्रारंभिक सामग्री',
     part: (n) => `भाग ${n}`,
     reference: 'संदर्भ'
   },
-  chapter: {
-    chapterEyebrow: (n) => `अध्याय ${n}`,
-    paginationLabel: 'अध्याय',
+  topic: {
+    topicEyebrow: (n) => `विषय ${n}`,
+    paginationLabel: 'विषय',
     onThisPage: 'इस पृष्ठ पर',
     previous: 'पिछला',
     next: 'अगला'
@@ -419,15 +419,15 @@ const jaJp: UiStrings = {
   },
   contents: {
     pageTitle: '目次',
-    lead: '各章は独立して読めます。公共価値についての講座として最初から通読するか、目の前の決定に対応する章に直接進んでください。',
+    lead: '各トピックは独立して読めます。公共価値についての講座として最初から通読するか、目の前の決定に対応するトピックに直接進んでください。',
     readingIn: (label) => `${label}で読んでいます。ヘッダーの選択メニューから言語を切り替えられます。`,
     frontMatter: '前付け',
     part: (n) => `第${n}部`,
     reference: '参考資料'
   },
-  chapter: {
-    chapterEyebrow: (n) => `第${n}章`,
-    paginationLabel: '章',
+  topic: {
+    topicEyebrow: (n) => `トピック${n}`,
+    paginationLabel: 'トピック',
     onThisPage: 'このページの内容',
     previous: '前へ',
     next: '次へ'
@@ -459,15 +459,15 @@ const ruRu: UiStrings = {
   },
   contents: {
     pageTitle: 'Содержание',
-    lead: 'Каждая глава самостоятельна. Читайте подряд, как курс по общественной ценности, или переходите сразу к главе, соответствующей решению, которое стоит перед вами.',
+    lead: 'Каждая тема самостоятельна. Читайте подряд, как курс по общественной ценности, или переходите сразу к теме, соответствующей решению, которое стоит перед вами.',
     readingIn: (label) => `Вы читаете на языке: ${label}. Язык можно сменить в переключателе в шапке сайта.`,
     frontMatter: 'Вступительные материалы',
     part: (n) => `Часть ${n}`,
     reference: 'Справочные материалы'
   },
-  chapter: {
-    chapterEyebrow: (n) => `Глава ${n}`,
-    paginationLabel: 'Глава',
+  topic: {
+    topicEyebrow: (n) => `Тема ${n}`,
+    paginationLabel: 'Тема',
     onThisPage: 'На этой странице',
     previous: 'Назад',
     next: 'Далее'
@@ -478,6 +478,45 @@ const ruRu: UiStrings = {
     sourceAndContributions: 'Исходный код и участие:',
     builtWith: 'Создано с помощью',
     ledBy: 'Руководитель проекта:'
+  }
+};
+
+const koKr: UiStrings = {
+  siteTitle: '공공가치 가이드',
+  skipToContent: '본문으로 건너뛰기',
+  nav: { contents: '목차', glossary: '용어집', index: '색인', source: '소스' },
+  breadcrumb: { home: '홈', contents: '목차' },
+  picker: { theme: '테마', locale: '언어', textSize: '글자 크기', share: '공유' },
+  share: {
+    emailLink: '링크를 이메일로 보내기',
+    shareOnLinkedIn: 'LinkedIn에 공유',
+    shareOnReddit: 'Reddit에 공유',
+    shareOnBluesky: 'Bluesky에 공유',
+    shareOnMastodon: 'Mastodon에 공유',
+    copyLink: '링크 복사',
+    copied: '복사했다!',
+    copyFailed: '복사하지 못했다 — 주소 표시줄에서 주소를 복사하라'
+  },
+  contents: {
+    pageTitle: '목차',
+    lead: '각 주제는 독립적으로 완결된다. 공공가치 강좌처럼 처음부터 끝까지 읽어도 되고, 지금 마주한 결정에 맞는 주제로 곧바로 가도 된다.',
+    readingIn: (label) => `읽는 언어: ${label}. 사이트 머리글의 언어 선택기에서 바꿀 수 있다.`,
+    frontMatter: '앞부분',
+    part: (n) => `제${n}부`,
+    reference: '참고 자료'
+  },
+  topic: {
+    topicEyebrow: (n) => `주제 ${n}`,
+    paginationLabel: '주제',
+    onThisPage: '이 페이지의 내용',
+    previous: '이전',
+    next: '다음'
+  },
+  footer: {
+    tagline: '정부와 사회 부문에서 공공가치를 창출하기 위한 모범 사례를 담은 실용 안내서이며, 범위는 전 세계이다.',
+    sourceAndContributions: '소스와 기여:',
+    builtWith: '제작 도구:',
+    ledBy: '프로젝트 책임자:'
   }
 };
 
@@ -495,7 +534,8 @@ const STRINGS: Record<string, UiStrings> = {
   'ar-001': ar001,
   'hi-in': hiIn,
   'ja-jp': jaJp,
-  'ru-ru': ruRu
+  'ru-ru': ruRu,
+  'ko-kr': koKr
 };
 
 /** UI chrome strings for `locale`, falling back to English if the locale is unknown. */

@@ -48,18 +48,18 @@
   /**
    * Where switching to `newLocale` should go from the page showing now.
    *
-   * A chapter page jumps to the *same chapter* in the new locale via the
-   * cross-locale slug map (most chapters share a slug across locales, but a
-   * Welsh chapter directory does not). Anywhere else lands on the new
+   * A topic page jumps to the *same topic* in the new locale via the
+   * cross-locale slug map (most topics share a slug across locales, but a
+   * Welsh topic directory does not). Anywhere else lands on the new
    * locale's contents page, since locale-neutral pages (home, glossary,
    * index) have no per-locale equivalent to jump to.
    */
   function targetPathForLocale(newLocale: string): string {
-    const chapterMatch = page.url.pathname.match(/^\/[^/]+\/chapters\/([^/]+)\/?$/);
-    if (chapterMatch && page.data?.ref) {
+    const topicMatch = page.url.pathname.match(/^\/[^/]+\/topics\/([^/]+)\/?$/);
+    if (topicMatch && page.data?.ref) {
       const key: string = page.data.ref.number || `front:${page.data.ref.slug}`;
       const mapped = page.data.localeSlugMap?.[key]?.[newLocale];
-      if (mapped) return `/${newLocale}/chapters/${mapped}/`;
+      if (mapped) return `/${newLocale}/topics/${mapped}/`;
     }
     return `/${newLocale}/contents/`;
   }

@@ -39,8 +39,8 @@ export default defineConfig({
        * plain root-relative paths and this comment instead.
        */
       prerender: {
-        // Chapter prose carries anchors into headings that live on other
-        // chapter pages, and the glossary cross-links chapters by name.
+        // Topic prose carries anchors into headings that live on other
+        // topic pages, and the glossary cross-links topics by name.
         // Demote the missing-id check so a cross-reference typo warns
         // rather than failing the whole build.
         handleMissingId: 'warn'

@@ -8,11 +8,15 @@ This is the **website** for the Public Value Guide. It is not the book.
 
 The prose lives in <https://github.com/public-value-guide/public-value-guide>. `src/content/` is a vendored copy of it.
 
-**Never edit `src/content/`.** An edit there is lost the next time anyone runs `pnpm sync`, and it silently forks the book from its source of truth. To fix a typo in a chapter, fix it in the book repository — under `locales/<slug>/chapters/<NN-NN-slug>/index.md`, not a file here — then run `pnpm sync` here.
+**Never edit `src/content/`.** An edit there is lost the next time anyone runs `pnpm sync`, and it silently forks the book from its source of truth. To fix a typo in a topic, fix it in the book repository — under `locales/<slug>/topics/<NN-NN-slug>/index.md`, not a file here — then run `pnpm sync` here.
 
-**The book has up to fourteen locales** (`en-gb-oxendict`, `en-gb`, `en-us`, `en-001`, `cy-gb`, `cy-001`, `es-001`, `fr-001`, `de-de`, `zh-cn`, `ar-001`, `hi-in`, `ja-jp`, `ru-ru`; see `spec/index.md` §4a upstream), but `$lib/book.ts`'s `LOCALES` only lists the ones with fully-synced chapter content — check that list, not the upstream directory listing, for what the live site actually offers. A chapter's slug is not guaranteed to match across locales, so chapter lookups always take a `locale` argument — never assume one global slug space. The glossary and index are not localized upstream and stay at unprefixed URLs shared by every locale.
+**The book has fifteen locales** (`en-gb-oxendict`, `en-gb`, `en-us`, `en-001`, `cy-gb`, `cy-001`, `es-001`, `fr-001`, `de-de`, `zh-cn`, `ar-001`, `hi-in`, `ja-jp`, `ru-ru`, `ko-kr`; see `spec/index.md` §4a upstream), but `$lib/book.ts`'s `LOCALES` only lists the ones with fully-synced topic content — check that list, not the upstream directory listing, for what the live site actually offers. A topic's slug is not guaranteed to match across locales, so topic lookups always take a `locale` argument — never assume one global slug space. The glossary and index are not localized upstream and stay at unprefixed URLs shared by every locale.
 
 ## Conventions
+
+- **"Topic", not "chapter".** The book renamed chapters to topics; routes are `/<locale>/topics/<slug>/`, the sync script reads `locales/<locale>/topics/`, and each locale's UI strings use that locale's word for topic (Topic, Pwnc, Tema, Thème, Thema, 主题, الموضوع, विषय, トピック, Тема, 주제). Old `/chapters/` URLs no longer exist.
+- **`static/llms.txt` and `static/llms.json` are synced, not edited.** They are generated upstream by `bin/build-llms` and copied by `pnpm sync`.
+- **Adding a locale:** add it to `LOCALES` in `src/lib/book.ts` *and* to `STRINGS` in `src/lib/i18n.ts` (use the locale's own word for topic), then run `pnpm sync`.
 
 - **Prerendered, always.** `src/routes/+layout.ts` sets `prerender = true`. Every route must be prerenderable: no runtime server code, no request-time data. A new dynamic route needs an `entries()` export so adapter-static knows what to emit.
 - **Content stays server-side.** Anything that reads `src/content/` belongs in `src/lib/server/`, which SvelteKit refuses to bundle into client code. The content is several megabytes; a stray client-side import would ship all of it to every reader.
@@ -38,8 +42,8 @@ Verify at 1440px and at 390px that no page scrolls horizontally, that the theme 
 
 ## Things that have bitten before
 
-- **Wide tables.** Chapters compare four or five columns of paradigms, sector lenses, and maturity levels. Tables are wrapped in a scrolling `.prose-scroll` region by the markdown renderer; do not remove the wrapper to "fix" a table's appearance.
-- **Bare URLs.** The references section of every chapter ends in autolinked URLs with no spaces to break at. `.prose a { overflow-wrap: anywhere }` is what keeps them from setting the page width on a phone.
-- **Front matter has no chapter number.** `slugFor` and the templates both special-case it. A layout that assumes every entry has a number will break on the preface.
+- **Wide tables.** Topics compare four or five columns of paradigms, sector lenses, and maturity levels. Tables are wrapped in a scrolling `.prose-scroll` region by the markdown renderer; do not remove the wrapper to "fix" a table's appearance.
+- **Bare URLs.** The references section of every topic ends in autolinked URLs with no spaces to break at. `.prose a { overflow-wrap: anywhere }` is what keeps them from setting the page width on a phone.
+- **Front matter has no topic number.** `slugFor` and the templates both special-case it. A layout that assumes every entry has a number will break on the preface.
 - **`LocalePicker`'s `onChange` fires once on mount**, not only on a real user choice, and the two calls are indistinguishable from inside the callback (see the Lily component's own source). `+layout.svelte` guards this with a `readyToNavigate` flag that absorbs the first call; removing that guard makes every page load silently redirect to whatever locale was last stored or detected.
-- **A locale synced but not yet added to `LOCALES`.** `sync-content.sh` copies whatever chapter content exists upstream, including a locale that is only partway through translation. That content sits in `src/content/` unused until someone deliberately adds the locale to `src/lib/book.ts`'s `LOCALES` — don't add it there until `pnpm sync`'s own chapter count for that locale reaches 34.
+- **A locale synced but not yet added to `LOCALES`.** `sync-content.sh` copies whatever topic content exists upstream, including a locale that is only partway through translation. That content sits in `src/content/` unused until someone deliberately adds the locale to `src/lib/book.ts`'s `LOCALES` — don't add it there until `pnpm sync`'s own topic count for that locale reaches 34.
