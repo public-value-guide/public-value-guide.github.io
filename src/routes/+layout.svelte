@@ -130,6 +130,11 @@
         `https://mastodonshare.com/?text=${encodeURIComponent(pageTitle())}&url=${encodeURIComponent(url)}`
     }
   ]);
+
+  /** Keep the header search in-app: `/?query` is the site's own search route. */
+  function searchNavigate(href: string) {
+    goto(href);
+  }
 </script>
 
 <SkipLink href="#main" label={t.skipToContent} />
@@ -156,8 +161,12 @@
         theme: t.picker.theme,
         locale: t.picker.locale,
         textSize: t.picker.textSize,
-        share: t.picker.share
+        share: t.picker.share,
+        search: t.picker.search,
+        searchInput: t.picker.searchInput,
+        searchSubmit: t.picker.searchSubmit
       }}
+      searchProps={{ navigate: searchNavigate }}
       themesUrl="/assets/themes/"
       themes={GENERIC_THEMES}
       themeProps={{

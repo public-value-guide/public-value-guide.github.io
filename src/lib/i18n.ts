@@ -32,7 +32,16 @@ export type UiStrings = {
   skipToContent: string;
   nav: { contents: string; glossary: string; index: string; source: string };
   breadcrumb: { home: string; contents: string };
-  picker: { theme: string; locale: string; textSize: string; share: string };
+  picker: {
+    theme: string;
+    locale: string;
+    textSize: string;
+    share: string;
+    /** Accessible names for the header search: button, text field, ⏎ submit. */
+    search: string;
+    searchInput: string;
+    searchSubmit: string;
+  };
   share: {
     emailLink: string;
     shareOnLinkedIn: string;
@@ -71,7 +80,11 @@ const en: UiStrings = {
   skipToContent: 'Skip to main content',
   nav: { contents: 'Contents', glossary: 'Glossary', index: 'Index', source: 'Source' },
   breadcrumb: { home: 'Home', contents: 'Contents' },
-  picker: { theme: 'Theme', locale: 'Language', textSize: 'Text size', share: 'Share' },
+  picker: { theme: 'Theme', locale: 'Language', textSize: 'Text size', share: 'Share',
+    search: 'Search',
+    searchInput: 'Search the guide',
+    searchSubmit: 'Submit search'
+  },
   share: {
     emailLink: 'Email Link',
     shareOnLinkedIn: 'Share on LinkedIn',
@@ -123,7 +136,11 @@ const cyGb: UiStrings = {
   skipToContent: 'Neidio i’r prif gynnwys',
   nav: { contents: 'Cynnwys', glossary: 'Geirfa', index: 'Mynegai', source: 'Ffynhonnell' },
   breadcrumb: { home: 'Hafan', contents: 'Cynnwys' },
-  picker: { theme: 'Thema', locale: 'Iaith', textSize: 'Maint testun', share: 'Rhannu' },
+  picker: { theme: 'Thema', locale: 'Iaith', textSize: 'Maint testun', share: 'Rhannu',
+    search: 'Chwilio',
+    searchInput: 'Chwilio’r canllaw',
+    searchSubmit: 'Cyflwyno’r chwiliad'
+  },
   share: {
     emailLink: 'E-bostio’r Ddolen',
     shareOnLinkedIn: 'Rhannu ar LinkedIn',
@@ -167,7 +184,11 @@ const es001: UiStrings = {
   skipToContent: 'Saltar al contenido principal',
   nav: { contents: 'Contenido', glossary: 'Glosario', index: 'Índice', source: 'Fuente' },
   breadcrumb: { home: 'Inicio', contents: 'Contenido' },
-  picker: { theme: 'Tema', locale: 'Idioma', textSize: 'Tamaño del texto', share: 'Compartir' },
+  picker: { theme: 'Tema', locale: 'Idioma', textSize: 'Tamaño del texto', share: 'Compartir',
+    search: 'Buscar',
+    searchInput: 'Buscar en la guía',
+    searchSubmit: 'Enviar búsqueda'
+  },
   share: {
     emailLink: 'Enviar enlace por correo',
     shareOnLinkedIn: 'Compartir en LinkedIn',
@@ -207,7 +228,11 @@ const fr001: UiStrings = {
   skipToContent: 'Passer au contenu principal',
   nav: { contents: 'Contenu', glossary: 'Glossaire', index: 'Index', source: 'Source' },
   breadcrumb: { home: 'Accueil', contents: 'Contenu' },
-  picker: { theme: 'Thème', locale: 'Langue', textSize: 'Taille du texte', share: 'Partager' },
+  picker: { theme: 'Thème', locale: 'Langue', textSize: 'Taille du texte', share: 'Partager',
+    search: 'Rechercher',
+    searchInput: 'Rechercher dans le guide',
+    searchSubmit: 'Lancer la recherche'
+  },
   share: {
     emailLink: 'Envoyer le lien par courriel',
     shareOnLinkedIn: 'Partager sur LinkedIn',
@@ -247,7 +272,11 @@ const deDe: UiStrings = {
   skipToContent: 'Zum Hauptinhalt springen',
   nav: { contents: 'Inhalt', glossary: 'Glossar', index: 'Index', source: 'Quelle' },
   breadcrumb: { home: 'Start', contents: 'Inhalt' },
-  picker: { theme: 'Thema', locale: 'Sprache', textSize: 'Textgröße', share: 'Teilen' },
+  picker: { theme: 'Thema', locale: 'Sprache', textSize: 'Textgröße', share: 'Teilen',
+    search: 'Suche',
+    searchInput: 'Im Leitfaden suchen',
+    searchSubmit: 'Suche absenden'
+  },
   share: {
     emailLink: 'Link per E-Mail senden',
     shareOnLinkedIn: 'Auf LinkedIn teilen',
@@ -287,7 +316,11 @@ const zhCn: UiStrings = {
   skipToContent: '跳转到主要内容',
   nav: { contents: '目录', glossary: '术语表', index: '索引', source: '源代码' },
   breadcrumb: { home: '首页', contents: '目录' },
-  picker: { theme: '主题', locale: '语言', textSize: '字体大小', share: '分享' },
+  picker: { theme: '主题', locale: '语言', textSize: '字体大小', share: '分享',
+    search: '搜索',
+    searchInput: '在指南中搜索',
+    searchSubmit: '提交搜索'
+  },
   share: {
     emailLink: '通过电子邮件发送链接',
     shareOnLinkedIn: '分享到 LinkedIn',
@@ -326,7 +359,11 @@ const ar001: UiStrings = {
   skipToContent: 'الانتقال إلى المحتوى الرئيسي',
   nav: { contents: 'المحتويات', glossary: 'المسرد', index: 'الفهرس', source: 'المصدر' },
   breadcrumb: { home: 'الرئيسية', contents: 'المحتويات' },
-  picker: { theme: 'السمة', locale: 'اللغة', textSize: 'حجم النص', share: 'مشاركة' },
+  picker: { theme: 'السمة', locale: 'اللغة', textSize: 'حجم النص', share: 'مشاركة',
+    search: 'بحث',
+    searchInput: 'ابحث في الدليل',
+    searchSubmit: 'إرسال البحث'
+  },
   share: {
     emailLink: 'إرسال الرابط بالبريد الإلكتروني',
     shareOnLinkedIn: 'مشاركة على LinkedIn',
@@ -366,7 +403,11 @@ const hiIn: UiStrings = {
   skipToContent: 'मुख्य सामग्री पर जाएँ',
   nav: { contents: 'विषय-सूची', glossary: 'शब्दावली', index: 'अनुक्रमणिका', source: 'स्रोत' },
   breadcrumb: { home: 'मुखपृष्ठ', contents: 'विषय-सूची' },
-  picker: { theme: 'थीम', locale: 'भाषा', textSize: 'पाठ का आकार', share: 'साझा करें' },
+  picker: { theme: 'थीम', locale: 'भाषा', textSize: 'पाठ का आकार', share: 'साझा करें',
+    search: 'खोजें',
+    searchInput: 'मार्गदर्शिका में खोजें',
+    searchSubmit: 'खोज सबमिट करें'
+  },
   share: {
     emailLink: 'ईमेल लिंक',
     shareOnLinkedIn: 'LinkedIn पर साझा करें',
@@ -406,7 +447,11 @@ const jaJp: UiStrings = {
   skipToContent: 'メインコンテンツへスキップ',
   nav: { contents: '目次', glossary: '用語集', index: '索引', source: 'ソース' },
   breadcrumb: { home: 'ホーム', contents: '目次' },
-  picker: { theme: 'テーマ', locale: '言語', textSize: '文字サイズ', share: '共有' },
+  picker: { theme: 'テーマ', locale: '言語', textSize: '文字サイズ', share: '共有',
+    search: '検索',
+    searchInput: 'ガイド内を検索',
+    searchSubmit: '検索を実行'
+  },
   share: {
     emailLink: 'リンクをメールで送る',
     shareOnLinkedIn: 'LinkedInで共有',
@@ -446,7 +491,11 @@ const ruRu: UiStrings = {
   skipToContent: 'Перейти к основному содержимому',
   nav: { contents: 'Содержание', glossary: 'Глоссарий', index: 'Указатель', source: 'Исходный код' },
   breadcrumb: { home: 'Главная', contents: 'Содержание' },
-  picker: { theme: 'Тема', locale: 'Язык', textSize: 'Размер текста', share: 'Поделиться' },
+  picker: { theme: 'Тема', locale: 'Язык', textSize: 'Размер текста', share: 'Поделиться',
+    search: 'Поиск',
+    searchInput: 'Поиск по руководству',
+    searchSubmit: 'Выполнить поиск'
+  },
   share: {
     emailLink: 'Отправить ссылку по почте',
     shareOnLinkedIn: 'Поделиться в LinkedIn',
@@ -486,7 +535,11 @@ const koKr: UiStrings = {
   skipToContent: '본문으로 건너뛰기',
   nav: { contents: '목차', glossary: '용어집', index: '색인', source: '소스' },
   breadcrumb: { home: '홈', contents: '목차' },
-  picker: { theme: '테마', locale: '언어', textSize: '글자 크기', share: '공유' },
+  picker: { theme: '테마', locale: '언어', textSize: '글자 크기', share: '공유',
+    search: '검색',
+    searchInput: '가이드 검색',
+    searchSubmit: '검색 실행'
+  },
   share: {
     emailLink: '링크를 이메일로 보내기',
     shareOnLinkedIn: 'LinkedIn에 공유',
