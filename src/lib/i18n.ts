@@ -65,6 +65,17 @@ export type UiStrings = {
     previous: string;
     next: string;
   };
+  /** The site search: its form on `/`, and the results page at `/?<query>`. */
+  results: {
+    label: string;
+    heading: (query: string) => string;
+    searching: string;
+    none: (query: string) => string;
+    browse: string;
+    failed: string;
+    count: (n: number, more: boolean) => string;
+    button: string;
+  };
   footer: {
     tagline: string;
     sourceAndContributions: string;
@@ -107,6 +118,16 @@ const en: UiStrings = {
     onThisPage: 'On this page',
     previous: 'Previous',
     next: 'Next'
+  },
+  results: {
+    label: 'Search results',
+    heading: (q) => `Search: ${q}`,
+    searching: 'Searching…',
+    none: (q) => `No results for “${q}”.`,
+    browse: 'Browse the contents',
+    failed: 'The search index could not be loaded.',
+    count: (n, more) => `${n}${more ? '+' : ''} result${n === 1 ? '' : 's'}`,
+    button: 'Search'
   },
   footer: {
     tagline:
@@ -164,6 +185,16 @@ const cyGb: UiStrings = {
     previous: 'Blaenorol',
     next: 'Nesaf'
   },
+  results: {
+    label: 'Canlyniadau chwilio',
+    heading: (q) => `Chwilio: ${q}`,
+    searching: 'Yn chwilio…',
+    none: (q) => `Dim canlyniadau ar gyfer “${q}”.`,
+    browse: 'Pori’r cynnwys',
+    failed: 'Nid oedd modd llwytho’r mynegai chwilio.',
+    count: (n, more) => `${n}${more ? '+' : ''} canlyniad`,
+    button: 'Chwilio'
+  },
   footer: {
     tagline:
       'llawlyfr ymarferol o arferion gorau ar gyfer creu gwerth cyhoeddus mewn llywodraeth a’r sector cymdeithasol, byd-eang ei gwmpas.',
@@ -212,6 +243,16 @@ const es001: UiStrings = {
     previous: 'Anterior',
     next: 'Siguiente'
   },
+  results: {
+    label: 'Resultados de búsqueda',
+    heading: (q) => `Búsqueda: ${q}`,
+    searching: 'Buscando…',
+    none: (q) => `Sin resultados para “${q}”.`,
+    browse: 'Explorar el contenido',
+    failed: 'No se pudo cargar el índice de búsqueda.',
+    count: (n, more) => `${n}${more ? '+' : ''} resultado${n === 1 ? '' : 's'}`,
+    button: 'Buscar'
+  },
   footer: {
     tagline:
       'un manual práctico de buenas prácticas para crear valor público en el gobierno y el sector social, de alcance mundial.',
@@ -255,6 +296,16 @@ const fr001: UiStrings = {
     onThisPage: 'Sur cette page',
     previous: 'Précédent',
     next: 'Suivant'
+  },
+  results: {
+    label: 'Résultats de recherche',
+    heading: (q) => `Recherche : ${q}`,
+    searching: 'Recherche en cours…',
+    none: (q) => `Aucun résultat pour « ${q} ».`,
+    browse: 'Parcourir le contenu',
+    failed: 'Impossible de charger l’index de recherche.',
+    count: (n, more) => `${n}${more ? '+' : ''} résultat${n === 1 ? '' : 's'}`,
+    button: 'Rechercher'
   },
   footer: {
     tagline:
@@ -300,6 +351,16 @@ const deDe: UiStrings = {
     previous: 'Zurück',
     next: 'Weiter'
   },
+  results: {
+    label: 'Suchergebnisse',
+    heading: (q) => `Suche: ${q}`,
+    searching: 'Suche läuft…',
+    none: (q) => `Keine Ergebnisse für „${q}“.`,
+    browse: 'Zum Inhaltsverzeichnis',
+    failed: 'Der Suchindex konnte nicht geladen werden.',
+    count: (n, more) => `${n}${more ? '+' : ''} Ergebnis${n === 1 ? '' : 'se'}`,
+    button: 'Suchen'
+  },
   footer: {
     tagline:
       'ein praktischer Leitfaden bewährter Praktiken zur Schaffung öffentlichen Wertes in Regierung und sozialem Sektor, weltweit angelegt.',
@@ -344,6 +405,16 @@ const zhCn: UiStrings = {
     previous: '上一章',
     next: '下一章'
   },
+  results: {
+    label: '搜索结果',
+    heading: (q) => `搜索:${q}`,
+    searching: '正在搜索…',
+    none: (q) => `没有找到“${q}”的结果。`,
+    browse: '浏览目录',
+    failed: '无法加载搜索索引。',
+    count: (n, more) => `${n}${more ? '+' : ''} 条结果`,
+    button: '搜索'
+  },
   footer: {
     tagline: '一部面向全球的、关于在政府与社会部门中创造公共价值的最佳实践实用手册。',
     sourceAndContributions: '源代码与贡献:',
@@ -386,6 +457,16 @@ const ar001: UiStrings = {
     onThisPage: 'في هذه الصفحة',
     previous: 'السابق',
     next: 'التالي'
+  },
+  results: {
+    label: 'نتائج البحث',
+    heading: (q) => `بحث: ${q}`,
+    searching: 'جارٍ البحث…',
+    none: (q) => `لا توجد نتائج لـ «${q}».`,
+    browse: 'تصفّح المحتويات',
+    failed: 'تعذّر تحميل فهرس البحث.',
+    count: (n, more) => `${n}${more ? '+' : ''} نتيجة`,
+    button: 'بحث'
   },
   footer: {
     tagline:
@@ -431,6 +512,16 @@ const hiIn: UiStrings = {
     previous: 'पिछला',
     next: 'अगला'
   },
+  results: {
+    label: 'खोज परिणाम',
+    heading: (q) => `खोज: ${q}`,
+    searching: 'खोज रहे हैं…',
+    none: (q) => `“${q}” के लिए कोई परिणाम नहीं मिला।`,
+    browse: 'विषय-सूची देखें',
+    failed: 'खोज सूचकांक लोड नहीं हो सका।',
+    count: (n, more) => `${n}${more ? '+' : ''} परिणाम`,
+    button: 'खोजें'
+  },
   footer: {
     tagline:
       'सरकार और सामाजिक क्षेत्र में लोक मूल्य बनाने के लिए श्रेष्ठ व्यवहारों की एक व्यावहारिक पुस्तिका, विश्वव्यापी दायरे में।',
@@ -474,6 +565,16 @@ const jaJp: UiStrings = {
     onThisPage: 'このページの内容',
     previous: '前へ',
     next: '次へ'
+  },
+  results: {
+    label: '検索結果',
+    heading: (q) => `検索: ${q}`,
+    searching: '検索中…',
+    none: (q) => `「${q}」の結果はありません。`,
+    browse: '目次を見る',
+    failed: '検索インデックスを読み込めませんでした。',
+    count: (n, more) => `${n}${more ? '+' : ''}件の結果`,
+    button: '検索'
   },
   footer: {
     tagline:
@@ -519,6 +620,16 @@ const ruRu: UiStrings = {
     previous: 'Назад',
     next: 'Далее'
   },
+  results: {
+    label: 'Результаты поиска',
+    heading: (q) => `Поиск: ${q}`,
+    searching: 'Идёт поиск…',
+    none: (q) => `По запросу «${q}» ничего не найдено.`,
+    browse: 'Открыть содержание',
+    failed: 'Не удалось загрузить поисковый индекс.',
+    count: (n, more) => `${n}${more ? '+' : ''} ${n % 10 === 1 && n % 100 !== 11 ? 'результат' : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 'результата' : 'результатов'}`,
+    button: 'Найти'
+  },
   footer: {
     tagline:
       'практическое руководство по лучшим практикам создания общественной ценности в государственном и социальном секторах, мировое по охвату.',
@@ -562,6 +673,16 @@ const koKr: UiStrings = {
     onThisPage: '이 페이지의 내용',
     previous: '이전',
     next: '다음'
+  },
+  results: {
+    label: '검색 결과',
+    heading: (q) => `검색: ${q}`,
+    searching: '검색 중…',
+    none: (q) => `“${q}”에 대한 결과가 없다.`,
+    browse: '목차 보기',
+    failed: '검색 색인을 불러오지 못했다.',
+    count: (n, more) => `결과 ${n}${more ? '+' : ''}건`,
+    button: '검색'
   },
   footer: {
     tagline: '정부와 사회 부문에서 공공가치를 창출하기 위한 모범 사례를 담은 실용 안내서이며, 범위는 전 세계이다.',

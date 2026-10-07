@@ -1,10 +1,10 @@
 // Builds build/search-index.json from the generated HTML. See spec/search/index.md.
-import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, sep } from 'node:path';
 
 const BUILD = process.argv[2] ?? 'build';
 const MAX_TEXT = 20000;
-const DEFAULTS = ['en-gb', 'en-001', 'en-us', 'en'];
+const DEFAULTS = ['en-gb-oxendict', 'en-gb', 'en-001', 'en-us'];
 const LOCALE = /^[a-z]{2,3}(-[a-z0-9]{2,8})*$/i;
 
 function walk(dir, out = []) {
@@ -61,15 +61,27 @@ for (const file of walk(BUILD)) {
 	pages.push({ url, locale: localeOf(url), title, headings, text: strip(main).slice(0, MAX_TEXT) });
 }
 
-const locales = new Set(pages.map((p) => p.locale).filter(Boolean));
-// argv[3]: a locale slug to index, or 'none' when the unprefixed pages are the default locale.
+const locales = [...new Set(pages.map((p) => p.locale).filter(Boolean))].sort();
+// argv[3]: the locale whose index is also written to the legacy /search-index.json,
+// or 'none'. Defaults to the first present of DEFAULTS.
 const defaultLocale =
-	process.argv[3] === 'none' ? null : (process.argv[3] ?? DEFAULTS.find((l) => locales.has(l)) ?? null);
-const entries = pages
-	.filter((p) => !p.locale || p.locale === defaultLocale)
-	.map((p) => ({ u: p.url, t: p.title, h: p.headings.join(' | '), x: p.text }))
-	.filter((e) => e.t || e.x)
-	.sort((a, b) => (a.u < b.u ? -1 : 1));
+	process.argv[3] === 'none' ? null : (process.argv[3] ?? DEFAULTS.find((l) => locales.includes(l)) ?? null);
 
-writeFileSync(join(BUILD, 'search-index.json'), JSON.stringify(entries));
-console.log(`search index: ${entries.length} pages (default locale: ${defaultLocale ?? 'none'}), ${locales.size} locales skipped/merged`);
+// One index per locale at /search-index/<locale>.json. Unprefixed pages (the
+// glossary and the index) are English, so only English locales include them.
+const entriesFor = (locale) =>
+	pages
+		.filter((p) => (p.locale ? p.locale === locale : /^en(-|$)/.test(locale)))
+		.map((p) => ({ u: p.url, t: p.title, h: p.headings.join(' | '), x: p.text }))
+		.filter((e) => e.t || e.x)
+		.sort((a, b) => (a.u < b.u ? -1 : 1));
+
+mkdirSync(join(BUILD, 'search-index'), { recursive: true });
+let total = 0;
+for (const locale of locales) {
+	const entries = entriesFor(locale);
+	total += entries.length;
+	writeFileSync(join(BUILD, 'search-index', `${locale}.json`), JSON.stringify(entries));
+}
+if (defaultLocale) writeFileSync(join(BUILD, 'search-index.json'), JSON.stringify(entriesFor(defaultLocale)));
+console.log(`search index: ${locales.length} locale indexes, ${total} entries (default locale: ${defaultLocale ?? 'none'})`);

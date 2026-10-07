@@ -200,7 +200,7 @@
   </GrailLayoutTopHeader>
 
   <GrailLayoutCenterMain class="site-main" id="main">
-    <SearchGate {children} />
+    <SearchGate {children} locale={chromeLocale ?? DEFAULT_LOCALE} strings={t.results} />
   </GrailLayoutCenterMain>
 
   <GrailLayoutBottomFooter class="site-footer">

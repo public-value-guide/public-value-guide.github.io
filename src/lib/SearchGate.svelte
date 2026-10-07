@@ -2,17 +2,43 @@
 	import { page } from '$app/state';
 	import { goto } from '$app/navigation';
 	import { targetFromSearch, search, type IndexEntry, type SearchResult } from '#lib/search.js';
+	import { DEFAULT_LOCALE } from '#lib/book.js';
+	import type { UiStrings } from '#lib/i18n.js';
 	import type { Snippet } from 'svelte';
 
-	let { children }: { children?: Snippet } = $props();
+	/** `locale` picks the search index and `strings` the wording; both follow the reader's locale. */
+	let {
+		children,
+		locale,
+		strings
+	}: { children?: Snippet; locale: string; strings: UiStrings['results'] } = $props();
 
 	let target = $state('');
 	let input = $state('');
 	let results = $state<SearchResult[] | null>(null);
 	let failed = $state(false);
-	let indexPromise: Promise<IndexEntry[]> | null = null;
+	const indexes = new Map<string, Promise<IndexEntry[]>>();
 
 	const onHome = $derived(page.url.pathname === '/');
+
+	/** One index per locale, fetched once; a locale with no index falls back to the default locale's. */
+	function indexFor(code: string): Promise<IndexEntry[]> {
+		let loading = indexes.get(code);
+		if (!loading) {
+			loading = fetch(`/search-index/${code}.json`)
+				.then((r) => {
+					if (!r.ok) throw new Error(String(r.status));
+					return r.json() as Promise<IndexEntry[]>;
+				})
+				.catch((error) => {
+					indexes.delete(code);
+					if (code === DEFAULT_LOCALE) throw error;
+					return indexFor(DEFAULT_LOCALE);
+				});
+			indexes.set(code, loading);
+		}
+		return loading;
+	}
 
 	// Client-only: the home page is prerendered, so the query is read here.
 	$effect(() => {
@@ -22,21 +48,17 @@
 
 	$effect(() => {
 		const q = target;
+		const code = locale;
 		if (!q) {
 			results = null;
 			return;
 		}
 		failed = false;
-		indexPromise ??= fetch('/search-index.json').then((r) => {
-			if (!r.ok) throw new Error(String(r.status));
-			return r.json() as Promise<IndexEntry[]>;
-		});
-		indexPromise.then(
+		indexFor(code).then(
 			(index) => {
-				if (q === target) results = search(index, q);
+				if (q === target && code === locale) results = search(index, q);
 			},
 			() => {
-				indexPromise = null;
 				failed = true;
 			}
 		);
@@ -51,23 +73,23 @@
 
 {#if onHome}
 	<form class="site-search" role="search" onsubmit={submit}>
-		<label for="site-search-input">Search</label>
+		<label for="site-search-input">{strings.button}</label>
 		<input id="site-search-input" type="search" bind:value={input} autocomplete="off" />
-		<button type="submit">Search</button>
+		<button type="submit">{strings.button}</button>
 	</form>
 {/if}
 
 {#if target}
-	<section class="site-search-results" aria-live="polite" aria-label="Search results">
-		<h1>Search: {target}</h1>
+	<section class="site-search-results" aria-live="polite" aria-label={strings.label}>
+		<h1>{strings.heading(target)}</h1>
 		{#if failed}
-			<p>The search index could not be loaded.</p>
+			<p>{strings.failed}</p>
 		{:else if results === null}
-			<p>Searching…</p>
+			<p>{strings.searching}</p>
 		{:else if results.length === 0}
-			<p>No results for “{target}”. <a href="/">Back to the home page</a></p>
+			<p>{strings.none(target)} <a href={`/${locale}/contents/`}>{strings.browse}</a></p>
 		{:else}
-			<p>{results.length}{results.length === 50 ? '+' : ''} result{results.length === 1 ? '' : 's'}</p>
+			<p>{strings.count(results.length, results.length === 50)}</p>
 			<ol>
 				{#each results as r (r.url)}
 					<li>
@@ -82,4 +104,3 @@
 {:else}
 	{@render children?.()}
 {/if}
-
