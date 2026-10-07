@@ -89,30 +89,6 @@ export function isLocale(value: string): boolean {
 }
 
 /**
- * Two-letter route aliases for each language's World (`-001`) locale, e.g.
- * `en` → `en-001`, so `/en/` serves the same content as `/en-001/`. Derived
- * from `LOCALES`, so a new `xx-001` locale gets its `/xx/` alias for free.
- */
-export const LOCALE_ALIASES: Record<string, string> = Object.fromEntries(
-  LOCALE_SLUGS.filter((slug) => slug.endsWith('-001')).map((slug) => [slug.split('-')[0], slug])
-);
-
-/** Every locale route segment to prerender: the real slugs plus the aliases. */
-export const ROUTE_LOCALES: string[] = [...LOCALE_SLUGS, ...Object.keys(LOCALE_ALIASES)];
-
-/** Is `value` a known locale slug or a two-letter alias for one? */
-export function isLocaleOrAlias(value: string): boolean {
-  return isLocale(value) || Object.hasOwn(LOCALE_ALIASES, value);
-}
-
-/** The real locale slug behind a route segment: an alias resolves, anything else passes through. */
-export function resolveLocale(value: string): string;
-export function resolveLocale(value: string | undefined): string | undefined;
-export function resolveLocale(value: string | undefined): string | undefined {
-  return value !== undefined && Object.hasOwn(LOCALE_ALIASES, value) ? LOCALE_ALIASES[value] : value;
-}
-
-/**
  * The locale route that best matches a browser language tag, or `undefined`
  * when the book has nothing for that language.
  *
@@ -133,7 +109,7 @@ export function localeForLanguageTag(tag: string): string | undefined {
   const [language, region] = parts;
   if (!language) return undefined;
   if (region && isLocale(`${language}-${region}`)) return `${language}-${region}`;
-  if (Object.hasOwn(LOCALE_ALIASES, language)) return LOCALE_ALIASES[language];
+  if (isLocale(`${language}-001`)) return `${language}-001`;
   return LOCALE_SLUGS.find((slug) => slug.startsWith(`${language}-`));
 }
 
@@ -459,7 +435,7 @@ PART_TRANSLATIONS['cy-001'] = PART_TRANSLATIONS['cy-gb'];
 
 /** `PARTS`, translated for `locale` where a translation exists, English otherwise. */
 export function partsFor(locale: string): Part[] {
-  const translation = PART_TRANSLATIONS[resolveLocale(locale)];
+  const translation = PART_TRANSLATIONS[locale];
   if (!translation) return PARTS;
   return PARTS.map((part) => ({ ...part, ...(translation[part.number] ?? {}) }));
 }

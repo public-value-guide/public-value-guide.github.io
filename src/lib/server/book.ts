@@ -6,7 +6,7 @@
 // each page ships only its own rendered HTML.
 
 import { parse, type Document, type Heading } from '#lib/markdown.js';
-import { PARTS, LOCALE_SLUGS, ROUTE_LOCALES, resolveLocale, type TopicRef } from '#lib/book.js';
+import { PARTS, LOCALE_SLUGS, type TopicRef } from '#lib/book.js';
 
 /**
  * Raw markdown for every topic, keyed by module path, e.g.
@@ -169,9 +169,7 @@ export function topic(
 
 /** `{ locale, slug }` for every topic in every locale, for prerender entry generation. */
 export function localeTopicEntries(): Array<{ locale: string; slug: string }> {
-  return ROUTE_LOCALES.flatMap((locale) =>
-    slugs(resolveLocale(locale)).map((slug) => ({ locale, slug }))
-  );
+  return LOCALE_SLUGS.flatMap((locale) => slugs(locale).map((slug) => ({ locale, slug })));
 }
 
 /** Every topic slug for one locale, for prerender entry generation. */

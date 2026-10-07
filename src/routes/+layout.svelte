@@ -10,7 +10,7 @@
     GrailLayoutBottomFooter
   } from '@lilydesignsystem/svelte-headless';
   import PickerBar, { DEFAULT_THEMES } from '@lilydesignsystem/svelte-picker-bar';
-  import { SOURCE_REPO, LOCALES, LOCALE_SLUGS, DEFAULT_LOCALE, resolveLocale } from '#lib/book.js';
+  import { SOURCE_REPO, LOCALES, LOCALE_SLUGS, DEFAULT_LOCALE } from '#lib/book.js';
   import { ui } from '#lib/i18n.js';
 
   /**
@@ -39,10 +39,7 @@
   // (home, glossary, index). The header chrome (nav, picker, footer) reads
   // this locale's own strings; locale-neutral pages fall back to English,
   // `ui()`'s default when passed `undefined`.
-  // `routeLocale` is the URL segment (possibly a two-letter alias like `en`);
-  // `currentLocale` is the real locale behind it, for the picker and strings.
-  const routeLocale = $derived(page.params.locale);
-  const currentLocale = $derived(resolveLocale(routeLocale));
+    const currentLocale = $derived(page.params.locale);
   // On locale-neutral pages (home, glossary, index) the URL names no locale, so
   // the picker shows the reader's saved or detected one. The chrome must follow
   // that same locale, or the picker would say German over English navigation.
@@ -86,8 +83,7 @@
       readyToNavigate = true;
       return;
     }
-    // Already showing this locale — possibly through its two-letter alias
-    // (`/en/` is `/en-001/`) — so there is nowhere to go.
+    // Already showing this locale, so there is nowhere to go.
     if (newLocale === currentLocale) return;
     const target = targetPathForLocale(newLocale);
     if (target !== page.url.pathname) goto(target);
@@ -96,7 +92,7 @@
   // "Contents" follows whichever locale is currently showing, falling back
   // to the house-style default on locale-neutral pages.
   const siteLinks = $derived([
-    { href: `/${routeLocale ?? pickerLocale ?? DEFAULT_LOCALE}/contents/`, label: t.nav.contents },
+    { href: `/${currentLocale ?? pickerLocale ?? DEFAULT_LOCALE}/contents/`, label: t.nav.contents },
     { href: '/glossary/', label: t.nav.glossary },
     { href: '/index/', label: t.nav.index }
   ]);
