@@ -113,16 +113,15 @@ export function resolveLocale(value: string | undefined): string | undefined {
 }
 
 /**
- * The locale route segment that best matches a browser language tag, or
- * `undefined` when the book has nothing for that language.
+ * The locale route that best matches a browser language tag, or `undefined`
+ * when the book has nothing for that language.
  *
  * Tags are BCP 47 as browsers report them (`cy-GB`, `zh-Hans-CN`, `en_AU`):
  * case and `_` are normalized and a script subtag is dropped. An exact slug
  * wins (`cy-GB` -> `cy-gb`, `en-GB` -> `en-gb`). Otherwise the language's
- * two-letter route, which serves its World (`-001`) locale, is the superset
- * route (`en-AU` -> `en`, i.e. `/en/`, the same content as `/en-001/`;
- * `fr-CA` -> `fr`). With no World locale, the first locale in that language
- * stands in (`de-AT` -> `de-de`).
+ * international World locale is used (`en-AU` -> `en-001`, `fr-CA` ->
+ * `fr-001`). With no World locale, the first locale in that language stands
+ * in (`de-AT` -> `de-de`).
  */
 export function localeForLanguageTag(tag: string): string | undefined {
   const parts = tag
@@ -134,7 +133,7 @@ export function localeForLanguageTag(tag: string): string | undefined {
   const [language, region] = parts;
   if (!language) return undefined;
   if (region && isLocale(`${language}-${region}`)) return `${language}-${region}`;
-  if (Object.hasOwn(LOCALE_ALIASES, language)) return language;
+  if (Object.hasOwn(LOCALE_ALIASES, language)) return LOCALE_ALIASES[language];
   return LOCALE_SLUGS.find((slug) => slug.startsWith(`${language}-`));
 }
 
