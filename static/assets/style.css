@@ -846,6 +846,32 @@ body {
     }
 }
 
+/* On a phone the search field opens over the row of picker buttons instead of
+   hanging below the header. Hung below, a 278px popup straddled the header's
+   bottom edge and covered the start of the content. Over its own row it stays
+   inside the header, and the other pickers are hidden only while searching.
+   The theme positions the panel with anchor positioning inside `:where()`,
+   which has no specificity, so these class selectors override it. */
+@media (max-width: 40rem) {
+    .site-controls {
+        position: relative;
+        width: 100%;
+    }
+
+    .site-controls .search-picker {
+        position: static;
+    }
+
+    .site-controls .search-picker-panel {
+        position: absolute;
+        inset: 0 0 auto 0;
+        position-area: none;
+        width: auto;
+        max-width: none;
+        margin: 0;
+    }
+}
+
 @media (max-width: 40rem) {
     .page-pagination .pagination-list {
         grid-template-columns: minmax(0, 1fr);
