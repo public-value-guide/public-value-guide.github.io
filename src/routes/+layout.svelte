@@ -86,6 +86,9 @@
       readyToNavigate = true;
       return;
     }
+    // Already showing this locale — possibly through its two-letter alias
+    // (`/en/` is `/en-001/`) — so there is nowhere to go.
+    if (newLocale === currentLocale) return;
     const target = targetPathForLocale(newLocale);
     if (target !== page.url.pathname) goto(target);
   }
