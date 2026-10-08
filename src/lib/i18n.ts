@@ -65,6 +65,8 @@ export type UiStrings = {
     previous: string;
     next: string;
   };
+  /** The header's link picker (home icon): its accessible name and the project links it lists. */
+  links: { label: string; skills: string; llms: string; issues: string };
   /** The site search: its form on `/`, and the results page at `/?<query>`. */
   results: {
     label: string;
@@ -119,6 +121,7 @@ const en: UiStrings = {
     previous: 'Previous',
     next: 'Next'
   },
+  links: { label: 'Links', skills: 'AI skills', llms: 'For AI agents (llms.txt)', issues: 'Report an issue' },
   results: {
     label: 'Search results',
     heading: (q) => `Search: ${q}`,
@@ -185,6 +188,7 @@ const cyGb: UiStrings = {
     previous: 'Blaenorol',
     next: 'Nesaf'
   },
+  links: { label: 'Dolenni', skills: 'Sgiliau AI', llms: 'I asiantau AI (llms.txt)', issues: 'Adrodd ar broblem' },
   results: {
     label: 'Canlyniadau chwilio',
     heading: (q) => `Chwilio: ${q}`,
@@ -243,6 +247,7 @@ const es001: UiStrings = {
     previous: 'Anterior',
     next: 'Siguiente'
   },
+  links: { label: 'Enlaces', skills: 'Habilidades de IA', llms: 'Para agentes de IA (llms.txt)', issues: 'Informar de un problema' },
   results: {
     label: 'Resultados de búsqueda',
     heading: (q) => `Búsqueda: ${q}`,
@@ -297,6 +302,7 @@ const fr001: UiStrings = {
     previous: 'Précédent',
     next: 'Suivant'
   },
+  links: { label: 'Liens', skills: 'Compétences IA', llms: 'Pour les agents IA (llms.txt)', issues: 'Signaler un problème' },
   results: {
     label: 'Résultats de recherche',
     heading: (q) => `Recherche : ${q}`,
@@ -351,6 +357,7 @@ const deDe: UiStrings = {
     previous: 'Zurück',
     next: 'Weiter'
   },
+  links: { label: 'Links', skills: 'KI-Skills', llms: 'Für KI-Agenten (llms.txt)', issues: 'Problem melden' },
   results: {
     label: 'Suchergebnisse',
     heading: (q) => `Suche: ${q}`,
@@ -405,6 +412,7 @@ const zhCn: UiStrings = {
     previous: '上一章',
     next: '下一章'
   },
+  links: { label: '链接', skills: 'AI 技能', llms: '面向 AI 代理(llms.txt)', issues: '报告问题' },
   results: {
     label: '搜索结果',
     heading: (q) => `搜索:${q}`,
@@ -458,6 +466,7 @@ const ar001: UiStrings = {
     previous: 'السابق',
     next: 'التالي'
   },
+  links: { label: 'روابط', skills: 'مهارات الذكاء الاصطناعي', llms: 'لوكلاء الذكاء الاصطناعي (llms.txt)', issues: 'الإبلاغ عن مشكلة' },
   results: {
     label: 'نتائج البحث',
     heading: (q) => `بحث: ${q}`,
@@ -512,6 +521,7 @@ const hiIn: UiStrings = {
     previous: 'पिछला',
     next: 'अगला'
   },
+  links: { label: 'लिंक', skills: 'एआई कौशल', llms: 'एआई एजेंटों के लिए (llms.txt)', issues: 'समस्या की रिपोर्ट करें' },
   results: {
     label: 'खोज परिणाम',
     heading: (q) => `खोज: ${q}`,
@@ -566,6 +576,7 @@ const jaJp: UiStrings = {
     previous: '前へ',
     next: '次へ'
   },
+  links: { label: 'リンク', skills: 'AIスキル', llms: 'AIエージェント向け(llms.txt)', issues: '問題を報告' },
   results: {
     label: '検索結果',
     heading: (q) => `検索: ${q}`,
@@ -620,6 +631,7 @@ const ruRu: UiStrings = {
     previous: 'Назад',
     next: 'Далее'
   },
+  links: { label: 'Ссылки', skills: 'Навыки ИИ', llms: 'Для ИИ-агентов (llms.txt)', issues: 'Сообщить о проблеме' },
   results: {
     label: 'Результаты поиска',
     heading: (q) => `Поиск: ${q}`,
@@ -674,6 +686,7 @@ const koKr: UiStrings = {
     previous: '이전',
     next: '다음'
   },
+  links: { label: '링크', skills: 'AI 스킬', llms: 'AI 에이전트용(llms.txt)', issues: '문제 신고' },
   results: {
     label: '검색 결과',
     heading: (q) => `검색: ${q}`,

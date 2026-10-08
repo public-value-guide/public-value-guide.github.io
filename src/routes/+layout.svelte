@@ -10,7 +10,7 @@
     GrailLayoutBottomFooter
   } from '@lilydesignsystem/svelte-headless';
   import PickerBar, { DEFAULT_THEMES } from '@lilydesignsystem/svelte-picker-bar';
-  import { SOURCE_REPO, LOCALES, LOCALE_SLUGS, DEFAULT_LOCALE } from '#lib/book.js';
+  import { SOURCE_REPO, SKILLS_REPO, LOCALES, LOCALE_SLUGS, DEFAULT_LOCALE } from '#lib/book.js';
   import { ui } from '#lib/i18n.js';
 
   /**
@@ -138,6 +138,28 @@
     }
   ]);
 
+  /**
+   * The link picker's list: the site's own pages (navigated in-app) and the
+   * project's places elsewhere (new tab). Labels are in the reader's locale;
+   * GitHub, Codeberg, GitLab and Lily are names, not words.
+   */
+  const projectLinks = $derived([
+    {
+      label: t.nav.contents,
+      href: `/${currentLocale ?? pickerLocale ?? DEFAULT_LOCALE}/contents/`,
+      current: page.url.pathname.endsWith('/contents/')
+    },
+    { label: t.nav.glossary, href: '/glossary/', current: page.url.pathname === '/glossary/' },
+    { label: t.nav.index, href: '/index/', current: page.url.pathname === '/index/' },
+    { label: t.links.llms, href: '/llms.txt', newTab: true },
+    { label: `${t.nav.source} — GitHub`, href: SOURCE_REPO, newTab: true },
+    { label: `${t.nav.source} — Codeberg`, href: 'https://codeberg.org/public-value-guide/public-value-guide', newTab: true },
+    { label: `${t.nav.source} — GitLab`, href: 'https://gitlab.com/public-value-guide/public-value-guide', newTab: true },
+    { label: t.links.skills, href: SKILLS_REPO, newTab: true },
+    { label: t.links.issues, href: `${SOURCE_REPO}/issues`, newTab: true },
+    { label: 'Lily Design System', href: 'https://github.com/LilyDesignSystem', newTab: true }
+  ]);
+
   /** Keep the header search in-app: `/?query` is the site's own search route. */
   function searchNavigate(href: string) {
     goto(href);
@@ -169,10 +191,13 @@
         locale: t.picker.locale,
         textSize: t.picker.textSize,
         share: t.picker.share,
+        link: t.links.label,
         search: t.picker.search,
         searchInput: t.picker.searchInput,
         searchSubmit: t.picker.searchSubmit
       }}
+      links={projectLinks}
+      linkProps={{ navigate: searchNavigate }}
       searchProps={{ navigate: searchNavigate }}
       themesUrl="/assets/themes/"
       themes={GENERIC_THEMES}
