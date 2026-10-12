@@ -52,13 +52,26 @@ mkdir -p "$destination/locales"
 total=0
 for locale_path in "$locales_dir"/*/; do
     slug=$(basename "$locale_path")
-    if [ ! -d "${locale_path}topics" ]; then
+    # A non-English locale translates the name of its topics directory (`temas/`,
+    # `主题/`, `トピック/`…). It is the subdirectory whose children carry a
+    # `.locale-peer-id`; it is vendored back under the fixed name `topics/` so the
+    # site's routes and content glob stay locale-agnostic.
+    topics_dir=""
+    for d in "$locale_path"*/; do
+        for c in "$d"*/; do
+            if [ -f "${c}.locale-peer-id" ]; then
+                topics_dir=${d%/}
+                break 2
+            fi
+        done
+    done
+    if [ -z "$topics_dir" ]; then
         continue
     fi
     # Skip a locale that has been scaffolded (directories exist) but has no
     # topic content synced upstream yet, so an empty locale never appears to
     # exist on the site.
-    if ! find "${locale_path}topics" -mindepth 2 -maxdepth 2 -name index.md -size +0c | grep -q .; then
+    if ! find "$topics_dir" -mindepth 2 -maxdepth 2 -name index.md -size +0c | grep -q .; then
         echo "Skipping locale $slug: no non-empty topics yet"
         continue
     fi
@@ -68,7 +81,7 @@ for locale_path in "$locales_dir"/*/; do
     # index.md into one shared file); without one, cp preserves each topic
     # directory as its own named subdirectory of the destination, which is
     # what the site's glob (topics/*/index.md) expects.
-    cp -R "${locale_path}topics/"* "$destination/locales/$slug/topics/"
+    cp -R "$topics_dir/"* "$destination/locales/$slug/topics/"
     count=$(find "$destination/locales/$slug/topics" -name index.md -size +0c | wc -l | tr -d ' ')
     total=$((total + count))
     echo "Synced $count topics for locale $slug"

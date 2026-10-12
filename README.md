@@ -2,7 +2,7 @@
 
 The public website for the [Public Value Guide](https://github.com/public-value-guide/public-value-guide) at <https://public-value-guide.github.io>.
 
-The book itself — 33 topics plus a preface, a glossary, and an index — lives in the source repository, written across fifteen locales (`en-gb-oxendict`, `en-gb`, `en-us`, `en-001`, `cy-gb`, `cy-001`, `es-001`, `fr-001`, `de-de`, `zh-cn`, `ar-001`, `hi-in`, `ja-jp`, `ru-ru`, `ko-kr` — see `spec/index.md` §4a upstream). This repository turns that markdown into a reading site. Only locales with synced topic content appear on the live site; see `src/lib/book.ts`'s `LOCALES`.
+The book itself — 33 topics plus a preface, a glossary, and an index — lives in the source repository, written across twenty-one locales (`en-gb-oxendict`, `en-gb`, `en-us`, `en-001`, `cy-gb`, `cy-001`, `es-001`, `fr-001`, `de-de`, `zh-cn`, `ar-001`, `hi-in`, `ja-jp`, `ru-ru`, `ko-kr`, `zh-001`, `hi-001`, `ja-001`, `ko-001`, `id-001`, `bn-001` — see `spec/index.md` §4a upstream). This repository turns that markdown into a reading site. Only locales with synced topic content appear on the live site; see `src/lib/book.ts`'s `LOCALES`.
 
 ## What's here
 

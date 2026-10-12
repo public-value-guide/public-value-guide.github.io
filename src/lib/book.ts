@@ -62,7 +62,13 @@ export const LOCALES: Locale[] = [
   { slug: 'hi-in', label: 'हिन्दी - भारत' },
   { slug: 'ja-jp', label: '日本語 - 日本' },
   { slug: 'ru-ru', label: 'Русский - Россия' },
-  { slug: 'ko-kr', label: '한국어 - 대한민국' }
+  { slug: 'ko-kr', label: '한국어 - 대한민국' },
+  { slug: 'zh-001', label: '中文 - 简体' },
+  { slug: 'hi-001', label: 'हिन्दी' },
+  { slug: 'ja-001', label: '日本語' },
+  { slug: 'ko-001', label: '한국어' },
+  { slug: 'id-001', label: 'Bahasa Indonesia' },
+  { slug: 'bn-001', label: 'বাংলা' }
 ];
 
 /**
@@ -429,9 +435,63 @@ const PART_TRANSLATIONS: Record<string, Record<number, { title: string; tagline:
       title: '디지털, 소프트웨어, 기술',
       tagline: '기술의 공공가치: 디지털 정부, 인공지능, 소프트웨어, 데이터, 사이버 보안'
     }
+  },
+  'id-001': {
+    1: {
+      title: 'Fondasi',
+      tagline:
+        'mengapa nilai publik berbeda dari nilai pasar atau mandat demokratis semata, dan model-model yang menjelaskannya'
+    },
+    2: {
+      title: 'Evaluasi dan Bukti',
+      tagline: 'perangkat analis: menilai hasil, membangun argumen, menguji klaim'
+    },
+    3: {
+      title: 'Sistem, Tata Kelola, dan Prioritas',
+      tagline:
+        'bagaimana organisasi sektor publik dan sektor sosial distrukturkan, didanai, dan dimintai pertanggungjawaban'
+    },
+    4: {
+      title: 'Isu Global dan Kemasyarakatan',
+      tagline: 'nilai publik di luar satu lembaga: perilaku, kepercayaan, planet, dan percakapan publik'
+    },
+    5: {
+      title: 'Digital, Perangkat Lunak, dan Teknologi',
+      tagline:
+        'nilai publik teknologi: pemerintahan digital, kecerdasan buatan, perangkat lunak, data, dan keamanan siber'
+    }
+  },
+  'bn-001': {
+    1: {
+      title: 'ভিত্তি',
+      tagline:
+        'জনমূল্য কেন কেবল বাজারমূল্য বা গণতান্ত্রিক ম্যান্ডেট থেকে আলাদা, এবং যে মডেলগুলো তা ব্যাখ্যা করে'
+    },
+    2: {
+      title: 'মূল্যায়ন ও প্রমাণ',
+      tagline: 'বিশ্লেষকের সরঞ্জাম: ফলাফলের মূল্য নির্ধারণ, যুক্তি গঠন, দাবি যাচাই'
+    },
+    3: {
+      title: 'ব্যবস্থা, শাসন ও অগ্রাধিকার',
+      tagline:
+        'সরকারি ও সামাজিক খাতের প্রতিষ্ঠান কীভাবে কাঠামোবদ্ধ, অর্থায়িত এবং জবাবদিহির আওতাভুক্ত'
+    },
+    4: {
+      title: 'বৈশ্বিক ও সামাজিক বিষয়',
+      tagline: 'একটি প্রতিষ্ঠানের বাইরে জনমূল্য: আচরণ, আস্থা, পৃথিবী ও জনসংলাপ'
+    },
+    5: {
+      title: 'ডিজিটাল, সফটওয়্যার ও প্রযুক্তি',
+      tagline:
+        'প্রযুক্তির জনমূল্য: ডিজিটাল সরকার, কৃত্রিম বুদ্ধিমত্তা, সফটওয়্যার, উপাত্ত ও সাইবার নিরাপত্তা'
+    }
   }
 };
 PART_TRANSLATIONS['cy-001'] = PART_TRANSLATIONS['cy-gb'];
+PART_TRANSLATIONS['zh-001'] = PART_TRANSLATIONS['zh-cn'];
+PART_TRANSLATIONS['hi-001'] = PART_TRANSLATIONS['hi-in'];
+PART_TRANSLATIONS['ja-001'] = PART_TRANSLATIONS['ja-jp'];
+PART_TRANSLATIONS['ko-001'] = PART_TRANSLATIONS['ko-kr'];
 
 /** `PARTS`, translated for `locale` where a translation exists, English otherwise. */
 export function partsFor(locale: string): Part[] {

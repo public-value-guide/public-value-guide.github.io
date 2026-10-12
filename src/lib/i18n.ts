@@ -705,6 +705,123 @@ const koKr: UiStrings = {
   }
 };
 
+const id001: UiStrings = {
+  siteTitle: 'Panduan Nilai Publik',
+  skipToContent: 'Lompat ke konten utama',
+  nav: { contents: 'Daftar Isi', glossary: 'Glosarium', index: 'Indeks', source: 'Sumber' },
+  breadcrumb: { home: 'Beranda', contents: 'Daftar Isi' },
+  picker: { theme: 'Tema', locale: 'Bahasa', textSize: 'Ukuran teks', share: 'Bagikan',
+    search: 'Cari',
+    searchInput: 'Cari di panduan',
+    searchSubmit: 'Kirim pencarian'
+  },
+  share: {
+    emailLink: 'Kirim Tautan lewat Surel',
+    shareOnLinkedIn: 'Bagikan di LinkedIn',
+    shareOnReddit: 'Bagikan di Reddit',
+    shareOnBluesky: 'Bagikan di Bluesky',
+    shareOnMastodon: 'Bagikan di Mastodon',
+    copyLink: 'Salin Tautan',
+    copied: 'Tersalin!',
+    copyFailed: 'Gagal menyalin — salin dari bilah alamat'
+  },
+  contents: {
+    pageTitle: 'Daftar Isi',
+    lead: 'Setiap topik berdiri sendiri. Bacalah dari awal hingga akhir sebagai kursus nilai publik, atau langsung ke topik yang sesuai dengan keputusan yang Anda hadapi.',
+    readingIn: (label) => `Dibaca dalam ${label}. Ganti bahasa lewat pemilih di header.`,
+    frontMatter: 'Bagian awal',
+    part: (n) => `Bagian ${n}`,
+    reference: 'Rujukan'
+  },
+  topic: {
+    topicEyebrow: (n) => `Topik ${n}`,
+    paginationLabel: 'Topik',
+    onThisPage: 'Di halaman ini',
+    previous: 'Sebelumnya',
+    next: 'Berikutnya'
+  },
+  links: { label: 'Tautan', skills: 'Keterampilan AI', llms: 'Untuk agen AI (llms.txt)', issues: 'Laporkan masalah' },
+  results: {
+    label: 'Hasil pencarian',
+    heading: (q) => `Pencarian: ${q}`,
+    searching: 'Mencari…',
+    none: (q) => `Tidak ada hasil untuk “${q}”.`,
+    browse: 'Telusuri daftar isi',
+    failed: 'Indeks pencarian tidak dapat dimuat.',
+    count: (n, more) => `${n}${more ? '+' : ''} hasil`,
+    button: 'Cari'
+  },
+  footer: {
+    tagline:
+      'buku panduan praktis tentang praktik terbaik untuk menciptakan nilai publik di pemerintahan dan sektor sosial, dengan cakupan di seluruh dunia.',
+    sourceAndContributions: 'Sumber dan kontribusi:',
+    builtWith: 'Dibangun dengan',
+    ledBy: 'Dipimpin oleh'
+  }
+};
+
+const bn001: UiStrings = {
+  siteTitle: 'জনমূল্য নির্দেশিকা',
+  skipToContent: 'মূল বিষয়বস্তুতে যান',
+  nav: { contents: 'সূচিপত্র', glossary: 'শব্দকোষ', index: 'নির্ঘণ্ট', source: 'উৎস' },
+  breadcrumb: { home: 'হোম', contents: 'সূচিপত্র' },
+  picker: { theme: 'থিম', locale: 'ভাষা', textSize: 'লেখার আকার', share: 'শেয়ার',
+    search: 'অনুসন্ধান',
+    searchInput: 'নির্দেশিকায় অনুসন্ধান করুন',
+    searchSubmit: 'অনুসন্ধান জমা দিন'
+  },
+  share: {
+    emailLink: 'ইমেইলে লিংক পাঠান',
+    shareOnLinkedIn: 'LinkedIn-এ শেয়ার করুন',
+    shareOnReddit: 'Reddit-এ শেয়ার করুন',
+    shareOnBluesky: 'Bluesky-তে শেয়ার করুন',
+    shareOnMastodon: 'Mastodon-এ শেয়ার করুন',
+    copyLink: 'লিংক কপি করুন',
+    copied: 'কপি হয়েছে!',
+    copyFailed: 'কপি করা যায়নি — ঠিকানা বার থেকে কপি করুন'
+  },
+  contents: {
+    pageTitle: 'সূচিপত্র',
+    lead: 'প্রতিটি বিষয় স্বয়ংসম্পূর্ণ। জনমূল্যের একটি কোর্স হিসেবে শুরু থেকে শেষ পর্যন্ত পড়ুন, অথবা আপনার সামনের সিদ্ধান্তের সঙ্গে মেলে এমন বিষয়ে সরাসরি যান।',
+    readingIn: (label) => `${label} ভাষায় পড়ছেন। শিরোনামের ভাষা বাছাইকারী থেকে ভাষা বদলান।`,
+    frontMatter: 'প্রারম্ভিক অংশ',
+    part: (n) => `খণ্ড ${n}`,
+    reference: 'তথ্যসূত্র'
+  },
+  topic: {
+    topicEyebrow: (n) => `বিষয় ${n}`,
+    paginationLabel: 'বিষয়',
+    onThisPage: 'এই পাতায়',
+    previous: 'আগের',
+    next: 'পরের'
+  },
+  links: { label: 'লিংক', skills: 'এআই স্কিল', llms: 'এআই এজেন্টদের জন্য (llms.txt)', issues: 'সমস্যা জানান' },
+  results: {
+    label: 'অনুসন্ধানের ফলাফল',
+    heading: (q) => `অনুসন্ধান: ${q}`,
+    searching: 'অনুসন্ধান চলছে…',
+    none: (q) => `“${q}”-এর জন্য কোনো ফলাফল নেই।`,
+    browse: 'সূচিপত্র ঘুরে দেখুন',
+    failed: 'অনুসন্ধান সূচি লোড করা যায়নি।',
+    count: (n, more) => `${n}${more ? '+' : ''}টি ফলাফল`,
+    button: 'অনুসন্ধান'
+  },
+  footer: {
+    tagline:
+      'সরকার ও সামাজিক খাতে জনমূল্য সৃষ্টির সর্বোত্তম চর্চার একটি ব্যবহারিক নির্দেশিকা, যার পরিসর বিশ্বজুড়ে।',
+    sourceAndContributions: 'উৎস ও অবদান:',
+    builtWith: 'নির্মাণে ব্যবহৃত:',
+    ledBy: 'প্রকল্প প্রধান:'
+  }
+};
+
+// World variants of languages that also have a regional locale reuse the regional strings,
+// as `cy-001` reuses `cy-gb`: the register difference is negligible for this formal content.
+const zh001: UiStrings = zhCn;
+const hi001: UiStrings = hiIn;
+const ja001: UiStrings = jaJp;
+const ko001: UiStrings = koKr;
+
 const STRINGS: Record<string, UiStrings> = {
   'en-gb-oxendict': enGbOxendict,
   'en-gb': enGb,
@@ -720,7 +837,13 @@ const STRINGS: Record<string, UiStrings> = {
   'hi-in': hiIn,
   'ja-jp': jaJp,
   'ru-ru': ruRu,
-  'ko-kr': koKr
+  'ko-kr': koKr,
+  'zh-001': zh001,
+  'hi-001': hi001,
+  'ja-001': ja001,
+  'ko-001': ko001,
+  'id-001': id001,
+  'bn-001': bn001
 };
 
 /** UI chrome strings for `locale`, falling back to English if the locale is unknown. */
