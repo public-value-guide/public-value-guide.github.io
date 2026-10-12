@@ -23,7 +23,7 @@
     <p class="page-lead">{hero.intro}</p>
     <p class="page-hero-contents"><a href="/{data.locale}/contents/">{t.nav.contents}</a></p>
     <p class="page-hero-translations">
-      {hero.translations}{#each Object.entries(ENDONYMS) as [code, name], i (code)}{i ? ', ' : ''}<a
+      {hero.translations}{#each Object.entries(ENDONYMS).filter(([c]) => c.endsWith('-001')) as [code, name], i (code)}{i ? ', ' : ''}<a
           href="/{code}/"
           aria-current={code === data.locale ? 'page' : undefined}>{name}</a
         >{/each}
