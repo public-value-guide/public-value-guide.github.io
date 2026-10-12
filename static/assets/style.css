@@ -978,3 +978,28 @@ body {
 .site-search-results li p {
 	margin: 0.25rem 0 0;
 }
+
+/* Locale landing page hero: headline, subheadline, intro, and the translations list. */
+.page-hero-subheadline {
+    margin: 0 0 var(--lily-space-md);
+    font-size: 1.3em;
+    font-weight: 600;
+    line-height: 1.35;
+    text-wrap: balance;
+}
+
+.page-hero-contents {
+    margin: var(--lily-space-md) 0 var(--lily-space-sm);
+    font-weight: 600;
+}
+
+.page-hero-translations {
+    margin: 0;
+    font-size: 0.875em;
+    color: var(--lily-text-muted);
+}
+
+.page-hero-translations a[aria-current='page'] {
+    font-weight: 700;
+    text-decoration: none;
+}

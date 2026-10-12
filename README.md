@@ -27,7 +27,7 @@ public-value-guide.github.io/
 │       ├── +layout.server.ts     Cross-locale topic slug map, for the language picker
 │       ├── +page.svelte          Home (locale-neutral; links into the default locale)
 │       ├── [locale=locale]/
-│       │   ├── +page.server.ts   Redirects to this locale's contents
+│       │   ├── +page.server.ts   Locale landing page (hero) with a link to contents
 │       │   ├── contents/         Full table of contents, in this locale
 │       │   └── topics/[slug]/  One prerendered page per topic, in this locale
 │       ├── glossary/             Locale-neutral: the glossary is not localized upstream
