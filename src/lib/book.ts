@@ -63,10 +63,12 @@ export const LOCALES: Locale[] = [
   { slug: 'ja-jp', label: '日本語 - 日本' },
   { slug: 'ru-ru', label: 'Русский - Россия' },
   { slug: 'ko-kr', label: '한국어 - 대한민국' },
+  { slug: 'sv-se', label: 'Svenska - Sverige' },
   { slug: 'zh-001', label: '中文 - 简体' },
   { slug: 'hi-001', label: 'हिन्दी' },
   { slug: 'ja-001', label: '日本語' },
   { slug: 'ko-001', label: '한국어' },
+  { slug: 'sv-001', label: 'Svenska' },
   { slug: 'id-001', label: 'Bahasa Indonesia' },
   { slug: 'bn-001', label: 'বাংলা' }
 ];
@@ -436,6 +438,28 @@ const PART_TRANSLATIONS: Record<string, Record<number, { title: string; tagline:
       tagline: '기술의 공공가치: 디지털 정부, 인공지능, 소프트웨어, 데이터, 사이버 보안'
     }
   },
+  'sv-se': {
+    1: {
+      title: 'Grunder',
+      tagline: 'varför offentligt värde skiljer sig från marknadsvärde eller demokratiskt mandat ensamt, och modellerna som förklarar det'
+    },
+    2: {
+      title: 'Utvärdering och evidens',
+      tagline: 'analytikerns verktygslåda: att värdera utfall, bygga argumentet och pröva påståenden'
+    },
+    3: {
+      title: 'System, styrning och prioriteringar',
+      tagline: 'hur organisationer i offentlig sektor och social sektor är strukturerade, finansierade och ansvarsskyldiga'
+    },
+    4: {
+      title: 'Globala och samhälleliga frågor',
+      tagline: 'offentligt värde bortom en enskild institution: beteende, förtroende, planeten och det offentliga samtalet'
+    },
+    5: {
+      title: 'Digitalt, mjukvara och teknik',
+      tagline: 'teknikens offentliga värde: digital förvaltning, artificiell intelligens, mjukvara, data och cybersäkerhet'
+    }
+  },
   'id-001': {
     1: {
       title: 'Fondasi',
@@ -492,6 +516,7 @@ PART_TRANSLATIONS['zh-001'] = PART_TRANSLATIONS['zh-cn'];
 PART_TRANSLATIONS['hi-001'] = PART_TRANSLATIONS['hi-in'];
 PART_TRANSLATIONS['ja-001'] = PART_TRANSLATIONS['ja-jp'];
 PART_TRANSLATIONS['ko-001'] = PART_TRANSLATIONS['ko-kr'];
+PART_TRANSLATIONS['sv-001'] = PART_TRANSLATIONS['sv-se'];
 
 /** `PARTS`, translated for `locale` where a translation exists, English otherwise. */
 export function partsFor(locale: string): Part[] {

@@ -705,6 +705,61 @@ const koKr: UiStrings = {
   }
 };
 
+const svSe: UiStrings = {
+  siteTitle: 'Handledning i offentligt värde',
+  skipToContent: 'Hoppa till huvudinnehållet',
+  nav: { contents: 'Innehåll', glossary: 'Ordlista', index: 'Register', source: 'Källa' },
+  breadcrumb: { home: 'Hem', contents: 'Innehåll' },
+  picker: { theme: 'Tema', locale: 'Språk', textSize: 'Textstorlek', share: 'Dela',
+    search: 'Sök',
+    searchInput: 'Sök i handledningen',
+    searchSubmit: 'Skicka sökning'
+  },
+  share: {
+    emailLink: 'Skicka länken med e-post',
+    shareOnLinkedIn: 'Dela på LinkedIn',
+    shareOnReddit: 'Dela på Reddit',
+    shareOnBluesky: 'Dela på Bluesky',
+    shareOnMastodon: 'Dela på Mastodon',
+    copyLink: 'Kopiera länk',
+    copied: 'Kopierat!',
+    copyFailed: 'Det gick inte att kopiera – kopiera adressen från adressfältet i stället'
+  },
+  contents: {
+    pageTitle: 'Innehåll',
+    lead: 'Varje ämne är fristående. Läs rakt igenom för en kurs i offentligt värde, eller gå direkt till det ämne som motsvarar beslutet du står inför.',
+    readingIn: (label) => `Du läser på ${label}. Byt språk med språkväljaren i sidhuvudet.`,
+    frontMatter: 'Inledning',
+    part: (n) => `Del ${n}`,
+    reference: 'Referens'
+  },
+  topic: {
+    topicEyebrow: (n) => `Ämne ${n}`,
+    paginationLabel: 'Ämne',
+    onThisPage: 'På den här sidan',
+    previous: 'Föregående',
+    next: 'Nästa'
+  },
+  links: { label: 'Länkar', skills: 'AI-färdigheter', llms: 'För AI-agenter (llms.txt)', issues: 'Rapportera ett problem' },
+  results: {
+    label: 'Sökresultat',
+    heading: (q) => `Sökning: ${q}`,
+    searching: 'Söker…',
+    none: (q) => `Inga resultat för ”${q}”.`,
+    browse: 'Bläddra i innehållet',
+    failed: 'Sökindexet kunde inte läsas in.',
+    count: (n, more) => `${n}${more ? '+' : ''} ${n === 1 ? 'resultat' : 'resultat'}`,
+    button: 'Sök'
+  },
+  footer: {
+    tagline:
+      'en praktisk handbok med bästa praxis för att skapa offentligt värde inom staten och den sociala sektorn, med global räckvidd.',
+    sourceAndContributions: 'Källa och bidrag:',
+    builtWith: 'Byggd med',
+    ledBy: 'Ledd av'
+  }
+};
+
 const id001: UiStrings = {
   siteTitle: 'Panduan Nilai Publik',
   skipToContent: 'Lompat ke konten utama',
@@ -821,6 +876,7 @@ const zh001: UiStrings = zhCn;
 const hi001: UiStrings = hiIn;
 const ja001: UiStrings = jaJp;
 const ko001: UiStrings = koKr;
+const sv001: UiStrings = svSe;
 
 const STRINGS: Record<string, UiStrings> = {
   'en-gb-oxendict': enGbOxendict,
@@ -838,10 +894,12 @@ const STRINGS: Record<string, UiStrings> = {
   'ja-jp': jaJp,
   'ru-ru': ruRu,
   'ko-kr': koKr,
+  'sv-se': svSe,
   'zh-001': zh001,
   'hi-001': hi001,
   'ja-001': ja001,
   'ko-001': ko001,
+  'sv-001': sv001,
   'id-001': id001,
   'bn-001': bn001
 };

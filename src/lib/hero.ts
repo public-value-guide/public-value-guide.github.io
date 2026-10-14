@@ -95,6 +95,16 @@ export const HERO: Record<string, { tagline: string; intro?: string; translation
   "intro": "Это руководство предназначено для тех, кто возглавляет организации государственного и социального секторов: руководителей ведомств, лидеров местного самоуправления, директоров некоммерческих организаций, а также руководителей по политике, цифровым технологиям, финансам и операциям, которые им помогают. Оно применяет теорию общественной ценности, начиная со стратегического треугольника Марка Мура, к практическим решениям в 33 самодостаточных темах.",
   "translations": "Переводы: "
  },
+ "sv-001": {
+  "tagline": "En praktisk handbok med bästa praxis för att skapa offentligt värde inom staten och den sociala sektorn.",
+  "intro": "Den här handledningen riktar sig till dem som leder organisationer i offentlig sektor och social sektor: myndighetschefer, ledare inom lokal förvaltning, chefer för ideella organisationer samt de ledare inom policy, digitalisering, ekonomi och verksamhet som stöder dem. Den tillämpar teorin om offentligt värde, med början i Mark Moores strategiska triangel, på praktiska beslut i 33 fristående ämnen.",
+  "translations": "Översättningar: "
+ },
+ "sv-se": {
+  "tagline": "En praktisk handbok med bästa praxis för att skapa offentligt värde inom staten och den sociala sektorn.",
+  "intro": "Den här handledningen riktar sig till dem som leder organisationer i offentlig sektor och social sektor: myndighetschefer, ledare inom lokal förvaltning, chefer för ideella organisationer samt de ledare inom policy, digitalisering, ekonomi och verksamhet som stöder dem. Den tillämpar teorin om offentligt värde, med början i Mark Moores strategiska triangel, på praktiska beslut i 33 fristående ämnen.",
+  "translations": "Översättningar: "
+ },
  "zh-001": {
   "tagline": "一本在政府和社会部门创造公共价值的最佳实践实用手册。",
   "intro": "本指南面向领导公共和社会部门组织的人士：机构负责人、地方政府领导、非营利组织负责人，以及为他们提供支持的政策、数字、财务与运营负责人。它从马克·摩尔的战略三角出发，将公共价值理论运用到33个相互独立的主题中的实际决策里。",
@@ -127,6 +137,8 @@ export const ENDONYMS: Record<string, string> = {
  "ko-001": "한국어",
  "ko-kr": "한국어 (대한민국)",
  "ru-ru": "Русский (Россия)",
+ "sv-001": "Svenska",
+ "sv-se": "Svenska (Sverige)",
  "zh-001": "中文",
  "zh-cn": "简体中文"
 };
