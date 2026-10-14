@@ -64,11 +64,13 @@ export const LOCALES: Locale[] = [
   { slug: 'ru-ru', label: 'Русский - Россия' },
   { slug: 'ko-kr', label: '한국어 - 대한민국' },
   { slug: 'sv-se', label: 'Svenska - Sverige' },
+  { slug: 'nl-nl', label: 'Nederlands - Nederland' },
   { slug: 'zh-001', label: '中文 - 简体' },
   { slug: 'hi-001', label: 'हिन्दी' },
   { slug: 'ja-001', label: '日本語' },
   { slug: 'ko-001', label: '한국어' },
   { slug: 'sv-001', label: 'Svenska' },
+  { slug: 'nl-001', label: 'Nederlands' },
   { slug: 'id-001', label: 'Bahasa Indonesia' },
   { slug: 'bn-001', label: 'বাংলা' }
 ];
@@ -460,6 +462,28 @@ const PART_TRANSLATIONS: Record<string, Record<number, { title: string; tagline:
       tagline: 'teknikens offentliga värde: digital förvaltning, artificiell intelligens, mjukvara, data och cybersäkerhet'
     }
   },
+  'nl-nl': {
+    1: {
+      title: 'Grondslagen',
+      tagline: 'waarom publieke waarde verschilt van marktwaarde of democratisch mandaat alleen, en de modellen die dat verklaren'
+    },
+    2: {
+      title: 'Evaluatie en bewijs',
+      tagline: 'de gereedschapskist van de analist: uitkomsten waarderen, de businesscase opbouwen en beweringen toetsen'
+    },
+    3: {
+      title: 'Systemen, bestuur en prioriteiten',
+      tagline: 'hoe organisaties in de publieke en sociale sector zijn ingericht, gefinancierd en aanspreekbaar'
+    },
+    4: {
+      title: 'Mondiale en maatschappelijke vraagstukken',
+      tagline: 'publieke waarde voorbij één instelling: gedrag, vertrouwen, de planeet en het publieke gesprek'
+    },
+    5: {
+      title: 'Digitaal, software en technologie',
+      tagline: 'de publieke waarde van technologie: digitale overheid, kunstmatige intelligentie, software, data en cybersecurity'
+    }
+  },
   'id-001': {
     1: {
       title: 'Fondasi',
@@ -517,6 +541,7 @@ PART_TRANSLATIONS['hi-001'] = PART_TRANSLATIONS['hi-in'];
 PART_TRANSLATIONS['ja-001'] = PART_TRANSLATIONS['ja-jp'];
 PART_TRANSLATIONS['ko-001'] = PART_TRANSLATIONS['ko-kr'];
 PART_TRANSLATIONS['sv-001'] = PART_TRANSLATIONS['sv-se'];
+PART_TRANSLATIONS['nl-001'] = PART_TRANSLATIONS['nl-nl'];
 
 /** `PARTS`, translated for `locale` where a translation exists, English otherwise. */
 export function partsFor(locale: string): Part[] {

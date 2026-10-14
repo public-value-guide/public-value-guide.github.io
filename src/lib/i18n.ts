@@ -760,6 +760,61 @@ const svSe: UiStrings = {
   }
 };
 
+const nlNl: UiStrings = {
+  siteTitle: 'Gids publieke waarde',
+  skipToContent: 'Ga naar de hoofdinhoud',
+  nav: { contents: 'Inhoud', glossary: 'Woordenlijst', index: 'Register', source: 'Bron' },
+  breadcrumb: { home: 'Home', contents: 'Inhoud' },
+  picker: { theme: 'Thema', locale: 'Taal', textSize: 'Tekstgrootte', share: 'Delen',
+    search: 'Zoeken',
+    searchInput: 'Zoek in de gids',
+    searchSubmit: 'Zoekopdracht verzenden'
+  },
+  share: {
+    emailLink: 'Link per e-mail versturen',
+    shareOnLinkedIn: 'Delen op LinkedIn',
+    shareOnReddit: 'Delen op Reddit',
+    shareOnBluesky: 'Delen op Bluesky',
+    shareOnMastodon: 'Delen op Mastodon',
+    copyLink: 'Link kopiëren',
+    copied: 'Gekopieerd!',
+    copyFailed: 'Kopiëren is niet gelukt – kopieer het adres in plaats daarvan uit de adresbalk'
+  },
+  contents: {
+    pageTitle: 'Inhoud',
+    lead: 'Elk onderwerp is zelfstandig. Lees het geheel van voor naar achter voor een cursus publieke waarde, of ga rechtstreeks naar het onderwerp dat past bij de beslissing waar u voor staat.',
+    readingIn: (label) => `U leest in ${label}. Wissel van taal met de taalkeuze in de paginakop.`,
+    frontMatter: 'Voorwerk',
+    part: (n) => `Deel ${n}`,
+    reference: 'Naslag'
+  },
+  topic: {
+    topicEyebrow: (n) => `Onderwerp ${n}`,
+    paginationLabel: 'Onderwerp',
+    onThisPage: 'Op deze pagina',
+    previous: 'Vorige',
+    next: 'Volgende'
+  },
+  links: { label: 'Links', skills: 'AI-vaardigheden', llms: 'Voor AI-agenten (llms.txt)', issues: 'Een probleem melden' },
+  results: {
+    label: 'Zoekresultaten',
+    heading: (q) => `Zoeken: ${q}`,
+    searching: 'Bezig met zoeken…',
+    none: (q) => `Geen resultaten voor „${q}”.`,
+    browse: 'Door de inhoud bladeren',
+    failed: 'De zoekindex kon niet worden geladen.',
+    count: (n, more) => `${n}${more ? '+' : ''} ${n === 1 ? 'resultaat' : 'resultaten'}`,
+    button: 'Zoeken'
+  },
+  footer: {
+    tagline:
+      'een praktisch handboek met beste praktijken voor het creëren van publieke waarde bij de overheid en in de sociale sector, met wereldwijd bereik.',
+    sourceAndContributions: 'Bron en bijdragen:',
+    builtWith: 'Gebouwd met',
+    ledBy: 'Geleid door'
+  }
+};
+
 const id001: UiStrings = {
   siteTitle: 'Panduan Nilai Publik',
   skipToContent: 'Lompat ke konten utama',
@@ -877,6 +932,7 @@ const hi001: UiStrings = hiIn;
 const ja001: UiStrings = jaJp;
 const ko001: UiStrings = koKr;
 const sv001: UiStrings = svSe;
+const nl001: UiStrings = nlNl;
 
 const STRINGS: Record<string, UiStrings> = {
   'en-gb-oxendict': enGbOxendict,
@@ -895,11 +951,13 @@ const STRINGS: Record<string, UiStrings> = {
   'ru-ru': ruRu,
   'ko-kr': koKr,
   'sv-se': svSe,
+  'nl-nl': nlNl,
   'zh-001': zh001,
   'hi-001': hi001,
   'ja-001': ja001,
   'ko-001': ko001,
   'sv-001': sv001,
+  'nl-001': nl001,
   'id-001': id001,
   'bn-001': bn001
 };

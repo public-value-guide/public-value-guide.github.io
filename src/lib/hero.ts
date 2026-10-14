@@ -90,6 +90,16 @@ export const HERO: Record<string, { tagline: string; intro?: string; translation
   "intro": "이 가이드는 공공 및 사회 부문 조직을 이끄는 사람들, 즉 기관장, 지방정부 리더, 비영리단체 이사, 그리고 이들을 지원하는 정책·디지털·재무·운영 리더를 위한 것입니다. 마크 무어의 전략적 삼각형을 비롯한 공공가치 이론을 33개의 독립된 주제에서 실무적 의사결정에 적용합니다.",
   "translations": "번역: "
  },
+ "nl-001": {
+  "tagline": "Een praktisch handboek met beste praktijken voor het creëren van publieke waarde bij de overheid en in de sociale sector.",
+  "intro": "Deze gids is bedoeld voor de mensen die organisaties in de publieke en sociale sector leiden: directeuren van uitvoeringsorganisaties, bestuurders van lokale overheden, directeuren van non-profitorganisaties en de leiders op het gebied van beleid, digitaal, financiën en uitvoering die hen bijstaan. Zij past de theorie van publieke waarde, te beginnen bij de strategische driehoek van Mark Moore, toe op praktische beslissingen in 33 zelfstandige onderwerpen.",
+  "translations": "Vertalingen: "
+ },
+ "nl-nl": {
+  "tagline": "Een praktisch handboek met beste praktijken voor het creëren van publieke waarde bij de overheid en in de sociale sector.",
+  "intro": "Deze gids is bedoeld voor de mensen die organisaties in de publieke en sociale sector leiden: directeuren van uitvoeringsorganisaties, bestuurders van lokale overheden, directeuren van non-profitorganisaties en de leiders op het gebied van beleid, digitaal, financiën en uitvoering die hen bijstaan. Zij past de theorie van publieke waarde, te beginnen bij de strategische driehoek van Mark Moore, toe op praktische beslissingen in 33 zelfstandige onderwerpen.",
+  "translations": "Vertalingen: "
+ },
  "ru-ru": {
   "tagline": "Практическое руководство по лучшим практикам создания общественной ценности в государстве и социальном секторе.",
   "intro": "Это руководство предназначено для тех, кто возглавляет организации государственного и социального секторов: руководителей ведомств, лидеров местного самоуправления, директоров некоммерческих организаций, а также руководителей по политике, цифровым технологиям, финансам и операциям, которые им помогают. Оно применяет теорию общественной ценности, начиная со стратегического треугольника Марка Мура, к практическим решениям в 33 самодостаточных темах.",
@@ -136,6 +146,8 @@ export const ENDONYMS: Record<string, string> = {
  "ja-jp": "日本語 (日本)",
  "ko-001": "한국어",
  "ko-kr": "한국어 (대한민국)",
+ "nl-001": "Nederlands",
+ "nl-nl": "Nederlands (Nederland)",
  "ru-ru": "Русский (Россия)",
  "sv-001": "Svenska",
  "sv-se": "Svenska (Sverige)",
