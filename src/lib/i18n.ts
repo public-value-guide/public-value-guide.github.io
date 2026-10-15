@@ -815,6 +815,61 @@ const nlNl: UiStrings = {
   }
 };
 
+const isIs: UiStrings = {
+  siteTitle: 'Handbók um almannavirði',
+  skipToContent: 'Fara beint í aðalefni',
+  nav: { contents: 'Efnisyfirlit', glossary: 'Orðalisti', index: 'Atriðisorðaskrá', source: 'Heimild' },
+  breadcrumb: { home: 'Heim', contents: 'Efnisyfirlit' },
+  picker: { theme: 'Þema', locale: 'Tungumál', textSize: 'Textastærð', share: 'Deila',
+    search: 'Leita',
+    searchInput: 'Leita í handbókinni',
+    searchSubmit: 'Senda leit'
+  },
+  share: {
+    emailLink: 'Senda tengil í tölvupósti',
+    shareOnLinkedIn: 'Deila á LinkedIn',
+    shareOnReddit: 'Deila á Reddit',
+    shareOnBluesky: 'Deila á Bluesky',
+    shareOnMastodon: 'Deila á Mastodon',
+    copyLink: 'Afrita tengil',
+    copied: 'Afritað!',
+    copyFailed: 'Afritun mistókst – afritaðu vistfangið úr veffangastikunni í staðinn'
+  },
+  contents: {
+    pageTitle: 'Efnisyfirlit',
+    lead: 'Hvert viðfangsefni stendur sjálfstætt. Lestu allt frá upphafi til enda sem námskeið í almannavirði, eða farðu beint í viðfangsefnið sem á við ákvörðunina sem þú stendur frammi fyrir.',
+    readingIn: (label) => `Þú ert að lesa á ${label}. Skiptu um tungumál með tungumálavalinu í haus síðunnar.`,
+    frontMatter: 'Inngangur',
+    part: (n) => `${n}. hluti`,
+    reference: 'Uppflettiefni'
+  },
+  topic: {
+    topicEyebrow: (n) => `Viðfangsefni ${n}`,
+    paginationLabel: 'Viðfangsefni',
+    onThisPage: 'Á þessari síðu',
+    previous: 'Fyrra',
+    next: 'Næsta'
+  },
+  links: { label: 'Tenglar', skills: 'Gervigreindarfærni', llms: 'Fyrir gervigreindarmiðla (llms.txt)', issues: 'Tilkynna vandamál' },
+  results: {
+    label: 'Leitarniðurstöður',
+    heading: (q) => `Leit: ${q}`,
+    searching: 'Leita…',
+    none: (q) => `Engar niðurstöður fyrir „${q}“.`,
+    browse: 'Skoða efnisyfirlitið',
+    failed: 'Ekki tókst að hlaða leitarskránni.',
+    count: (n, more) => `${n}${more ? '+' : ''} ${n % 10 === 1 && n % 100 !== 11 ? 'niðurstaða' : 'niðurstöður'}`,
+    button: 'Leita'
+  },
+  footer: {
+    tagline:
+      'hagnýt handbók um bestu starfsvenjur við að skapa almannavirði hjá hinu opinbera og í félagageiranum, með hnattrænt gildissvið.',
+    sourceAndContributions: 'Heimild og framlög:',
+    builtWith: 'Smíðað með',
+    ledBy: 'Undir forystu'
+  }
+};
+
 const id001: UiStrings = {
   siteTitle: 'Panduan Nilai Publik',
   skipToContent: 'Lompat ke konten utama',
@@ -933,6 +988,7 @@ const ja001: UiStrings = jaJp;
 const ko001: UiStrings = koKr;
 const sv001: UiStrings = svSe;
 const nl001: UiStrings = nlNl;
+const is001: UiStrings = isIs;
 
 const STRINGS: Record<string, UiStrings> = {
   'en-gb-oxendict': enGbOxendict,
@@ -952,12 +1008,14 @@ const STRINGS: Record<string, UiStrings> = {
   'ko-kr': koKr,
   'sv-se': svSe,
   'nl-nl': nlNl,
+  'is-is': isIs,
   'zh-001': zh001,
   'hi-001': hi001,
   'ja-001': ja001,
   'ko-001': ko001,
   'sv-001': sv001,
   'nl-001': nl001,
+  'is-001': is001,
   'id-001': id001,
   'bn-001': bn001
 };

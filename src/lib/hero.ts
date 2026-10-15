@@ -70,6 +70,16 @@ export const HERO: Record<string, { tagline: string; intro?: string; translation
   "intro": "Panduan ini ditujukan bagi mereka yang memimpin organisasi sektor publik dan sosial: kepala lembaga, pemimpin pemerintah daerah, direktur organisasi nirlaba, serta pemimpin kebijakan, digital, keuangan, dan operasi yang mendukung mereka. Panduan ini menerapkan teori nilai publik, mulai dari segitiga strategis Mark Moore, pada keputusan praktis dalam 33 topik yang berdiri sendiri.",
   "translations": "Terjemahan: "
  },
+ "is-001": {
+  "tagline": "Hagnýt handbók um bestu starfsvenjur við að skapa almannavirði hjá hinu opinbera og í félagageiranum.",
+  "intro": "Þessi handbók er fyrir fólkið sem stýrir skipulagsheildum í opinbera geiranum og félagageiranum: forstöðumenn stofnana, leiðtoga sveitarfélaga, framkvæmdastjóra félagasamtaka og stefnu-, stafræna, fjármála- og rekstrarstjórnendur sem þjóna þeim. Hún beitir kenningunni um almannavirði, frá stefnumótandi þríhyrningi Marks Moore og áfram, á hagnýtar ákvarðanir í 33 sjálfstæðum viðfangsefnum.",
+  "translations": "Þýðingar: "
+ },
+ "is-is": {
+  "tagline": "Hagnýt handbók um bestu starfsvenjur við að skapa almannavirði hjá hinu opinbera og í félagageiranum.",
+  "intro": "Þessi handbók er fyrir fólkið sem stýrir skipulagsheildum í opinbera geiranum og félagageiranum: forstöðumenn stofnana, leiðtoga sveitarfélaga, framkvæmdastjóra félagasamtaka og stefnu-, stafræna, fjármála- og rekstrarstjórnendur sem þjóna þeim. Hún beitir kenningunni um almannavirði, frá stefnumótandi þríhyrningi Marks Moore og áfram, á hagnýtar ákvarðanir í 33 sjálfstæðum viðfangsefnum.",
+  "translations": "Þýðingar: "
+ },
  "ja-001": {
   "tagline": "政府と社会セクターで公共価値を生み出すためのベストプラクティスの実践ハンドブック。",
   "intro": "このガイドは、公共・社会セクターの組織を率いる人々、すなわち機関の長、地方自治体のリーダー、非営利団体の理事、そして彼らを支える政策・デジタル・財務・運営のリーダーのためのものです。マーク・ムーアの戦略的三角形に始まる公共価値理論を、33の独立したトピックで実践的な意思決定に応用します。",
@@ -142,6 +152,8 @@ export const ENDONYMS: Record<string, string> = {
  "hi-001": "हिन्दी",
  "hi-in": "हिन्दी (भारत)",
  "id-001": "Bahasa Indonesia",
+ "is-001": "Íslenska",
+ "is-is": "Íslenska (Ísland)",
  "ja-001": "日本語",
  "ja-jp": "日本語 (日本)",
  "ko-001": "한국어",

@@ -65,12 +65,14 @@ export const LOCALES: Locale[] = [
   { slug: 'ko-kr', label: '한국어 - 대한민국' },
   { slug: 'sv-se', label: 'Svenska - Sverige' },
   { slug: 'nl-nl', label: 'Nederlands - Nederland' },
+  { slug: 'is-is', label: 'Íslenska - Ísland' },
   { slug: 'zh-001', label: '中文 - 简体' },
   { slug: 'hi-001', label: 'हिन्दी' },
   { slug: 'ja-001', label: '日本語' },
   { slug: 'ko-001', label: '한국어' },
   { slug: 'sv-001', label: 'Svenska' },
   { slug: 'nl-001', label: 'Nederlands' },
+  { slug: 'is-001', label: 'Íslenska' },
   { slug: 'id-001', label: 'Bahasa Indonesia' },
   { slug: 'bn-001', label: 'বাংলা' }
 ];
@@ -484,6 +486,28 @@ const PART_TRANSLATIONS: Record<string, Record<number, { title: string; tagline:
       tagline: 'de publieke waarde van technologie: digitale overheid, kunstmatige intelligentie, software, data en cybersecurity'
     }
   },
+  'is-is': {
+    1: {
+      title: 'Grunnur',
+      tagline: 'hvers vegna almannavirði er annað en markaðsvirði eða lýðræðislegt umboð eitt og sér, og líkönin sem útskýra það'
+    },
+    2: {
+      title: 'Mat og sönnunargögn',
+      tagline: 'verkfærakista greinandans: að verðmeta árangur, byggja viðskiptarökin og prófa fullyrðingar'
+    },
+    3: {
+      title: 'Kerfi, stjórnarhættir og forgangsröðun',
+      tagline: 'hvernig skipulagsheildir í opinbera geiranum og félagageiranum eru byggðar upp, fjármagnaðar og gerðar ábyrgar'
+    },
+    4: {
+      title: 'Hnattræn og samfélagsleg málefni',
+      tagline: 'almannavirði handan einnar stofnunar: hegðun, traust, jörðin og opinber umræða'
+    },
+    5: {
+      title: 'Stafrænt, hugbúnaður og tækni',
+      tagline: 'almannavirði tækninnar: stafræn stjórnsýsla, gervigreind, hugbúnaður, gögn og netöryggi'
+    }
+  },
   'id-001': {
     1: {
       title: 'Fondasi',
@@ -542,6 +566,7 @@ PART_TRANSLATIONS['ja-001'] = PART_TRANSLATIONS['ja-jp'];
 PART_TRANSLATIONS['ko-001'] = PART_TRANSLATIONS['ko-kr'];
 PART_TRANSLATIONS['sv-001'] = PART_TRANSLATIONS['sv-se'];
 PART_TRANSLATIONS['nl-001'] = PART_TRANSLATIONS['nl-nl'];
+PART_TRANSLATIONS['is-001'] = PART_TRANSLATIONS['is-is'];
 
 /** `PARTS`, translated for `locale` where a translation exists, English otherwise. */
 export function partsFor(locale: string): Part[] {
