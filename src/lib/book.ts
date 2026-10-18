@@ -66,6 +66,7 @@ export const LOCALES: Locale[] = [
   { slug: 'sv-se', label: 'Svenska - Sverige' },
   { slug: 'nl-nl', label: 'Nederlands - Nederland' },
   { slug: 'is-is', label: 'Íslenska - Ísland' },
+  { slug: 'sw-tz', label: 'Kiswahili - Tanzania' },
   { slug: 'zh-001', label: '中文 - 简体' },
   { slug: 'hi-001', label: 'हिन्दी' },
   { slug: 'ja-001', label: '日本語' },
@@ -74,6 +75,7 @@ export const LOCALES: Locale[] = [
   { slug: 'nl-001', label: 'Nederlands' },
   { slug: 'is-001', label: 'Íslenska' },
   { slug: 'ru-001', label: 'Русский' },
+  { slug: 'sw-001', label: 'Kiswahili' },
   { slug: 'id-001', label: 'Bahasa Indonesia' },
   { slug: 'bn-001', label: 'বাংলা' }
 ];
@@ -558,6 +560,31 @@ const PART_TRANSLATIONS: Record<string, Record<number, { title: string; tagline:
       tagline:
         'প্রযুক্তির জনমূল্য: ডিজিটাল সরকার, কৃত্রিম বুদ্ধিমত্তা, সফটওয়্যার, উপাত্ত ও সাইবার নিরাপত্তা'
     }
+  },
+  'sw-tz': {
+    1: {
+      title: 'Misingi',
+      tagline:
+        'kwa nini thamani ya umma ni tofauti na thamani ya soko au mamlaka ya kidemokrasia, na mifano inayoieleza'
+    },
+    2: {
+      title: 'Tathmini na Ushahidi',
+      tagline: 'zana za mchambuzi: kupima thamani ya matokeo, kujenga hoja, na kujaribu madai'
+    },
+    3: {
+      title: 'Mifumo, Utawala na Vipaumbele',
+      tagline:
+        'jinsi mashirika ya sekta ya umma na ya kijamii yanavyopangwa, kufadhiliwa, na kuwajibishwa'
+    },
+    4: {
+      title: 'Masuala ya Kimataifa na ya Kijamii',
+      tagline: 'thamani ya umma zaidi ya shirika moja: tabia, imani, sayari, na mazungumzo ya umma'
+    },
+    5: {
+      title: 'Kidijitali, Programu na Teknolojia',
+      tagline:
+        'thamani ya umma ya teknolojia: serikali mtandao, akili bandia, programu, data, na usalama wa mtandao'
+    }
   }
 };
 PART_TRANSLATIONS['cy-001'] = PART_TRANSLATIONS['cy-gb'];
@@ -569,6 +596,7 @@ PART_TRANSLATIONS['sv-001'] = PART_TRANSLATIONS['sv-se'];
 PART_TRANSLATIONS['nl-001'] = PART_TRANSLATIONS['nl-nl'];
 PART_TRANSLATIONS['is-001'] = PART_TRANSLATIONS['is-is'];
 PART_TRANSLATIONS['ru-001'] = PART_TRANSLATIONS['ru-ru'];
+PART_TRANSLATIONS['sw-001'] = PART_TRANSLATIONS['sw-tz'];
 
 /** `PARTS`, translated for `locale` where a translation exists, English otherwise. */
 export function partsFor(locale: string): Part[] {

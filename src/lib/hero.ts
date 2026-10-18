@@ -120,6 +120,16 @@ export const HERO: Record<string, { tagline: string; intro?: string; translation
   "intro": "Это руководство предназначено для тех, кто возглавляет организации государственного и социального секторов: руководителей ведомств, лидеров местного самоуправления, директоров некоммерческих организаций, а также руководителей по политике, цифровым технологиям, финансам и операциям, которые им помогают. Оно применяет теорию общественной ценности, начиная со стратегического треугольника Марка Мура, к практическим решениям в 33 самодостаточных темах.",
   "translations": "Переводы: "
  },
+ "sw-001": {
+  "tagline": "Mwongozo wa vitendo wa mazoea bora ya kuunda thamani ya umma serikalini na katika sekta ya kijamii.",
+  "intro": "Mwongozo huu ni kwa watu wanaoongoza mashirika ya sekta ya umma na ya sekta ya kijamii: wakuu wa mawakala, viongozi wa serikali za mitaa, wakurugenzi wa mashirika yasiyo ya faida, na viongozi wa sera, kidijitali, fedha na uendeshaji wanaowasaidia. Unatumia nadharia ya thamani ya umma, kuanzia pembetatu ya kimkakati ya Mark Moore, kwa maamuzi ya vitendo katika mada 33 zinazojitosheleza.",
+  "translations": "Tafsiri: "
+ },
+ "sw-tz": {
+  "tagline": "Mwongozo wa vitendo wa mazoea bora ya kuunda thamani ya umma serikalini na katika sekta ya kijamii.",
+  "intro": "Mwongozo huu ni kwa watu wanaoongoza mashirika ya sekta ya umma na ya sekta ya kijamii: wakuu wa mawakala, viongozi wa serikali za mitaa, wakurugenzi wa mashirika yasiyo ya faida, na viongozi wa sera, kidijitali, fedha na uendeshaji wanaowasaidia. Unatumia nadharia ya thamani ya umma, kuanzia pembetatu ya kimkakati ya Mark Moore, kwa maamuzi ya vitendo katika mada 33 zinazojitosheleza.",
+  "translations": "Tafsiri: "
+ },
  "sv-001": {
   "tagline": "En praktisk handbok med bästa praxis för att skapa offentligt värde inom staten och den sociala sektorn.",
   "intro": "Den här handledningen riktar sig till dem som leder organisationer i offentlig sektor och social sektor: myndighetschefer, ledare inom lokal förvaltning, chefer för ideella organisationer samt de ledare inom policy, digitalisering, ekonomi och verksamhet som stöder dem. Den tillämpar teorin om offentligt värde, med början i Mark Moores strategiska triangel, på praktiska beslut i 33 fristående ämnen.",
@@ -169,6 +179,8 @@ export const ENDONYMS: Record<string, string> = {
  "ru-ru": "Русский (Россия)",
  "sv-001": "Svenska",
  "sv-se": "Svenska (Sverige)",
+ "sw-001": "Kiswahili",
+ "sw-tz": "Kiswahili (Tanzania)",
  "zh-001": "中文",
  "zh-cn": "简体中文"
 };

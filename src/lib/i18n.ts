@@ -651,6 +651,61 @@ const ruRu: UiStrings = {
   }
 };
 
+const swTz: UiStrings = {
+  siteTitle: 'Mwongozo wa Thamani ya Umma',
+  skipToContent: 'Ruka hadi maudhui makuu',
+  nav: { contents: 'Yaliyomo', glossary: 'Kamusi ya istilahi', index: 'Faharasa', source: 'Chanzo' },
+  breadcrumb: { home: 'Mwanzo', contents: 'Yaliyomo' },
+  picker: { theme: 'Mandhari', locale: 'Lugha', textSize: 'Ukubwa wa maandishi', share: 'Shiriki',
+    search: 'Tafuta',
+    searchInput: 'Tafuta katika mwongozo',
+    searchSubmit: 'Wasilisha utafutaji'
+  },
+  share: {
+    emailLink: 'Tuma kiungo kwa barua pepe',
+    shareOnLinkedIn: 'Shiriki kwenye LinkedIn',
+    shareOnReddit: 'Shiriki kwenye Reddit',
+    shareOnBluesky: 'Shiriki kwenye Bluesky',
+    shareOnMastodon: 'Shiriki kwenye Mastodon',
+    copyLink: 'Nakili kiungo',
+    copied: 'Imenakiliwa!',
+    copyFailed: 'Kunakili kumeshindwa — nakili anwani kutoka upau wa anwani'
+  },
+  contents: {
+    pageTitle: 'Yaliyomo',
+    lead: 'Kila mada inajitosheleza. Soma moja kwa moja kama kozi ya thamani ya umma, au nenda moja kwa moja kwenye mada inayolingana na uamuzi ulio mbele yako.',
+    readingIn: (label) => `Unasoma kwa ${label}. Badilisha lugha kupitia kichagua lugha kilicho juu ya ukurasa.`,
+    frontMatter: 'Sehemu ya utangulizi',
+    part: (n) => `Sehemu ya ${n}`,
+    reference: 'Marejeleo'
+  },
+  topic: {
+    topicEyebrow: (n) => `Mada ${n}`,
+    paginationLabel: 'Mada',
+    onThisPage: 'Katika ukurasa huu',
+    previous: 'Iliyotangulia',
+    next: 'Inayofuata'
+  },
+  links: { label: 'Viungo', skills: 'Ujuzi wa AI', llms: 'Kwa mawakala wa AI (llms.txt)', issues: 'Ripoti tatizo' },
+  results: {
+    label: 'Matokeo ya utafutaji',
+    heading: (q) => `Utafutaji: ${q}`,
+    searching: 'Inatafuta…',
+    none: (q) => `Hakuna matokeo ya “${q}”.`,
+    browse: 'Vinjari yaliyomo',
+    failed: 'Faharasa ya utafutaji haikuweza kupakiwa.',
+    count: (n, more) => `Matokeo ${n}${more ? '+' : ''}`,
+    button: 'Tafuta'
+  },
+  footer: {
+    tagline:
+      'mwongozo wa vitendo wa mazoea bora ya kuunda thamani ya umma serikalini na katika sekta ya kijamii, wenye wigo wa ulimwengu mzima.',
+    sourceAndContributions: 'Chanzo na michango:',
+    builtWith: 'Imejengwa kwa kutumia',
+    ledBy: 'Inaongozwa na'
+  }
+};
+
 const koKr: UiStrings = {
   siteTitle: '공공가치 가이드',
   skipToContent: '본문으로 건너뛰기',
@@ -1017,6 +1072,8 @@ const STRINGS: Record<string, UiStrings> = {
   'nl-001': nl001,
   'is-001': is001,
   'ru-001': ruRu,
+  'sw-tz': swTz,
+  'sw-001': swTz,
   'id-001': id001,
   'bn-001': bn001
 };
