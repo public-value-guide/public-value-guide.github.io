@@ -169,6 +169,11 @@ export const HERO: Record<string, { tagline: string; intro?: string; translation
   "tagline": "Um manual prático de boas práticas para criar valor público no governo e no setor social.",
   "intro": "Este guia destina-se às pessoas que dirigem organizações do setor público e do setor social: dirigentes de organismos, responsáveis do poder local, diretores de organizações sem fins lucrativos e os responsáveis de política, digital, finanças e operações que os apoiam. Aplica a teoria do valor público, a partir do triângulo estratégico de Mark Moore, a decisões práticas em 33 tópicos autónomos.",
   "translations": "Traduções: "
+ },
+ "ur-001": {
+  "tagline": "حکومت اور سماجی شعبے میں عوامی قدر پیدا کرنے کی بہترین مشقوں کی عملی رہنمائی۔",
+  "intro": "یہ رہنمائی ان لوگوں کے لیے ہے جو عوامی اور سماجی شعبے کے ادارے چلاتے ہیں: ایجنسی کے سربراہ، مقامی حکومت کے قائدین، غیر منافع بخش اداروں کے ڈائریکٹر، اور ان کی معاونت کرنے والے پالیسی، ڈیجیٹل، مالیات، اور عملیات کے قائدین۔ یہ مارک مور کے اسٹریٹجک مثلث سے شروع ہونے والے عوامی قدر کے نظریے کو 33 مکمل موضوعات میں عملی فیصلوں پر لاگو کرتی ہے۔",
+  "translations": "تراجم: "
  }
 };
 
@@ -206,5 +211,6 @@ export const ENDONYMS: Record<string, string> = {
  "de-001": "Deutsch",
  "id-id": "Bahasa Indonesia (Indonesia)",
  "zh-tw": "繁體中文",
- "pt-001": "Português"
+ "pt-001": "Português",
+ "ur-001": "اردو"
 };

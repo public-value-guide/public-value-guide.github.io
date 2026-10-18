@@ -81,7 +81,8 @@ export const LOCALES: Locale[] = [
   { slug: 'de-001', label: 'Deutsch' },
   { slug: 'id-id', label: 'Bahasa Indonesia - Indonesia' },
   { slug: 'zh-tw', label: '中文 - 台灣 - 繁體' },
-  { slug: 'pt-001', label: 'Português' }
+  { slug: 'pt-001', label: 'Português' },
+  { slug: 'ur-001', label: 'اردو' }
 ];
 
 /**
@@ -625,6 +626,13 @@ PART_TRANSLATIONS['ru-001'] = PART_TRANSLATIONS['ru-ru'];
 PART_TRANSLATIONS['sw-001'] = PART_TRANSLATIONS['sw-tz'];
 PART_TRANSLATIONS['de-001'] = PART_TRANSLATIONS['de-de'];
 PART_TRANSLATIONS['id-id'] = PART_TRANSLATIONS['id-001'];
+PART_TRANSLATIONS['ur-001'] = {
+  1: { title: 'بنیادیں', tagline: 'عوامی قدر تنہا منڈی کی قدر یا جمہوری مینڈیٹ سے مختلف کیوں ہے، اور اسے سمجھانے والے نمونے' },
+  2: { title: 'جائزہ اور شواہد', tagline: 'تجزیہ کار کا آلاتی خانہ: نتائج کی قدر کاری، مقدمہ بنانا، دعووں کی جانچ' },
+  3: { title: 'نظام، حکمرانی اور ترجیحات', tagline: 'عوامی اور سماجی شعبے کے ادارے کیسے ترتیب دیے، فنڈ کیے، اور جوابدہ ٹھہرائے جاتے ہیں' },
+  4: { title: 'عالمی اور سماجی مسائل', tagline: 'کسی ایک ادارے سے آگے عوامی قدر: رویہ، اعتماد، کرۂ ارض، اور عوامی گفتگو' },
+  5: { title: 'ڈیجیٹل، سافٹ ویئر اور ٹیکنالوجی', tagline: 'ٹیکنالوجی کی عوامی قدر: ڈیجیٹل حکومت، مصنوعی ذہانت، سافٹ ویئر، ڈیٹا، اور سائبر سکیورٹی' }
+};
 PART_TRANSLATIONS['pt-001'] = {
   1: { title: 'Fundamentos', tagline: 'por que razão o valor público é diferente do valor de mercado ou do mandato democrático por si sós, e os modelos que o explicam' },
   2: { title: 'Avaliação e evidência', tagline: 'a caixa de ferramentas do analista: valorizar resultados, construir o caso, testar afirmações' },

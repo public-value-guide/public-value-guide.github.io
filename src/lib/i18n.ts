@@ -1154,6 +1154,61 @@ const pt001: UiStrings = {
   }
 };
 
+const ur001: UiStrings = {
+  siteTitle: 'عوامی قدر کی رہنمائی',
+  skipToContent: 'مرکزی مواد پر جائیں',
+  nav: { contents: 'فہرستِ مضامین', glossary: 'فرہنگ', index: 'اشاریہ', source: 'ماخذ' },
+  breadcrumb: { home: 'ابتدا', contents: 'فہرستِ مضامین' },
+  picker: { theme: 'تھیم', locale: 'زبان', textSize: 'متن کا سائز', share: 'شیئر',
+    search: 'تلاش',
+    searchInput: 'رہنمائی میں تلاش کریں',
+    searchSubmit: 'تلاش جمع کریں'
+  },
+  share: {
+    emailLink: 'لنک ای میل کریں',
+    shareOnLinkedIn: 'لنکڈ اِن پر شیئر کریں',
+    shareOnReddit: 'ریڈٹ پر شیئر کریں',
+    shareOnBluesky: 'بلو اسکائی پر شیئر کریں',
+    shareOnMastodon: 'ماسٹوڈون پر شیئر کریں',
+    copyLink: 'لنک کاپی کریں',
+    copied: 'کاپی ہو گیا!',
+    copyFailed: 'کاپی ناکام — ایڈریس بار سے ایڈریس کاپی کریں'
+  },
+  contents: {
+    pageTitle: 'فہرستِ مضامین',
+    lead: 'ہر موضوع اپنی جگہ مکمل ہے۔ اسے عوامی قدر کے کورس کی طرح شروع سے آخر تک پڑھیں، یا سیدھا اس موضوع پر جائیں جو آپ کے سامنے موجود فیصلے سے میل کھاتا ہو۔',
+    readingIn: (label) => `${label} میں پڑھ رہے ہیں۔ ہیڈر میں زبان کے انتخاب سے زبان بدلیں۔`,
+    frontMatter: 'تمہیدی حصہ',
+    part: (n) => `حصہ ${n}`,
+    reference: 'حوالہ'
+  },
+  topic: {
+    topicEyebrow: (n) => `موضوع ${n}`,
+    paginationLabel: 'موضوع',
+    onThisPage: 'اس صفحے پر',
+    previous: 'پچھلا',
+    next: 'اگلا'
+  },
+  links: { label: 'روابط', skills: 'AI مہارتیں', llms: 'AI ایجنٹس کے لیے (llms.txt)', issues: 'مسئلے کی اطلاع دیں' },
+  results: {
+    label: 'تلاش کے نتائج',
+    heading: (q) => `تلاش: ${q}`,
+    searching: 'تلاش کی جا رہی ہے…',
+    none: (q) => `“${q}” کے لیے کوئی نتیجہ نہیں ملا۔`,
+    browse: 'فہرستِ مضامین دیکھیں',
+    failed: 'تلاش کا اشاریہ لوڈ نہیں ہو سکا۔',
+    count: (n, more) => `${n}${more ? '+' : ''} ${n === 1 ? 'نتیجہ' : 'نتائج'}`,
+    button: 'تلاش'
+  },
+  footer: {
+    tagline:
+      'حکومت اور سماجی شعبے میں عوامی قدر پیدا کرنے کی بہترین مشقوں کی عملی رہنمائی، جو عالمی دائرے کی ہے۔',
+    sourceAndContributions: 'ماخذ اور شراکتیں:',
+    builtWith: 'بنایا گیا',
+    ledBy: 'قیادت'
+  }
+};
+
 const STRINGS: Record<string, UiStrings> = {
   'en-gb-oxendict': enGbOxendict,
   'en-gb': enGb,
@@ -1188,7 +1243,8 @@ const STRINGS: Record<string, UiStrings> = {
   'de-001': deDe,
   'id-id': id001,
   'zh-tw': zhTw,
-  'pt-001': pt001
+  'pt-001': pt001,
+  'ur-001': ur001
 };
 
 /** UI chrome strings for `locale`, falling back to English if the locale is unknown. */
