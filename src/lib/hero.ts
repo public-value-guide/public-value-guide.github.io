@@ -115,6 +115,11 @@ export const HERO: Record<string, { tagline: string; intro?: string; translation
   "intro": "Это руководство предназначено для тех, кто возглавляет организации государственного и социального секторов: руководителей ведомств, лидеров местного самоуправления, директоров некоммерческих организаций, а также руководителей по политике, цифровым технологиям, финансам и операциям, которые им помогают. Оно применяет теорию общественной ценности, начиная со стратегического треугольника Марка Мура, к практическим решениям в 33 самодостаточных темах.",
   "translations": "Переводы: "
  },
+ "ru-001": {
+  "tagline": "Практическое руководство по лучшим практикам создания общественной ценности в государстве и социальном секторе.",
+  "intro": "Это руководство предназначено для тех, кто возглавляет организации государственного и социального секторов: руководителей ведомств, лидеров местного самоуправления, директоров некоммерческих организаций, а также руководителей по политике, цифровым технологиям, финансам и операциям, которые им помогают. Оно применяет теорию общественной ценности, начиная со стратегического треугольника Марка Мура, к практическим решениям в 33 самодостаточных темах.",
+  "translations": "Переводы: "
+ },
  "sv-001": {
   "tagline": "En praktisk handbok med bästa praxis för att skapa offentligt värde inom staten och den sociala sektorn.",
   "intro": "Den här handledningen riktar sig till dem som leder organisationer i offentlig sektor och social sektor: myndighetschefer, ledare inom lokal förvaltning, chefer för ideella organisationer samt de ledare inom policy, digitalisering, ekonomi och verksamhet som stöder dem. Den tillämpar teorin om offentligt värde, med början i Mark Moores strategiska triangel, på praktiska beslut i 33 fristående ämnen.",
@@ -160,6 +165,7 @@ export const ENDONYMS: Record<string, string> = {
  "ko-kr": "한국어 (대한민국)",
  "nl-001": "Nederlands",
  "nl-nl": "Nederlands (Nederland)",
+ "ru-001": "Русский",
  "ru-ru": "Русский (Россия)",
  "sv-001": "Svenska",
  "sv-se": "Svenska (Sverige)",

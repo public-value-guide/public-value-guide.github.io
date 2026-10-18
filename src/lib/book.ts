@@ -73,6 +73,7 @@ export const LOCALES: Locale[] = [
   { slug: 'sv-001', label: 'Svenska' },
   { slug: 'nl-001', label: 'Nederlands' },
   { slug: 'is-001', label: 'Íslenska' },
+  { slug: 'ru-001', label: 'Русский' },
   { slug: 'id-001', label: 'Bahasa Indonesia' },
   { slug: 'bn-001', label: 'বাংলা' }
 ];
@@ -567,6 +568,7 @@ PART_TRANSLATIONS['ko-001'] = PART_TRANSLATIONS['ko-kr'];
 PART_TRANSLATIONS['sv-001'] = PART_TRANSLATIONS['sv-se'];
 PART_TRANSLATIONS['nl-001'] = PART_TRANSLATIONS['nl-nl'];
 PART_TRANSLATIONS['is-001'] = PART_TRANSLATIONS['is-is'];
+PART_TRANSLATIONS['ru-001'] = PART_TRANSLATIONS['ru-ru'];
 
 /** `PARTS`, translated for `locale` where a translation exists, English otherwise. */
 export function partsFor(locale: string): Part[] {

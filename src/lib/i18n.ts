@@ -1016,6 +1016,7 @@ const STRINGS: Record<string, UiStrings> = {
   'sv-001': sv001,
   'nl-001': nl001,
   'is-001': is001,
+  'ru-001': ruRu,
   'id-001': id001,
   'bn-001': bn001
 };

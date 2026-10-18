@@ -6,7 +6,7 @@
   /** Where the header locale picker remembers a reader's own choice. */
   const LOCALE_STORAGE_KEY = 'public-value-guide-locale';
 
-  const fallback = `/${DEFAULT_LOCALE}/contents/`;
+  const fallback = `/${DEFAULT_LOCALE}/`;
 
   /**
    * The locale this reader should land in: a language they chose with the
@@ -34,7 +34,7 @@
   // (`/?<target>`) is a site search handled by SearchGate in the layout, so it
   // must not be redirected away.
   onMount(() => {
-    if (!location.search) goto(`/${preferredLocale()}/contents/`, { replaceState: true });
+    if (!location.search) goto(`/${preferredLocale()}/`, { replaceState: true });
   });
 </script>
 
