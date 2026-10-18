@@ -1099,6 +1099,61 @@ const sv001: UiStrings = svSe;
 const nl001: UiStrings = nlNl;
 const is001: UiStrings = isIs;
 
+const pt001: UiStrings = {
+  siteTitle: 'Guia do Valor Público',
+  skipToContent: 'Saltar para o conteúdo principal',
+  nav: { contents: 'Conteúdo', glossary: 'Glossário', index: 'Índice remissivo', source: 'Fonte' },
+  breadcrumb: { home: 'Início', contents: 'Conteúdo' },
+  picker: { theme: 'Tema', locale: 'Idioma', textSize: 'Tamanho do texto', share: 'Partilhar',
+    search: 'Pesquisar',
+    searchInput: 'Pesquisar no guia',
+    searchSubmit: 'Submeter pesquisa'
+  },
+  share: {
+    emailLink: 'Enviar ligação por correio eletrónico',
+    shareOnLinkedIn: 'Partilhar no LinkedIn',
+    shareOnReddit: 'Partilhar no Reddit',
+    shareOnBluesky: 'Partilhar no Bluesky',
+    shareOnMastodon: 'Partilhar no Mastodon',
+    copyLink: 'Copiar ligação',
+    copied: 'Copiado!',
+    copyFailed: 'Falha ao copiar — copie o endereço da barra de endereços'
+  },
+  contents: {
+    pageTitle: 'Conteúdo',
+    lead: 'Cada tópico é autónomo. Leia do princípio ao fim como um curso de valor público, ou vá diretamente ao tópico que corresponde à decisão que tem à sua frente.',
+    readingIn: (label) => `A ler em ${label}. Mude de idioma no seletor do cabeçalho.`,
+    frontMatter: 'Parte introdutória',
+    part: (n) => `Parte ${n}`,
+    reference: 'Referência'
+  },
+  topic: {
+    topicEyebrow: (n) => `Tópico ${n}`,
+    paginationLabel: 'Tópico',
+    onThisPage: 'Nesta página',
+    previous: 'Anterior',
+    next: 'Seguinte'
+  },
+  links: { label: 'Ligações', skills: 'Competências de IA', llms: 'Para agentes de IA (llms.txt)', issues: 'Comunicar um problema' },
+  results: {
+    label: 'Resultados da pesquisa',
+    heading: (q) => `Pesquisa: ${q}`,
+    searching: 'A pesquisar…',
+    none: (q) => `Sem resultados para “${q}”.`,
+    browse: 'Percorrer o conteúdo',
+    failed: 'Não foi possível carregar o índice de pesquisa.',
+    count: (n, more) => `${n}${more ? '+' : ''} ${n === 1 ? 'resultado' : 'resultados'}`,
+    button: 'Pesquisar'
+  },
+  footer: {
+    tagline:
+      'um manual prático de boas práticas para criar valor público no governo e no setor social, com âmbito mundial.',
+    sourceAndContributions: 'Fonte e contribuições:',
+    builtWith: 'Construído com o',
+    ledBy: 'Dirigido por'
+  }
+};
+
 const STRINGS: Record<string, UiStrings> = {
   'en-gb-oxendict': enGbOxendict,
   'en-gb': enGb,
@@ -1132,7 +1187,8 @@ const STRINGS: Record<string, UiStrings> = {
   'bn-001': bn001,
   'de-001': deDe,
   'id-id': id001,
-  'zh-tw': zhTw
+  'zh-tw': zhTw,
+  'pt-001': pt001
 };
 
 /** UI chrome strings for `locale`, falling back to English if the locale is unknown. */

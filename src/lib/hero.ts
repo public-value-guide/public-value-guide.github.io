@@ -164,6 +164,11 @@ export const HERO: Record<string, { tagline: string; intro?: string; translation
   "tagline": "一本在政府和社會部門創造公共價值的最佳實踐實用手冊。",
   "intro": "本指南面向領導公共和社會部門組織的人士：機構負責人、地方政府領導、非營利組織負責人，以及為他們提供支援的政策、數位、財務與運營負責人。它從馬克·摩爾的戰略三角出發，將公共價值理論運用到33個相互獨立的主題中的實際決策裡。",
   "translations": "翻譯： "
+ },
+ "pt-001": {
+  "tagline": "Um manual prático de boas práticas para criar valor público no governo e no setor social.",
+  "intro": "Este guia destina-se às pessoas que dirigem organizações do setor público e do setor social: dirigentes de organismos, responsáveis do poder local, diretores de organizações sem fins lucrativos e os responsáveis de política, digital, finanças e operações que os apoiam. Aplica a teoria do valor público, a partir do triângulo estratégico de Mark Moore, a decisões práticas em 33 tópicos autónomos.",
+  "translations": "Traduções: "
  }
 };
 
@@ -200,5 +205,6 @@ export const ENDONYMS: Record<string, string> = {
  "zh-cn": "简体中文",
  "de-001": "Deutsch",
  "id-id": "Bahasa Indonesia (Indonesia)",
- "zh-tw": "繁體中文"
+ "zh-tw": "繁體中文",
+ "pt-001": "Português"
 };

@@ -80,7 +80,8 @@ export const LOCALES: Locale[] = [
   { slug: 'bn-001', label: 'বাংলা' },
   { slug: 'de-001', label: 'Deutsch' },
   { slug: 'id-id', label: 'Bahasa Indonesia - Indonesia' },
-  { slug: 'zh-tw', label: '中文 - 台灣 - 繁體' }
+  { slug: 'zh-tw', label: '中文 - 台灣 - 繁體' },
+  { slug: 'pt-001', label: 'Português' }
 ];
 
 /**
@@ -624,6 +625,13 @@ PART_TRANSLATIONS['ru-001'] = PART_TRANSLATIONS['ru-ru'];
 PART_TRANSLATIONS['sw-001'] = PART_TRANSLATIONS['sw-tz'];
 PART_TRANSLATIONS['de-001'] = PART_TRANSLATIONS['de-de'];
 PART_TRANSLATIONS['id-id'] = PART_TRANSLATIONS['id-001'];
+PART_TRANSLATIONS['pt-001'] = {
+  1: { title: 'Fundamentos', tagline: 'por que razão o valor público é diferente do valor de mercado ou do mandato democrático por si sós, e os modelos que o explicam' },
+  2: { title: 'Avaliação e evidência', tagline: 'a caixa de ferramentas do analista: valorizar resultados, construir o caso, testar afirmações' },
+  3: { title: 'Sistemas, governação e prioridades', tagline: 'como as organizações do setor público e do setor social são estruturadas, financiadas e responsabilizadas' },
+  4: { title: 'Questões globais e societais', tagline: 'o valor público para além de uma instituição: comportamento, confiança, o planeta e a conversa pública' },
+  5: { title: 'Digital, software e tecnologia', tagline: 'o valor público da tecnologia: governo digital, inteligência artificial, software, dados e cibersegurança' }
+};
 
 /** `PARTS`, translated for `locale` where a translation exists, English otherwise. */
 export function partsFor(locale: string): Part[] {
