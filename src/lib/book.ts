@@ -77,7 +77,10 @@ export const LOCALES: Locale[] = [
   { slug: 'ru-001', label: 'Русский' },
   { slug: 'sw-001', label: 'Kiswahili' },
   { slug: 'id-001', label: 'Bahasa Indonesia' },
-  { slug: 'bn-001', label: 'বাংলা' }
+  { slug: 'bn-001', label: 'বাংলা' },
+  { slug: 'de-001', label: 'Deutsch' },
+  { slug: 'id-id', label: 'Bahasa Indonesia - Indonesia' },
+  { slug: 'zh-tw', label: '中文 - 台灣 - 繁體' }
 ];
 
 /**
@@ -305,6 +308,28 @@ const PART_TRANSLATIONS: Record<string, Record<number, { title: string; tagline:
       title: 'Digitales, Software, und Technologie',
       tagline:
         'der öffentliche Wert von Technologie: digitale Verwaltung, künstliche Intelligenz, Software, Daten, und Cybersicherheit'
+    }
+  },
+  'zh-tw': {
+    1: {
+      title: '基礎',
+      tagline: '為什麼公共價值不同於單純的市場價值或民主授權,以及解釋這一點的各種模型'
+    },
+    2: {
+      title: '評估與證據',
+      tagline: '分析者的工具箱:為成果估值、構建論證、檢驗主張'
+    },
+    3: {
+      title: '體系、治理與優先事項',
+      tagline: '公共與社會部門組織是如何被構建、被資助,並被追究責任的'
+    },
+    4: {
+      title: '全球與社會議題',
+      tagline: '超越單一機構的公共價值:行為、信任、地球,以及公共對話'
+    },
+    5: {
+      title: '數位、軟體與技術',
+      tagline: '技術的公共價值:數位政府、人工智慧、軟體、資料與網路安全'
     }
   },
   'zh-cn': {
@@ -597,6 +622,8 @@ PART_TRANSLATIONS['nl-001'] = PART_TRANSLATIONS['nl-nl'];
 PART_TRANSLATIONS['is-001'] = PART_TRANSLATIONS['is-is'];
 PART_TRANSLATIONS['ru-001'] = PART_TRANSLATIONS['ru-ru'];
 PART_TRANSLATIONS['sw-001'] = PART_TRANSLATIONS['sw-tz'];
+PART_TRANSLATIONS['de-001'] = PART_TRANSLATIONS['de-de'];
+PART_TRANSLATIONS['id-id'] = PART_TRANSLATIONS['id-001'];
 
 /** `PARTS`, translated for `locale` where a translation exists, English otherwise. */
 export function partsFor(locale: string): Part[] {

@@ -431,6 +431,60 @@ const zhCn: UiStrings = {
   }
 };
 
+const zhTw: UiStrings = {
+  siteTitle: '公共價值指南',
+  skipToContent: '跳轉到主要內容',
+  nav: { contents: '目錄', glossary: '術語表', index: '索引', source: '原始碼' },
+  breadcrumb: { home: '首頁', contents: '目錄' },
+  picker: { theme: '主題', locale: '語言', textSize: '字型大小', share: '分享',
+    search: '搜尋',
+    searchInput: '在指南中搜尋',
+    searchSubmit: '提交搜尋'
+  },
+  share: {
+    emailLink: '透過電子郵件傳送連結',
+    shareOnLinkedIn: '分享到 LinkedIn',
+    shareOnReddit: '分享到 Reddit',
+    shareOnBluesky: '分享到 Bluesky',
+    shareOnMastodon: '分享到 Mastodon',
+    copyLink: '複製連結',
+    copied: '已複製!',
+    copyFailed: '複製失敗——請改為複製位址列內容'
+  },
+  contents: {
+    pageTitle: '目錄',
+    lead: '每個主題都是獨立完整的。可以從頭到尾通讀,作為一門關於公共價值的課程,也可以直接跳轉到與你眼下的決策相匹配的那個主題。',
+    readingIn: (label) => `正在以${label}閱讀。可從頁首的選擇器切換語言。`,
+    frontMatter: '前言部分',
+    part: (n) => `第 ${n} 部分`,
+    reference: '參考資料'
+  },
+  topic: {
+    topicEyebrow: (n) => `主題${n}`,
+    paginationLabel: '主題',
+    onThisPage: '本頁內容',
+    previous: '上一章',
+    next: '下一章'
+  },
+  links: { label: '連結', skills: 'AI 技能', llms: '面向 AI 代理(llms.txt)', issues: '報告問題' },
+  results: {
+    label: '搜尋結果',
+    heading: (q) => `搜尋:${q}`,
+    searching: '正在搜尋…',
+    none: (q) => `沒有找到“${q}”的結果。`,
+    browse: '瀏覽目錄',
+    failed: '無法載入搜尋索引。',
+    count: (n, more) => `${n}${more ? '+' : ''} 條結果`,
+    button: '搜尋'
+  },
+  footer: {
+    tagline: '一部面向全球的、關於在政府與社會部門中創造公共價值的最佳實踐實用手冊。',
+    sourceAndContributions: '原始碼與貢獻:',
+    builtWith: '構建工具:',
+    ledBy: '負責人:'
+  }
+};
+
 const ar001: UiStrings = {
   siteTitle: 'دليل القيمة العامة',
   skipToContent: 'الانتقال إلى المحتوى الرئيسي',
@@ -1075,7 +1129,10 @@ const STRINGS: Record<string, UiStrings> = {
   'sw-tz': swTz,
   'sw-001': swTz,
   'id-001': id001,
-  'bn-001': bn001
+  'bn-001': bn001,
+  'de-001': deDe,
+  'id-id': id001,
+  'zh-tw': zhTw
 };
 
 /** UI chrome strings for `locale`, falling back to English if the locale is unknown. */

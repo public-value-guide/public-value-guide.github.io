@@ -149,6 +149,21 @@ export const HERO: Record<string, { tagline: string; intro?: string; translation
   "tagline": "一本在政府和社会部门创造公共价值的最佳实践实用手册。",
   "intro": "本指南面向领导公共和社会部门组织的人士：机构负责人、地方政府领导、非营利组织负责人，以及为他们提供支持的政策、数字、财务与运营负责人。它从马克·摩尔的战略三角出发，将公共价值理论运用到33个相互独立的主题中的实际决策里。",
   "translations": "翻译： "
+ },
+ "de-001": {
+  "tagline": "Ein praxisnahes Handbuch bewährter Verfahren zur Schaffung öffentlichen Werts in Verwaltung und Sozialsektor.",
+  "intro": "Dieser Leitfaden richtet sich an Menschen, die Organisationen des öffentlichen und des sozialen Sektors führen: Behördenleitungen, kommunale Führungskräfte, Geschäftsführungen gemeinnütziger Organisationen sowie die Leitungen für Politik, Digitales, Finanzen und Betrieb, die sie unterstützen. Er wendet die Theorie des öffentlichen Werts, ausgehend von Mark Moores strategischem Dreieck, in 33 in sich geschlossenen Themen auf praktische Entscheidungen an.",
+  "translations": "Übersetzungen: "
+ },
+ "id-id": {
+  "tagline": "Buku pegangan praktis berisi praktik terbaik untuk menciptakan nilai publik di pemerintahan dan sektor sosial.",
+  "intro": "Panduan ini ditujukan bagi mereka yang memimpin organisasi sektor publik dan sosial: kepala lembaga, pemimpin pemerintah daerah, direktur organisasi nirlaba, serta pemimpin kebijakan, digital, keuangan, dan operasi yang mendukung mereka. Panduan ini menerapkan teori nilai publik, mulai dari segitiga strategis Mark Moore, pada keputusan praktis dalam 33 topik yang berdiri sendiri.",
+  "translations": "Terjemahan: "
+ },
+ "zh-tw": {
+  "tagline": "一本在政府和社會部門創造公共價值的最佳實踐實用手冊。",
+  "intro": "本指南面向領導公共和社會部門組織的人士：機構負責人、地方政府領導、非營利組織負責人，以及為他們提供支援的政策、數位、財務與運營負責人。它從馬克·摩爾的戰略三角出發，將公共價值理論運用到33個相互獨立的主題中的實際決策裡。",
+  "translations": "翻譯： "
  }
 };
 
@@ -182,5 +197,8 @@ export const ENDONYMS: Record<string, string> = {
  "sw-001": "Kiswahili",
  "sw-tz": "Kiswahili (Tanzania)",
  "zh-001": "中文",
- "zh-cn": "简体中文"
+ "zh-cn": "简体中文",
+ "de-001": "Deutsch",
+ "id-id": "Bahasa Indonesia (Indonesia)",
+ "zh-tw": "繁體中文"
 };
