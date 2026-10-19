@@ -91,7 +91,9 @@ export const LOCALES: Locale[] = [
   { slug: 'it-it', label: 'Italiano' },
   { slug: 'it-001', label: 'Italiano' },
   { slug: 'th-th', label: 'ไทย' },
-  { slug: 'th-001', label: 'ไทย' }
+  { slug: 'th-001', label: 'ไทย' },
+  { slug: 'tr-tr', label: 'Türkçe' },
+  { slug: 'tr-001', label: 'Türkçe' }
 ];
 
 /**
@@ -667,6 +669,14 @@ PART_TRANSLATIONS['th-th'] = {
   5: { title: 'ดิจิทัล ซอฟต์แวร์ และเทคโนโลยี', tagline: 'คุณค่าสาธารณะของเทคโนโลยี รัฐบาลดิจิทัล ปัญญาประดิษฐ์ ซอฟต์แวร์ ข้อมูล และความมั่นคงปลอดภัยไซเบอร์' }
 };
 PART_TRANSLATIONS['th-001'] = PART_TRANSLATIONS['th-th'];
+PART_TRANSLATIONS['tr-tr'] = {
+  1: { title: 'Temeller', tagline: 'Kamu değerinin piyasa değerinden ve demokratik yetkiden neden farklı olduğu ve onu açıklayan modeller' },
+  2: { title: 'Değerlendirme ve kanıt', tagline: 'Analistin araç kutusu: sonuçları ölçmek, gerekçeleri kurmak ve iddiaları sınamak' },
+  3: { title: 'Sistemler, yönetişim ve öncelikler', tagline: 'Kamu ve sosyal sektör kuruluşları nasıl yapılandırılır, fonlanır ve hesap verebilir kılınır' },
+  4: { title: 'Toplumsal ve küresel konular', tagline: 'Tek bir kuruluşun ötesinde kamu değeri: davranış, güven, gezegen ve kamusal söylem' },
+  5: { title: 'Dijital, yazılım ve teknoloji', tagline: 'Teknolojinin kamu değeri: dijital devlet, yapay zekâ, yazılım, veri ve siber güvenlik' }
+};
+PART_TRANSLATIONS['tr-001'] = PART_TRANSLATIONS['tr-tr'];
 PART_TRANSLATIONS['da-001'] = {
   1: { title: 'Grundlag', tagline: 'Hvorfor offentlig værdi adskiller sig fra markedsværdi og demokratisk mandat, og de modeller der forklarer det' },
   2: { title: 'Vurdering og dokumentation', tagline: 'Analytikerens værktøjskasse: værdisætning af resultater, opbygning af sagen og afprøvning af påstande' },

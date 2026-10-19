@@ -1484,6 +1484,61 @@ const thTh: UiStrings = {
   }
 };
 
+const trTr: UiStrings = {
+  siteTitle: 'Kamu Değeri Rehberi',
+  skipToContent: 'Ana içeriğe geç',
+  nav: { contents: 'İçindekiler', glossary: 'Sözlük', index: 'Dizin', source: 'Kaynak' },
+  breadcrumb: { home: 'Ana sayfa', contents: 'İçindekiler' },
+  picker: { theme: 'Tema', locale: 'Dil', textSize: 'Metin boyutu', share: 'Paylaş',
+    search: 'Ara',
+    searchInput: 'Rehberde ara',
+    searchSubmit: 'Aramayı gönder'
+  },
+  share: {
+    emailLink: 'Bağlantıyı e-postayla gönder',
+    shareOnLinkedIn: 'LinkedIn\'de paylaş',
+    shareOnReddit: 'Reddit\'te paylaş',
+    shareOnBluesky: 'Bluesky\'de paylaş',
+    shareOnMastodon: 'Mastodon\'da paylaş',
+    copyLink: 'Bağlantıyı kopyala',
+    copied: 'Kopyalandı!',
+    copyFailed: 'Kopyalanamadı – lütfen adresi adres çubuğundan kopyalayın'
+  },
+  contents: {
+    pageTitle: 'İçindekiler',
+    lead: 'Her konu kendi başına yeterlidir. Rehberi kamu değeri üzerine bir kurs olarak baştan sona okuyabilir ya da önünüzdeki karara uyan konuya doğrudan geçebilirsiniz.',
+    readingIn: (label) => `${label} dilinde okuyorsunuz. Dili üstbilgideki dil seçicisinden değiştirebilirsiniz.`,
+    frontMatter: 'Önsöz',
+    part: (n) => `Bölüm ${n}`,
+    reference: 'Başvuru'
+  },
+  topic: {
+    topicEyebrow: (n) => `Konu ${n}`,
+    paginationLabel: 'Konu',
+    onThisPage: 'Bu sayfada',
+    previous: 'Önceki',
+    next: 'Sonraki'
+  },
+  links: { label: 'Bağlantılar', skills: 'Yapay zekâ için beceriler', llms: 'Yapay zekâ ajanları için (llms.txt)', issues: 'Bir hata bildirin' },
+  results: {
+    label: 'Arama sonuçları',
+    heading: (q) => `Ara: ${q}`,
+    searching: 'Aranıyor…',
+    none: (q) => `“${q}” için sonuç bulunamadı`,
+    browse: 'İçindekileri gözden geçirin',
+    failed: 'Arama dizini yüklenemedi',
+    count: (n, more) => `${n}${more ? '+' : ''} ${n === 1 ? 'sonuç' : 'sonuç'}`,
+    button: 'Ara'
+  },
+  footer: {
+    tagline:
+      'Kamu ve sosyal sektörde kamu değeri yaratmanın en iyi uygulamalarına dair pratik bir rehber, dünya çapındaki okurlar için yazılmıştır.',
+    sourceAndContributions: 'Kaynak ve katkılar:',
+    builtWith: 'Şununla geliştirildi:',
+    ledBy: 'Yöneten:'
+  }
+};
+
 const STRINGS: Record<string, UiStrings> = {
   'en-gb-oxendict': enGbOxendict,
   'en-gb': enGb,
@@ -1528,7 +1583,9 @@ const STRINGS: Record<string, UiStrings> = {
   'it-it': itIt,
   'it-001': itIt,
   'th-th': thTh,
-  'th-001': thTh
+  'th-001': thTh,
+  'tr-tr': trTr,
+  'tr-001': trTr
 };
 
 /** UI chrome strings for `locale`, falling back to English if the locale is unknown. */

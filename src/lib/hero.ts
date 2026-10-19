@@ -219,6 +219,16 @@ export const HERO: Record<string, { tagline: string; intro?: string; translation
   "tagline": "คู่มือปฏิบัติว่าด้วยแนวปฏิบัติที่ดีที่สุดในการสร้างคุณค่าสาธารณะในภาครัฐและภาคสังคม",
   "intro": "คู่มือนี้เขียนสำหรับผู้ที่นำองค์กรภาครัฐและภาคสังคม ได้แก่ ผู้บริหารหน่วยงาน ผู้นำรัฐบาลท้องถิ่น ผู้อำนวยการบริหารขององค์กรไม่แสวงหากำไร และผู้นำด้านนโยบาย ดิจิทัล การเงิน และปฏิบัติการที่สนับสนุนพวกเขา คู่มือนำทฤษฎีคุณค่าสาธารณะ เริ่มจากสามเหลี่ยมเชิงกลยุทธ์ของมาร์ก มัวร์ มาประยุกต์กับการตัดสินใจเชิงปฏิบัติใน 33 หัวข้อฉบับสมบูรณ์",
   "translations": "การแปล: "
+ },
+ "tr-tr": {
+  "tagline": "Kamu ve sosyal sektörde kamu değeri yaratmanın en iyi uygulamalarına dair pratik bir rehber",
+  "intro": "Bu rehber kamu ve sosyal sektör kuruluşlarını yönetenler için yazılmıştır: kurum yöneticileri, yerel yönetim liderleri, kâr amacı gütmeyen kuruluşların icra direktörleri ve onları destekleyen politika, dijital, mali ve operasyon liderleri. Mark Moore'un stratejik üçgeninden başlayarak kamu değeri kuramını 33 eksiksiz konuda pratik kararlara uygular.",
+  "translations": "Çeviriler: "
+ },
+ "tr-001": {
+  "tagline": "Kamu ve sosyal sektörde kamu değeri yaratmanın en iyi uygulamalarına dair pratik bir rehber",
+  "intro": "Bu rehber kamu ve sosyal sektör kuruluşlarını yönetenler için yazılmıştır: kurum yöneticileri, yerel yönetim liderleri, kâr amacı gütmeyen kuruluşların icra direktörleri ve onları destekleyen politika, dijital, mali ve operasyon liderleri. Mark Moore'un stratejik üçgeninden başlayarak kamu değeri kuramını 33 eksiksiz konuda pratik kararlara uygular.",
+  "translations": "Çeviriler: "
  }
 };
 
@@ -266,5 +276,7 @@ export const ENDONYMS: Record<string, string> = {
  "it-it": "Italiano",
  "it-001": "Italiano",
  "th-th": "ไทย",
- "th-001": "ไทย"
+ "th-001": "ไทย",
+ "tr-tr": "Türkçe",
+ "tr-001": "Türkçe"
 };
