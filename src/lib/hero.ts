@@ -199,6 +199,16 @@ export const HERO: Record<string, { tagline: string; intro?: string; translation
   "tagline": "Käytännönläheinen opas julkisen arvon luomisen parhaisiin käytäntöihin julkisella ja kolmannella sektorilla.",
   "intro": "Tämä opas on kirjoitettu julkisen ja kolmannen sektorin organisaatioita johtaville: virastojen johtajille, paikallishallinnon johtajille, kansalaisjärjestöjen toiminnanjohtajille sekä heitä tukeville politiikka-, digitaali-, talous- ja toimintajohtajille. Se ottaa julkisen arvon teorian, Mark Mooren strategisesta kolmiosta lähtien, ja soveltaa sitä käytännön päätöksiin 33 kokonaisessa aiheessa.",
   "translations": "Käännökset: "
+ },
+ "it-it": {
+  "tagline": "Una guida pratica alle migliori pratiche per creare valore pubblico nel settore pubblico e nel terzo settore.",
+  "intro": "Questa guida è scritta per chi guida organizzazioni pubbliche e del terzo settore: dirigenti di agenzie, responsabili dell'amministrazione locale, direttori esecutivi di organizzazioni non profit e i leader di politica, digitale, finanza e operazioni che li sostengono. Prende la teoria del valore pubblico, a partire dal triangolo strategico di Mark Moore, e la applica a decisioni pratiche in 33 argomenti completi.",
+  "translations": "Traduzioni: "
+ },
+ "it-001": {
+  "tagline": "Una guida pratica alle migliori pratiche per creare valore pubblico nel settore pubblico e nel terzo settore.",
+  "intro": "Questa guida è scritta per chi guida organizzazioni pubbliche e del terzo settore: dirigenti di agenzie, responsabili dell'amministrazione locale, direttori esecutivi di organizzazioni non profit e i leader di politica, digitale, finanza e operazioni che li sostengono. Prende la teoria del valore pubblico, a partire dal triangolo strategico di Mark Moore, e la applica a decisioni pratiche in 33 argomenti completi.",
+  "translations": "Traduzioni: "
  }
 };
 
@@ -242,5 +252,7 @@ export const ENDONYMS: Record<string, string> = {
  "et-ee": "Eesti",
  "et-001": "Eesti",
  "fi-fi": "Suomi",
- "fi-001": "Suomi"
+ "fi-001": "Suomi",
+ "it-it": "Italiano",
+ "it-001": "Italiano"
 };

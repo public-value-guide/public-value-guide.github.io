@@ -87,7 +87,9 @@ export const LOCALES: Locale[] = [
   { slug: 'et-ee', label: 'Eesti' },
   { slug: 'et-001', label: 'Eesti' },
   { slug: 'fi-fi', label: 'Suomi' },
-  { slug: 'fi-001', label: 'Suomi' }
+  { slug: 'fi-001', label: 'Suomi' },
+  { slug: 'it-it', label: 'Italiano' },
+  { slug: 'it-001', label: 'Italiano' }
 ];
 
 /**
@@ -647,6 +649,14 @@ PART_TRANSLATIONS['fi-fi'] = {
   5: { title: 'Digitaalisuus, ohjelmistot ja teknologia', tagline: 'Teknologian julkinen arvo: digitaalinen hallinto, tekoäly, ohjelmistot, data ja kyberturvallisuus' }
 };
 PART_TRANSLATIONS['fi-001'] = PART_TRANSLATIONS['fi-fi'];
+PART_TRANSLATIONS['it-it'] = {
+  1: { title: 'Fondamenti', tagline: 'Perché il valore pubblico differisce dal valore di mercato e dal mandato democratico, e i modelli che lo spiegano' },
+  2: { title: 'Valutazione ed evidenze', tagline: 'La cassetta degli attrezzi dell\'analista: valutare i risultati, costruire il caso e mettere alla prova le affermazioni' },
+  3: { title: 'Sistemi, governance e priorità', tagline: 'Come le organizzazioni pubbliche e del terzo settore sono strutturate, finanziate e chiamate a rispondere' },
+  4: { title: 'Questioni sociali e globali', tagline: 'Il valore pubblico oltre i confini di una singola organizzazione: comportamento, fiducia, pianeta e discorso pubblico' },
+  5: { title: 'Digitale, software e tecnologia', tagline: 'Il valore pubblico della tecnologia: governo digitale, intelligenza artificiale, software, dati e cybersicurezza' }
+};
+PART_TRANSLATIONS['it-001'] = PART_TRANSLATIONS['it-it'];
 PART_TRANSLATIONS['da-001'] = {
   1: { title: 'Grundlag', tagline: 'Hvorfor offentlig værdi adskiller sig fra markedsværdi og demokratisk mandat, og de modeller der forklarer det' },
   2: { title: 'Vurdering og dokumentation', tagline: 'Analytikerens værktøjskasse: værdisætning af resultater, opbygning af sagen og afprøvning af påstande' },

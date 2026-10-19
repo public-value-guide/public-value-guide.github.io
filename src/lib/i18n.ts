@@ -1374,6 +1374,61 @@ const fiFi: UiStrings = {
   }
 };
 
+const itIt: UiStrings = {
+  siteTitle: 'Guida al valore pubblico',
+  skipToContent: 'Vai al contenuto principale',
+  nav: { contents: 'Indice', glossary: 'Glossario', index: 'Indice analitico', source: 'Codice sorgente' },
+  breadcrumb: { home: 'Home', contents: 'Indice' },
+  picker: { theme: 'Tema', locale: 'Lingua', textSize: 'Dimensione del testo', share: 'Condividi',
+    search: 'Cerca',
+    searchInput: 'Cerca nella guida',
+    searchSubmit: 'Invia la ricerca'
+  },
+  share: {
+    emailLink: 'Invia il link per email',
+    shareOnLinkedIn: 'Condividi su LinkedIn',
+    shareOnReddit: 'Condividi su Reddit',
+    shareOnBluesky: 'Condividi su Bluesky',
+    shareOnMastodon: 'Condividi su Mastodon',
+    copyLink: 'Copia il link',
+    copied: 'Copiato!',
+    copyFailed: 'Copia non riuscita – copia l\'indirizzo dalla barra degli indirizzi'
+  },
+  contents: {
+    pageTitle: 'Indice',
+    lead: 'Ogni argomento è autonomo. Leggeteli dall\'inizio alla fine come un corso sul valore pubblico oppure passate direttamente all\'argomento che corrisponde alla decisione che avete davanti.',
+    readingIn: (label) => `State leggendo in ${label}. Cambiate lingua con il selettore della lingua nell'intestazione.`,
+    frontMatter: 'Introduzione',
+    part: (n) => `Parte ${n}`,
+    reference: 'Riferimento'
+  },
+  topic: {
+    topicEyebrow: (n) => `Argomento ${n}`,
+    paginationLabel: 'Argomento',
+    onThisPage: 'In questa pagina',
+    previous: 'Precedente',
+    next: 'Successivo'
+  },
+  links: { label: 'Link', skills: 'Competenze per l\'IA', llms: 'Per gli agenti di IA (llms.txt)', issues: 'Segnala un errore' },
+  results: {
+    label: 'Risultati della ricerca',
+    heading: (q) => `Ricerca: ${q}`,
+    searching: 'Ricerca in corso…',
+    none: (q) => `Nessun risultato per «${q}».`,
+    browse: 'Sfoglia l\'indice',
+    failed: 'Impossibile caricare l\'indice di ricerca.',
+    count: (n, more) => `${n}${more ? '+' : ''} ${n === 1 ? 'risultato' : 'risultati'}`,
+    button: 'Cerca'
+  },
+  footer: {
+    tagline:
+      'Una guida pratica alle migliori pratiche per creare valore pubblico nel settore pubblico e nel terzo settore, scritta per un pubblico globale.',
+    sourceAndContributions: 'Codice sorgente e contributi:',
+    builtWith: 'Realizzato con',
+    ledBy: 'Guidato da'
+  }
+};
+
 const STRINGS: Record<string, UiStrings> = {
   'en-gb-oxendict': enGbOxendict,
   'en-gb': enGb,
@@ -1414,7 +1469,9 @@ const STRINGS: Record<string, UiStrings> = {
   'et-ee': etEe,
   'et-001': etEe,
   'fi-fi': fiFi,
-  'fi-001': fiFi
+  'fi-001': fiFi,
+  'it-it': itIt,
+  'it-001': itIt
 };
 
 /** UI chrome strings for `locale`, falling back to English if the locale is unknown. */
