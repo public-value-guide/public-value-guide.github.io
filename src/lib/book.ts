@@ -82,7 +82,8 @@ export const LOCALES: Locale[] = [
   { slug: 'id-id', label: 'Bahasa Indonesia - Indonesia' },
   { slug: 'zh-tw', label: '中文 - 台灣 - 繁體' },
   { slug: 'pt-001', label: 'Português' },
-  { slug: 'ur-001', label: 'اردو' }
+  { slug: 'ur-001', label: 'اردو' },
+  { slug: 'da-001', label: 'Dansk' }
 ];
 
 /**
@@ -626,6 +627,13 @@ PART_TRANSLATIONS['ru-001'] = PART_TRANSLATIONS['ru-ru'];
 PART_TRANSLATIONS['sw-001'] = PART_TRANSLATIONS['sw-tz'];
 PART_TRANSLATIONS['de-001'] = PART_TRANSLATIONS['de-de'];
 PART_TRANSLATIONS['id-id'] = PART_TRANSLATIONS['id-001'];
+PART_TRANSLATIONS['da-001'] = {
+  1: { title: 'Grundlag', tagline: 'Hvorfor offentlig værdi adskiller sig fra markedsværdi og demokratisk mandat, og de modeller der forklarer det' },
+  2: { title: 'Vurdering og dokumentation', tagline: 'Analytikerens værktøjskasse: værdisætning af resultater, opbygning af sagen og afprøvning af påstande' },
+  3: { title: 'Systemer, styring og prioriteter', tagline: 'Hvordan offentlige og sociale organisationer struktureres, finansieres og holdes ansvarlige' },
+  4: { title: 'Samfundsmæssige og globale spørgsmål', tagline: 'Offentlig værdi ud over den enkelte organisation: adfærd, tillid, planeten og den offentlige samtale' },
+  5: { title: 'Digital, software og teknologi', tagline: 'Teknologiens offentlige værdi: digital forvaltning, AI, software, data og cybersikkerhed' }
+};
 PART_TRANSLATIONS['ur-001'] = {
   1: { title: 'بنیادیں', tagline: 'عوامی قدر تنہا منڈی کی قدر یا جمہوری مینڈیٹ سے مختلف کیوں ہے، اور اسے سمجھانے والے نمونے' },
   2: { title: 'جائزہ اور شواہد', tagline: 'تجزیہ کار کا آلاتی خانہ: نتائج کی قدر کاری، مقدمہ بنانا، دعووں کی جانچ' },

@@ -174,6 +174,11 @@ export const HERO: Record<string, { tagline: string; intro?: string; translation
   "tagline": "حکومت اور سماجی شعبے میں عوامی قدر پیدا کرنے کی بہترین مشقوں کی عملی رہنمائی۔",
   "intro": "یہ رہنمائی ان لوگوں کے لیے ہے جو عوامی اور سماجی شعبے کے ادارے چلاتے ہیں: ایجنسی کے سربراہ، مقامی حکومت کے قائدین، غیر منافع بخش اداروں کے ڈائریکٹر، اور ان کی معاونت کرنے والے پالیسی، ڈیجیٹل، مالیات، اور عملیات کے قائدین۔ یہ مارک مور کے اسٹریٹجک مثلث سے شروع ہونے والے عوامی قدر کے نظریے کو 33 مکمل موضوعات میں عملی فیصلوں پر لاگو کرتی ہے۔",
   "translations": "تراجم: "
+ },
+ "da-001": {
+  "tagline": "En praktisk guide til bedste praksis for at skabe offentlig værdi i det offentlige og i den sociale sektor.",
+  "intro": "Denne guide er skrevet til de mennesker, der leder offentlige organisationer og organisationer i den sociale sektor: myndighedschefer, ledere i lokal forvaltning, direktører i nonprofitorganisationer og de politik-, digitale, økonomi- og driftsledere, der støtter dem. Den tager teorien om offentlig værdi, med udgangspunkt i Mark Moores strategiske trekant, og anvender den på praktiske beslutninger i 33 fulde emner.",
+  "translations": "Oversættelser: "
  }
 };
 
@@ -212,5 +217,6 @@ export const ENDONYMS: Record<string, string> = {
  "id-id": "Bahasa Indonesia (Indonesia)",
  "zh-tw": "繁體中文",
  "pt-001": "Português",
- "ur-001": "اردو"
+ "ur-001": "اردو",
+ "da-001": "Dansk"
 };

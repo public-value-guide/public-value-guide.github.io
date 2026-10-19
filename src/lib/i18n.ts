@@ -1209,6 +1209,61 @@ const ur001: UiStrings = {
   }
 };
 
+const da001: UiStrings = {
+  siteTitle: 'Guide til offentlig værdi',
+  skipToContent: 'Gå til hovedindholdet',
+  nav: { contents: 'Indhold', glossary: 'Ordliste', index: 'Indeks', source: 'Kilde' },
+  breadcrumb: { home: 'Forside', contents: 'Indhold' },
+  picker: { theme: 'Tema', locale: 'Sprog', textSize: 'Tekststørrelse', share: 'Del',
+    search: 'Søg',
+    searchInput: 'Søg i guiden',
+    searchSubmit: 'Send søgning'
+  },
+  share: {
+    emailLink: 'Send link på e-mail',
+    shareOnLinkedIn: 'Del på LinkedIn',
+    shareOnReddit: 'Del på Reddit',
+    shareOnBluesky: 'Del på Bluesky',
+    shareOnMastodon: 'Del på Mastodon',
+    copyLink: 'Kopiér link',
+    copied: 'Kopieret!',
+    copyFailed: 'Kopiering mislykkedes – kopiér adressen fra adresselinjen'
+  },
+  contents: {
+    pageTitle: 'Indhold',
+    lead: 'Hvert emne står for sig selv. Læs dem fra start til slut som et kursus i offentlig værdi, eller gå direkte til det emne, der svarer til den beslutning, du står med.',
+    readingIn: (label) => `Du læser på ${label}. Skift sprog med sprogvælgeren i sidehovedet.`,
+    frontMatter: 'Indledning',
+    part: (n) => `Del ${n}`,
+    reference: 'Reference'
+  },
+  topic: {
+    topicEyebrow: (n) => `Emne ${n}`,
+    paginationLabel: 'Emne',
+    onThisPage: 'På denne side',
+    previous: 'Forrige',
+    next: 'Næste'
+  },
+  links: { label: 'Links', skills: 'AI-færdigheder', llms: 'Til AI-agenter (llms.txt)', issues: 'Meld en fejl' },
+  results: {
+    label: 'Søgeresultater',
+    heading: (q) => `Søgning: ${q}`,
+    searching: 'Søger…',
+    none: (q) => `Ingen resultater for “${q}”.`,
+    browse: 'Se indholdsfortegnelsen',
+    failed: 'Søgeindekset kunne ikke indlæses.',
+    count: (n, more) => `${n}${more ? '+' : ''} ${n === 1 ? 'resultat' : 'resultater'}`,
+    button: 'Søg'
+  },
+  footer: {
+    tagline:
+      'En praktisk guide til bedste praksis for at skabe offentlig værdi i det offentlige og i den sociale sektor, skrevet til et globalt publikum.',
+    sourceAndContributions: 'Kilde og bidrag:',
+    builtWith: 'Bygget med',
+    ledBy: 'Ledet af'
+  }
+};
+
 const STRINGS: Record<string, UiStrings> = {
   'en-gb-oxendict': enGbOxendict,
   'en-gb': enGb,
@@ -1244,7 +1299,8 @@ const STRINGS: Record<string, UiStrings> = {
   'id-id': id001,
   'zh-tw': zhTw,
   'pt-001': pt001,
-  'ur-001': ur001
+  'ur-001': ur001,
+  'da-001': da001
 };
 
 /** UI chrome strings for `locale`, falling back to English if the locale is unknown. */
