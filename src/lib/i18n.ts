@@ -1264,6 +1264,61 @@ const da001: UiStrings = {
   }
 };
 
+const etEe: UiStrings = {
+  siteTitle: 'Avaliku väärtuse juhend',
+  skipToContent: 'Liigu põhisisu juurde',
+  nav: { contents: 'Sisukord', glossary: 'Sõnastik', index: 'Register', source: 'Lähtekood' },
+  breadcrumb: { home: 'Avaleht', contents: 'Sisukord' },
+  picker: { theme: 'Kujundus', locale: 'Keel', textSize: 'Tekstisuurus', share: 'Jaga',
+    search: 'Otsi',
+    searchInput: 'Otsi juhendist',
+    searchSubmit: 'Saada otsing'
+  },
+  share: {
+    emailLink: 'Saada link e-postiga',
+    shareOnLinkedIn: 'Jaga LinkedInis',
+    shareOnReddit: 'Jaga Redditis',
+    shareOnBluesky: 'Jaga Blueskys',
+    shareOnMastodon: 'Jaga Mastodonis',
+    copyLink: 'Kopeeri link',
+    copied: 'Kopeeritud!',
+    copyFailed: 'Kopeerimine ebaõnnestus – kopeeri aadress aadressiribalt'
+  },
+  contents: {
+    pageTitle: 'Sisukord',
+    lead: 'Iga teema seisab iseseisvalt. Loe neid algusest lõpuni kui avaliku väärtuse kursust või liigu otse teema juurde, mis vastab otsusele, mille ees sa seisad.',
+    readingIn: (label) => `Loed keeles ${label}. Keele vahetamiseks kasuta päises olevat keelevalijat.`,
+    frontMatter: 'Sissejuhatus',
+    part: (n) => `${n}. osa`,
+    reference: 'Viide'
+  },
+  topic: {
+    topicEyebrow: (n) => `Teema ${n}`,
+    paginationLabel: 'Teema',
+    onThisPage: 'Sellel lehel',
+    previous: 'Eelmine',
+    next: 'Järgmine'
+  },
+  links: { label: 'Lingid', skills: 'TI-oskused', llms: 'Tehisintellekti agentidele (llms.txt)', issues: 'Teata veast' },
+  results: {
+    label: 'Otsingutulemused',
+    heading: (q) => `Otsing: ${q}`,
+    searching: 'Otsin…',
+    none: (q) => `Päringule „${q}” tulemusi ei leitud.`,
+    browse: 'Vaata sisukorda',
+    failed: 'Otsinguindeksi laadimine ebaõnnestus.',
+    count: (n, more) => `${n}${more ? '+' : ''} ${n === 1 ? 'tulemus' : 'tulemust'}`,
+    button: 'Otsi'
+  },
+  footer: {
+    tagline:
+      'Praktiline juhend parimate tavade kohta avaliku väärtuse loomisel avalikus ja sotsiaalsektoris, kirjutatud ülemaailmsele auditooriumile.',
+    sourceAndContributions: 'Lähtekood ja panused:',
+    builtWith: 'Ehitatud tööriistadega',
+    ledBy: 'Juhtinud'
+  }
+};
+
 const STRINGS: Record<string, UiStrings> = {
   'en-gb-oxendict': enGbOxendict,
   'en-gb': enGb,
@@ -1300,7 +1355,9 @@ const STRINGS: Record<string, UiStrings> = {
   'zh-tw': zhTw,
   'pt-001': pt001,
   'ur-001': ur001,
-  'da-001': da001
+  'da-001': da001,
+  'et-ee': etEe,
+  'et-001': etEe
 };
 
 /** UI chrome strings for `locale`, falling back to English if the locale is unknown. */

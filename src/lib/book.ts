@@ -83,7 +83,9 @@ export const LOCALES: Locale[] = [
   { slug: 'zh-tw', label: '中文 - 台灣 - 繁體' },
   { slug: 'pt-001', label: 'Português' },
   { slug: 'ur-001', label: 'اردو' },
-  { slug: 'da-001', label: 'Dansk' }
+  { slug: 'da-001', label: 'Dansk' },
+  { slug: 'et-ee', label: 'Eesti' },
+  { slug: 'et-001', label: 'Eesti' }
 ];
 
 /**
@@ -627,6 +629,14 @@ PART_TRANSLATIONS['ru-001'] = PART_TRANSLATIONS['ru-ru'];
 PART_TRANSLATIONS['sw-001'] = PART_TRANSLATIONS['sw-tz'];
 PART_TRANSLATIONS['de-001'] = PART_TRANSLATIONS['de-de'];
 PART_TRANSLATIONS['id-id'] = PART_TRANSLATIONS['id-001'];
+PART_TRANSLATIONS['et-ee'] = {
+  1: { title: 'Alused', tagline: 'Miks avalik väärtus erineb turuväärtusest ja demokraatlikust mandaadist ning mudelid, mis seda selgitavad' },
+  2: { title: 'Hindamine ja tõendid', tagline: 'Analüütiku tööriistakast: tulemuste väärtustamine, juhtumi ülesehitamine ja väidete proovilepanek' },
+  3: { title: 'Süsteemid, juhtimine ja prioriteedid', tagline: 'Kuidas avalikke ja sotsiaalseid organisatsioone struktureeritakse, rahastatakse ja vastutusele võetakse' },
+  4: { title: 'Ühiskondlikud ja globaalsed küsimused', tagline: 'Avalik väärtus ühe organisatsiooni piiridest kaugemal: käitumine, usaldus, planeet ja avalik vestlus' },
+  5: { title: 'Digitaalne, tarkvara ja tehnoloogia', tagline: 'Tehnoloogia avalik väärtus: digitaalne valitsemine, tehisintellekt, tarkvara, andmed ja küberturvalisus' }
+};
+PART_TRANSLATIONS['et-001'] = PART_TRANSLATIONS['et-ee'];
 PART_TRANSLATIONS['da-001'] = {
   1: { title: 'Grundlag', tagline: 'Hvorfor offentlig værdi adskiller sig fra markedsværdi og demokratisk mandat, og de modeller der forklarer det' },
   2: { title: 'Vurdering og dokumentation', tagline: 'Analytikerens værktøjskasse: værdisætning af resultater, opbygning af sagen og afprøvning af påstande' },

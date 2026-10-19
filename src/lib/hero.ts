@@ -179,6 +179,16 @@ export const HERO: Record<string, { tagline: string; intro?: string; translation
   "tagline": "En praktisk guide til bedste praksis for at skabe offentlig værdi i det offentlige og i den sociale sektor.",
   "intro": "Denne guide er skrevet til de mennesker, der leder offentlige organisationer og organisationer i den sociale sektor: myndighedschefer, ledere i lokal forvaltning, direktører i nonprofitorganisationer og de politik-, digitale, økonomi- og driftsledere, der støtter dem. Den tager teorien om offentlig værdi, med udgangspunkt i Mark Moores strategiske trekant, og anvender den på praktiske beslutninger i 33 fulde emner.",
   "translations": "Oversættelser: "
+ },
+ "et-ee": {
+  "tagline": "Praktiline juhend parimate tavade kohta avaliku väärtuse loomisel avalikus ja sotsiaalsektoris.",
+  "intro": "See juhend on kirjutatud inimestele, kes juhivad avaliku sektori ja sotsiaalsektori organisatsioone: asutuste juhid, kohalike omavalitsuste juhid, mittetulundusühingute tegevjuhid ning neid toetavad poliitika-, digi-, rahandus- ja tegevusjuhid. See võtab avaliku väärtuse teooria, lähtudes Mark Moore'i strateegilisest kolmnurgast, ja rakendab seda praktilistele otsustele 33 täismahus teemas.",
+  "translations": "Tõlked: "
+ },
+ "et-001": {
+  "tagline": "Praktiline juhend parimate tavade kohta avaliku väärtuse loomisel avalikus ja sotsiaalsektoris.",
+  "intro": "See juhend on kirjutatud inimestele, kes juhivad avaliku sektori ja sotsiaalsektori organisatsioone: asutuste juhid, kohalike omavalitsuste juhid, mittetulundusühingute tegevjuhid ning neid toetavad poliitika-, digi-, rahandus- ja tegevusjuhid. See võtab avaliku väärtuse teooria, lähtudes Mark Moore'i strateegilisest kolmnurgast, ja rakendab seda praktilistele otsustele 33 täismahus teemas.",
+  "translations": "Tõlked: "
  }
 };
 
@@ -218,5 +228,7 @@ export const ENDONYMS: Record<string, string> = {
  "zh-tw": "繁體中文",
  "pt-001": "Português",
  "ur-001": "اردو",
- "da-001": "Dansk"
+ "da-001": "Dansk",
+ "et-ee": "Eesti",
+ "et-001": "Eesti"
 };
