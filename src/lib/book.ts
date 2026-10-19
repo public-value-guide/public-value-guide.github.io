@@ -89,7 +89,9 @@ export const LOCALES: Locale[] = [
   { slug: 'fi-fi', label: 'Suomi' },
   { slug: 'fi-001', label: 'Suomi' },
   { slug: 'it-it', label: 'Italiano' },
-  { slug: 'it-001', label: 'Italiano' }
+  { slug: 'it-001', label: 'Italiano' },
+  { slug: 'th-th', label: 'ไทย' },
+  { slug: 'th-001', label: 'ไทย' }
 ];
 
 /**
@@ -657,6 +659,14 @@ PART_TRANSLATIONS['it-it'] = {
   5: { title: 'Digitale, software e tecnologia', tagline: 'Il valore pubblico della tecnologia: governo digitale, intelligenza artificiale, software, dati e cybersicurezza' }
 };
 PART_TRANSLATIONS['it-001'] = PART_TRANSLATIONS['it-it'];
+PART_TRANSLATIONS['th-th'] = {
+  1: { title: 'รากฐาน', tagline: 'ทำไมคุณค่าสาธารณะจึงต่างจากคุณค่าตลาดและอาณัติประชาธิปไตย และแบบจำลองที่อธิบายมัน' },
+  2: { title: 'การประเมินและหลักฐาน', tagline: 'กล่องเครื่องมือของนักวิเคราะห์ ประเมินผลลัพธ์ สร้างกรณี และทดสอบข้ออ้าง' },
+  3: { title: 'ระบบ ธรรมาภิบาล และลำดับความสำคัญ', tagline: 'องค์กรภาครัฐและภาคสังคมถูกจัดโครงสร้าง ให้ทุน และทำให้รับผิดชอบอย่างไร' },
+  4: { title: 'ประเด็นทางสังคมและระดับโลก', tagline: 'คุณค่าสาธารณะเกินกว่าขอบเขตขององค์กรเดียว พฤติกรรม ความไว้วางใจ ดาวเคราะห์ และวาทกรรมสาธารณะ' },
+  5: { title: 'ดิจิทัล ซอฟต์แวร์ และเทคโนโลยี', tagline: 'คุณค่าสาธารณะของเทคโนโลยี รัฐบาลดิจิทัล ปัญญาประดิษฐ์ ซอฟต์แวร์ ข้อมูล และความมั่นคงปลอดภัยไซเบอร์' }
+};
+PART_TRANSLATIONS['th-001'] = PART_TRANSLATIONS['th-th'];
 PART_TRANSLATIONS['da-001'] = {
   1: { title: 'Grundlag', tagline: 'Hvorfor offentlig værdi adskiller sig fra markedsværdi og demokratisk mandat, og de modeller der forklarer det' },
   2: { title: 'Vurdering og dokumentation', tagline: 'Analytikerens værktøjskasse: værdisætning af resultater, opbygning af sagen og afprøvning af påstande' },

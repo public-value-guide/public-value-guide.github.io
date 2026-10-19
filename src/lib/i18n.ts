@@ -1429,6 +1429,61 @@ const itIt: UiStrings = {
   }
 };
 
+const thTh: UiStrings = {
+  siteTitle: 'คู่มือคุณค่าสาธารณะ',
+  skipToContent: 'ข้ามไปยังเนื้อหาหลัก',
+  nav: { contents: 'สารบัญ', glossary: 'อภิธานศัพท์', index: 'ดัชนี', source: 'ซอร์สโค้ด' },
+  breadcrumb: { home: 'หน้าแรก', contents: 'สารบัญ' },
+  picker: { theme: 'ธีม', locale: 'ภาษา', textSize: 'ขนาดตัวอักษร', share: 'แบ่งปัน',
+    search: 'ค้นหา',
+    searchInput: 'ค้นหาในคู่มือ',
+    searchSubmit: 'ส่งคำค้นหา'
+  },
+  share: {
+    emailLink: 'ส่งลิงก์ทางอีเมล',
+    shareOnLinkedIn: 'แบ่งปันบน LinkedIn',
+    shareOnReddit: 'แบ่งปันบน Reddit',
+    shareOnBluesky: 'แบ่งปันบน Bluesky',
+    shareOnMastodon: 'แบ่งปันบน Mastodon',
+    copyLink: 'คัดลอกลิงก์',
+    copied: 'คัดลอกแล้ว!',
+    copyFailed: 'คัดลอกไม่สำเร็จ – โปรดคัดลอกที่อยู่จากแถบที่อยู่'
+  },
+  contents: {
+    pageTitle: 'สารบัญ',
+    lead: 'แต่ละหัวข้อเป็นเอกเทศในตัวเอง ท่านอ่านตั้งแต่ต้นจนจบเป็นหลักสูตรเรื่องคุณค่าสาธารณะ หรือข้ามไปยังหัวข้อที่ตรงกับการตัดสินใจที่อยู่ตรงหน้าท่านก็ได้',
+    readingIn: (label) => `ท่านกำลังอ่านใน${label} เปลี่ยนภาษาได้จากตัวเลือกภาษาที่ส่วนหัว`,
+    frontMatter: 'คำนำ',
+    part: (n) => `ส่วนที่ ${n}`,
+    reference: 'ข้อมูลอ้างอิง'
+  },
+  topic: {
+    topicEyebrow: (n) => `หัวข้อ ${n}`,
+    paginationLabel: 'หัวข้อ',
+    onThisPage: 'ในหน้านี้',
+    previous: 'ก่อนหน้า',
+    next: 'ถัดไป'
+  },
+  links: { label: 'ลิงก์', skills: 'ทักษะสำหรับ AI', llms: 'สำหรับเอเจนต์ AI (llms.txt)', issues: 'แจ้งข้อผิดพลาด' },
+  results: {
+    label: 'ผลการค้นหา',
+    heading: (q) => `ค้นหา: ${q}`,
+    searching: 'กำลังค้นหา…',
+    none: (q) => `ไม่พบผลลัพธ์สำหรับ “${q}”`,
+    browse: 'เรียกดูสารบัญ',
+    failed: 'โหลดดัชนีการค้นหาไม่สำเร็จ',
+    count: (n, more) => `${n}${more ? '+' : ''} ${n === 1 ? 'ผลลัพธ์' : 'ผลลัพธ์'}`,
+    button: 'ค้นหา'
+  },
+  footer: {
+    tagline:
+      'คู่มือปฏิบัติว่าด้วยแนวปฏิบัติที่ดีที่สุดในการสร้างคุณค่าสาธารณะในภาครัฐและภาคสังคม เขียนสำหรับผู้อ่านทั่วโลก',
+    sourceAndContributions: 'ซอร์สโค้ดและการมีส่วนร่วม:',
+    builtWith: 'สร้างด้วย',
+    ledBy: 'นำโดย'
+  }
+};
+
 const STRINGS: Record<string, UiStrings> = {
   'en-gb-oxendict': enGbOxendict,
   'en-gb': enGb,
@@ -1471,7 +1526,9 @@ const STRINGS: Record<string, UiStrings> = {
   'fi-fi': fiFi,
   'fi-001': fiFi,
   'it-it': itIt,
-  'it-001': itIt
+  'it-001': itIt,
+  'th-th': thTh,
+  'th-001': thTh
 };
 
 /** UI chrome strings for `locale`, falling back to English if the locale is unknown. */

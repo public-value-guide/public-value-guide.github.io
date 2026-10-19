@@ -209,6 +209,16 @@ export const HERO: Record<string, { tagline: string; intro?: string; translation
   "tagline": "Una guida pratica alle migliori pratiche per creare valore pubblico nel settore pubblico e nel terzo settore.",
   "intro": "Questa guida è scritta per chi guida organizzazioni pubbliche e del terzo settore: dirigenti di agenzie, responsabili dell'amministrazione locale, direttori esecutivi di organizzazioni non profit e i leader di politica, digitale, finanza e operazioni che li sostengono. Prende la teoria del valore pubblico, a partire dal triangolo strategico di Mark Moore, e la applica a decisioni pratiche in 33 argomenti completi.",
   "translations": "Traduzioni: "
+ },
+ "th-th": {
+  "tagline": "คู่มือปฏิบัติว่าด้วยแนวปฏิบัติที่ดีที่สุดในการสร้างคุณค่าสาธารณะในภาครัฐและภาคสังคม",
+  "intro": "คู่มือนี้เขียนสำหรับผู้ที่นำองค์กรภาครัฐและภาคสังคม ได้แก่ ผู้บริหารหน่วยงาน ผู้นำรัฐบาลท้องถิ่น ผู้อำนวยการบริหารขององค์กรไม่แสวงหากำไร และผู้นำด้านนโยบาย ดิจิทัล การเงิน และปฏิบัติการที่สนับสนุนพวกเขา คู่มือนำทฤษฎีคุณค่าสาธารณะ เริ่มจากสามเหลี่ยมเชิงกลยุทธ์ของมาร์ก มัวร์ มาประยุกต์กับการตัดสินใจเชิงปฏิบัติใน 33 หัวข้อฉบับสมบูรณ์",
+  "translations": "การแปล: "
+ },
+ "th-001": {
+  "tagline": "คู่มือปฏิบัติว่าด้วยแนวปฏิบัติที่ดีที่สุดในการสร้างคุณค่าสาธารณะในภาครัฐและภาคสังคม",
+  "intro": "คู่มือนี้เขียนสำหรับผู้ที่นำองค์กรภาครัฐและภาคสังคม ได้แก่ ผู้บริหารหน่วยงาน ผู้นำรัฐบาลท้องถิ่น ผู้อำนวยการบริหารขององค์กรไม่แสวงหากำไร และผู้นำด้านนโยบาย ดิจิทัล การเงิน และปฏิบัติการที่สนับสนุนพวกเขา คู่มือนำทฤษฎีคุณค่าสาธารณะ เริ่มจากสามเหลี่ยมเชิงกลยุทธ์ของมาร์ก มัวร์ มาประยุกต์กับการตัดสินใจเชิงปฏิบัติใน 33 หัวข้อฉบับสมบูรณ์",
+  "translations": "การแปล: "
  }
 };
 
@@ -254,5 +264,7 @@ export const ENDONYMS: Record<string, string> = {
  "fi-fi": "Suomi",
  "fi-001": "Suomi",
  "it-it": "Italiano",
- "it-001": "Italiano"
+ "it-001": "Italiano",
+ "th-th": "ไทย",
+ "th-001": "ไทย"
 };
