@@ -1319,6 +1319,61 @@ const etEe: UiStrings = {
   }
 };
 
+const fiFi: UiStrings = {
+  siteTitle: 'Julkisen arvon opas',
+  skipToContent: 'Siirry pääsisältöön',
+  nav: { contents: 'Sisällysluettelo', glossary: 'Sanasto', index: 'Hakemisto', source: 'Lähdekoodi' },
+  breadcrumb: { home: 'Etusivu', contents: 'Sisällysluettelo' },
+  picker: { theme: 'Teema', locale: 'Kieli', textSize: 'Tekstin koko', share: 'Jaa',
+    search: 'Haku',
+    searchInput: 'Hae oppaasta',
+    searchSubmit: 'Lähetä haku'
+  },
+  share: {
+    emailLink: 'Lähetä linkki sähköpostilla',
+    shareOnLinkedIn: 'Jaa LinkedInissä',
+    shareOnReddit: 'Jaa Redditissä',
+    shareOnBluesky: 'Jaa Blueskyssa',
+    shareOnMastodon: 'Jaa Mastodonissa',
+    copyLink: 'Kopioi linkki',
+    copied: 'Kopioitu!',
+    copyFailed: 'Kopiointi epäonnistui – kopioi osoite osoiteriviltä'
+  },
+  contents: {
+    pageTitle: 'Sisällysluettelo',
+    lead: 'Jokainen aihe on itsenäinen. Lue ne alusta loppuun julkisen arvon kurssina tai siirry suoraan aiheeseen, joka vastaa edessäsi olevaa päätöstä.',
+    readingIn: (label) => `Luet kielellä ${label}. Vaihda kieltä otsakkeen kielivalitsimella.`,
+    frontMatter: 'Johdanto',
+    part: (n) => `Osa ${n}`,
+    reference: 'Viite'
+  },
+  topic: {
+    topicEyebrow: (n) => `Aihe ${n}`,
+    paginationLabel: 'Aihe',
+    onThisPage: 'Tällä sivulla',
+    previous: 'Edellinen',
+    next: 'Seuraava'
+  },
+  links: { label: 'Linkit', skills: 'Tekoälytaidot', llms: 'Tekoälyagenteille (llms.txt)', issues: 'Ilmoita virheestä' },
+  results: {
+    label: 'Hakutulokset',
+    heading: (q) => `Haku: ${q}`,
+    searching: 'Haetaan…',
+    none: (q) => `Haulle ”${q}” ei löytynyt tuloksia.`,
+    browse: 'Selaa sisällysluetteloa',
+    failed: 'Hakuindeksin lataaminen epäonnistui.',
+    count: (n, more) => `${n}${more ? '+' : ''} ${n === 1 ? 'tulos' : 'tulosta'}`,
+    button: 'Hae'
+  },
+  footer: {
+    tagline:
+      'Käytännönläheinen opas julkisen arvon luomisen parhaisiin käytäntöihin julkisella ja kolmannella sektorilla, kirjoitettu maailmanlaajuiselle yleisölle.',
+    sourceAndContributions: 'Lähdekoodi ja kontribuutiot:',
+    builtWith: 'Rakennettu työkaluilla',
+    ledBy: 'Johtaja'
+  }
+};
+
 const STRINGS: Record<string, UiStrings> = {
   'en-gb-oxendict': enGbOxendict,
   'en-gb': enGb,
@@ -1357,7 +1412,9 @@ const STRINGS: Record<string, UiStrings> = {
   'ur-001': ur001,
   'da-001': da001,
   'et-ee': etEe,
-  'et-001': etEe
+  'et-001': etEe,
+  'fi-fi': fiFi,
+  'fi-001': fiFi
 };
 
 /** UI chrome strings for `locale`, falling back to English if the locale is unknown. */

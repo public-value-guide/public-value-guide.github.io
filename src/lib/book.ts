@@ -85,7 +85,9 @@ export const LOCALES: Locale[] = [
   { slug: 'ur-001', label: 'اردو' },
   { slug: 'da-001', label: 'Dansk' },
   { slug: 'et-ee', label: 'Eesti' },
-  { slug: 'et-001', label: 'Eesti' }
+  { slug: 'et-001', label: 'Eesti' },
+  { slug: 'fi-fi', label: 'Suomi' },
+  { slug: 'fi-001', label: 'Suomi' }
 ];
 
 /**
@@ -637,6 +639,14 @@ PART_TRANSLATIONS['et-ee'] = {
   5: { title: 'Digitaalne, tarkvara ja tehnoloogia', tagline: 'Tehnoloogia avalik väärtus: digitaalne valitsemine, tehisintellekt, tarkvara, andmed ja küberturvalisus' }
 };
 PART_TRANSLATIONS['et-001'] = PART_TRANSLATIONS['et-ee'];
+PART_TRANSLATIONS['fi-fi'] = {
+  1: { title: 'Perusteet', tagline: 'Miksi julkinen arvo eroaa markkina-arvosta ja demokraattisesta mandaatista, ja mallit, jotka sen selittävät' },
+  2: { title: 'Arviointi ja näyttö', tagline: 'Analyytikon työkalupakki: lopputulosten arvottaminen, perustelun rakentaminen ja väitteiden koetteleminen' },
+  3: { title: 'Järjestelmät, hallinto ja prioriteetit', tagline: 'Miten julkiset ja kolmannen sektorin organisaatiot jäsennetään, rahoitetaan ja pidetään vastuullisina' },
+  4: { title: 'Yhteiskunnalliset ja globaalit kysymykset', tagline: 'Julkinen arvo yksittäisen organisaation rajojen ulkopuolella: käyttäytyminen, luottamus, planeetta ja julkinen keskustelu' },
+  5: { title: 'Digitaalisuus, ohjelmistot ja teknologia', tagline: 'Teknologian julkinen arvo: digitaalinen hallinto, tekoäly, ohjelmistot, data ja kyberturvallisuus' }
+};
+PART_TRANSLATIONS['fi-001'] = PART_TRANSLATIONS['fi-fi'];
 PART_TRANSLATIONS['da-001'] = {
   1: { title: 'Grundlag', tagline: 'Hvorfor offentlig værdi adskiller sig fra markedsværdi og demokratisk mandat, og de modeller der forklarer det' },
   2: { title: 'Vurdering og dokumentation', tagline: 'Analytikerens værktøjskasse: værdisætning af resultater, opbygning af sagen og afprøvning af påstande' },

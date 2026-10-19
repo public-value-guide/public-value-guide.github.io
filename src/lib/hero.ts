@@ -189,6 +189,16 @@ export const HERO: Record<string, { tagline: string; intro?: string; translation
   "tagline": "Praktiline juhend parimate tavade kohta avaliku väärtuse loomisel avalikus ja sotsiaalsektoris.",
   "intro": "See juhend on kirjutatud inimestele, kes juhivad avaliku sektori ja sotsiaalsektori organisatsioone: asutuste juhid, kohalike omavalitsuste juhid, mittetulundusühingute tegevjuhid ning neid toetavad poliitika-, digi-, rahandus- ja tegevusjuhid. See võtab avaliku väärtuse teooria, lähtudes Mark Moore'i strateegilisest kolmnurgast, ja rakendab seda praktilistele otsustele 33 täismahus teemas.",
   "translations": "Tõlked: "
+ },
+ "fi-fi": {
+  "tagline": "Käytännönläheinen opas julkisen arvon luomisen parhaisiin käytäntöihin julkisella ja kolmannella sektorilla.",
+  "intro": "Tämä opas on kirjoitettu julkisen ja kolmannen sektorin organisaatioita johtaville: virastojen johtajille, paikallishallinnon johtajille, kansalaisjärjestöjen toiminnanjohtajille sekä heitä tukeville politiikka-, digitaali-, talous- ja toimintajohtajille. Se ottaa julkisen arvon teorian, Mark Mooren strategisesta kolmiosta lähtien, ja soveltaa sitä käytännön päätöksiin 33 kokonaisessa aiheessa.",
+  "translations": "Käännökset: "
+ },
+ "fi-001": {
+  "tagline": "Käytännönläheinen opas julkisen arvon luomisen parhaisiin käytäntöihin julkisella ja kolmannella sektorilla.",
+  "intro": "Tämä opas on kirjoitettu julkisen ja kolmannen sektorin organisaatioita johtaville: virastojen johtajille, paikallishallinnon johtajille, kansalaisjärjestöjen toiminnanjohtajille sekä heitä tukeville politiikka-, digitaali-, talous- ja toimintajohtajille. Se ottaa julkisen arvon teorian, Mark Mooren strategisesta kolmiosta lähtien, ja soveltaa sitä käytännön päätöksiin 33 kokonaisessa aiheessa.",
+  "translations": "Käännökset: "
  }
 };
 
@@ -230,5 +240,7 @@ export const ENDONYMS: Record<string, string> = {
  "ur-001": "اردو",
  "da-001": "Dansk",
  "et-ee": "Eesti",
- "et-001": "Eesti"
+ "et-001": "Eesti",
+ "fi-fi": "Suomi",
+ "fi-001": "Suomi"
 };
