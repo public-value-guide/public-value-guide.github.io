@@ -229,6 +229,16 @@ export const HERO: Record<string, { tagline: string; intro?: string; translation
   "tagline": "Kamu ve sosyal sektörde kamu değeri yaratmanın en iyi uygulamalarına dair pratik bir rehber",
   "intro": "Bu rehber kamu ve sosyal sektör kuruluşlarını yönetenler için yazılmıştır: kurum yöneticileri, yerel yönetim liderleri, kâr amacı gütmeyen kuruluşların icra direktörleri ve onları destekleyen politika, dijital, mali ve operasyon liderleri. Mark Moore'un stratejik üçgeninden başlayarak kamu değeri kuramını 33 eksiksiz konuda pratik kararlara uygular.",
   "translations": "Çeviriler: "
+ },
+ "vi-vn": {
+  "tagline": "Hướng dẫn thực hành về các thực hành tốt nhất để tạo giá trị công trong khu vực công và khu vực xã hội",
+  "intro": "Hướng dẫn này được viết cho những người lãnh đạo các tổ chức công và khu vực xã hội: người đứng đầu cơ quan, lãnh đạo chính quyền địa phương, giám đốc điều hành tổ chức phi lợi nhuận, cùng các nhà lãnh đạo chính sách, số, tài chính và vận hành hỗ trợ họ. Bắt đầu từ tam giác chiến lược của Mark Moore, hướng dẫn áp dụng lý thuyết giá trị công vào các quyết định thực tiễn qua 33 chủ đề đầy đủ.",
+  "translations": "Bản dịch: "
+ },
+ "vi-001": {
+  "tagline": "Hướng dẫn thực hành về các thực hành tốt nhất để tạo giá trị công trong khu vực công và khu vực xã hội",
+  "intro": "Hướng dẫn này được viết cho những người lãnh đạo các tổ chức công và khu vực xã hội: người đứng đầu cơ quan, lãnh đạo chính quyền địa phương, giám đốc điều hành tổ chức phi lợi nhuận, cùng các nhà lãnh đạo chính sách, số, tài chính và vận hành hỗ trợ họ. Bắt đầu từ tam giác chiến lược của Mark Moore, hướng dẫn áp dụng lý thuyết giá trị công vào các quyết định thực tiễn qua 33 chủ đề đầy đủ.",
+  "translations": "Bản dịch: "
  }
 };
 
@@ -278,5 +288,7 @@ export const ENDONYMS: Record<string, string> = {
  "th-th": "ไทย",
  "th-001": "ไทย",
  "tr-tr": "Türkçe",
- "tr-001": "Türkçe"
+ "tr-001": "Türkçe",
+ "vi-vn": "Tiếng Việt",
+ "vi-001": "Tiếng Việt"
 };

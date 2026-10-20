@@ -1539,6 +1539,61 @@ const trTr: UiStrings = {
   }
 };
 
+const viVn: UiStrings = {
+  siteTitle: 'Hướng dẫn Giá trị công',
+  skipToContent: 'Chuyển đến nội dung chính',
+  nav: { contents: 'Mục lục', glossary: 'Thuật ngữ', index: 'Chỉ mục', source: 'Nguồn' },
+  breadcrumb: { home: 'Trang chủ', contents: 'Mục lục' },
+  picker: { theme: 'Giao diện', locale: 'Ngôn ngữ', textSize: 'Cỡ chữ', share: 'Chia sẻ',
+    search: 'Tìm kiếm',
+    searchInput: 'Tìm trong hướng dẫn',
+    searchSubmit: 'Gửi tìm kiếm'
+  },
+  share: {
+    emailLink: 'Gửi liên kết qua email',
+    shareOnLinkedIn: 'Chia sẻ trên LinkedIn',
+    shareOnReddit: 'Chia sẻ trên Reddit',
+    shareOnBluesky: 'Chia sẻ trên Bluesky',
+    shareOnMastodon: 'Chia sẻ trên Mastodon',
+    copyLink: 'Sao chép liên kết',
+    copied: 'Đã sao chép!',
+    copyFailed: 'Không sao chép được – vui lòng sao chép địa chỉ từ thanh địa chỉ'
+  },
+  contents: {
+    pageTitle: 'Mục lục',
+    lead: 'Mỗi chủ đề tự đứng được một mình. Bạn có thể đọc hướng dẫn từ đầu đến cuối như một khóa học về giá trị công, hoặc đi thẳng đến chủ đề phù hợp với quyết định trước mắt.',
+    readingIn: (label) => `Bạn đang đọc bằng ${label}. Hãy đổi ngôn ngữ bằng bộ chọn ngôn ngữ ở đầu trang.`,
+    frontMatter: 'Lời nói đầu',
+    part: (n) => `Phần ${n}`,
+    reference: 'Tham khảo'
+  },
+  topic: {
+    topicEyebrow: (n) => `Chủ đề ${n}`,
+    paginationLabel: 'Chủ đề',
+    onThisPage: 'Trong trang này',
+    previous: 'Trước',
+    next: 'Tiếp'
+  },
+  links: { label: 'Liên kết', skills: 'Kỹ năng cho AI', llms: 'Dành cho tác tử AI (llms.txt)', issues: 'Báo lỗi' },
+  results: {
+    label: 'Kết quả tìm kiếm',
+    heading: (q) => `Tìm: ${q}`,
+    searching: 'Đang tìm…',
+    none: (q) => `Không có kết quả cho “${q}”`,
+    browse: 'Duyệt mục lục',
+    failed: 'Không tải được chỉ mục tìm kiếm',
+    count: (n, more) => `${n}${more ? '+' : ''} kết quả`,
+    button: 'Tìm'
+  },
+  footer: {
+    tagline:
+      'Hướng dẫn thực hành về các thực hành tốt nhất để tạo giá trị công trong khu vực công và khu vực xã hội, viết cho độc giả trên toàn thế giới.',
+    sourceAndContributions: 'Nguồn và đóng góp:',
+    builtWith: 'Xây dựng bằng:',
+    ledBy: 'Do dẫn dắt:'
+  }
+};
+
 const STRINGS: Record<string, UiStrings> = {
   'en-gb-oxendict': enGbOxendict,
   'en-gb': enGb,
@@ -1585,7 +1640,9 @@ const STRINGS: Record<string, UiStrings> = {
   'th-th': thTh,
   'th-001': thTh,
   'tr-tr': trTr,
-  'tr-001': trTr
+  'tr-001': trTr,
+  'vi-vn': viVn,
+  'vi-001': viVn
 };
 
 /** UI chrome strings for `locale`, falling back to English if the locale is unknown. */

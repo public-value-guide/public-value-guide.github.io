@@ -93,7 +93,9 @@ export const LOCALES: Locale[] = [
   { slug: 'th-th', label: 'ไทย' },
   { slug: 'th-001', label: 'ไทย' },
   { slug: 'tr-tr', label: 'Türkçe' },
-  { slug: 'tr-001', label: 'Türkçe' }
+  { slug: 'tr-001', label: 'Türkçe' },
+  { slug: 'vi-vn', label: 'Tiếng Việt' },
+  { slug: 'vi-001', label: 'Tiếng Việt' }
 ];
 
 /**
@@ -677,6 +679,14 @@ PART_TRANSLATIONS['tr-tr'] = {
   5: { title: 'Dijital, yazılım ve teknoloji', tagline: 'Teknolojinin kamu değeri: dijital devlet, yapay zekâ, yazılım, veri ve siber güvenlik' }
 };
 PART_TRANSLATIONS['tr-001'] = PART_TRANSLATIONS['tr-tr'];
+PART_TRANSLATIONS['vi-vn'] = {
+  1: { title: 'Nền tảng', tagline: 'Vì sao giá trị công khác với giá trị thị trường và ủy quyền dân chủ, và các mô hình giải thích điều đó' },
+  2: { title: 'Đánh giá và bằng chứng', tagline: 'Bộ công cụ của nhà phân tích: định giá kết quả, xây dựng luận cứ và kiểm nghiệm các tuyên bố' },
+  3: { title: 'Hệ thống, quản trị và ưu tiên', tagline: 'Cách các tổ chức công và khu vực xã hội được cấu trúc, tài trợ và buộc phải giải trình' },
+  4: { title: 'Các vấn đề xã hội và toàn cầu', tagline: 'Giá trị công vượt ra ngoài một tổ chức đơn lẻ: hành vi, niềm tin, hành tinh và diễn ngôn công' },
+  5: { title: 'Số, phần mềm và công nghệ', tagline: 'Giá trị công của công nghệ: chính phủ số, trí tuệ nhân tạo, phần mềm, dữ liệu và an ninh mạng' }
+};
+PART_TRANSLATIONS['vi-001'] = PART_TRANSLATIONS['vi-vn'];
 PART_TRANSLATIONS['da-001'] = {
   1: { title: 'Grundlag', tagline: 'Hvorfor offentlig værdi adskiller sig fra markedsværdi og demokratisk mandat, og de modeller der forklarer det' },
   2: { title: 'Vurdering og dokumentation', tagline: 'Analytikerens værktøjskasse: værdisætning af resultater, opbygning af sagen og afprøvning af påstande' },
