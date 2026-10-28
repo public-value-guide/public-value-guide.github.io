@@ -52,7 +52,7 @@ export const LOCALES: Locale[] = [
   { slug: 'en-gb', label: 'English - Great Britain' },
   { slug: 'en-us', label: 'English - United States' },
   { slug: 'en-001', label: 'English' },
-  { slug: 'cy-gb', label: 'Cymraeg - Cymru' },
+  { slug: 'cy-gb', label: 'Cymraeg - Prydain Fawr' },
   { slug: 'cy-001', label: 'Cymraeg' },
   { slug: 'es-001', label: 'Español' },
   { slug: 'fr-001', label: 'Français' },
